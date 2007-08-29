@@ -34,6 +34,15 @@ unsigned int allones = ~0;
 #define MAX(a,b) (a>b?a:b)
 #endif
 
+/*
+ * Find the "bounding box" for the CIDR prefix starting
+ * at 'first' and having "slash" value of 'slash'
+ *
+ * For square areas this is pretty easy.  We know how to find the
+ * point diagonally opposite the first value (add 1010..1010).
+ * Its a little harder for rectangular areas, so I cheat a little
+ * and divide it into the two smaller squares.
+ */
 void
 bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int *ymax)
 {
@@ -47,7 +56,6 @@ bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int
 	if (0 == (slash & 1)) {
 		/* square */
 		diag >>= slash;
-		fprintf(stderr, "square diag=%x\n", diag);
 		hil_xy_from_s(first >> 8, 12, &x1, &y1);
 		hil_xy_from_s((first+diag) >> 8, 12, &x2, &y2);
 		*xmin = MIN(x1,x2);
@@ -57,14 +65,13 @@ bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int
 	} else {
 		/* rectangle */
 		int x3, y3, x4, y4;
-		diag >>= (slash+1);
-		fprintf(stderr, "rect   diag=%x\n", diag);
+		slash += 1;
+		diag >>= slash;
 		hil_xy_from_s(first >> 8, 12, &x1, &y1);
 		hil_xy_from_s((first+diag) >> 8, 12, &x2, &y2);
-		first += (1 << (31-slash));
+		first += (1 << (32-slash));
 		hil_xy_from_s((first) >> 8, 12, &x3, &y3);
 		hil_xy_from_s((first+diag) >> 8, 12, &x4, &y4);
-fprintf(stderr, "x=[%d,%d,%d,%d] y=[%d,%d,%d,%d]\n", x1,x2,x3,x4,y1,y2,y3,y4);
 		*xmin = MIN(MIN(x1,x2),MIN(x3,x4));
 		*ymin = MIN(MIN(y1,y2),MIN(y3,y4));
 		*xmax = MAX(MAX(x1,x2),MAX(x3,x4));
