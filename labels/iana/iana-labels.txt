@@ -1,0 +1,109 @@
+0.0.0.0/7	IANA - Reserved
+2.0.0.0/8	IANA - Reserved
+3.0.0.0/8	General Electric Company
+4.0.0.0/8	Level 3 Communications, Inc.
+5.0.0.0/8	IANA - Reserved
+6.0.0.0/8	Army Information Systems Center
+7.0.0.0/8	IANA - Reserved
+8.0.0.0/8	Level 3 Communications, Inc.
+9.0.0.0/8	IBM
+10.0.0.0/8	IANA - Private Use
+11.0.0.0/8	DoD Intel Information Systems
+12.0.0.0/8	AT&T Bell Laboratories
+13.0.0.0/8	Xerox Corporation
+14.0.0.0/8	IANA - Public Data Network
+15.0.0.0/8	Hewlett-Packard Company
+16.0.0.0/8	Digital Equipment Corporation
+17.0.0.0/8	Apple Computer Inc.
+18.0.0.0/8	MIT
+19.0.0.0/8	Ford Motor Company
+20.0.0.0/8	Computer Sciences Corporation
+21.0.0.0/8	DDN-RVN
+22.0.0.0/8	Defense Information Systems Agency
+23.0.0.0/8	IANA - Reserved
+24.0.0.0/8	ARIN - Cable Block
+25.0.0.0/8	UK Ministry of Defense
+26.0.0.0/8	Defense Information Systems Agency
+27.0.0.0/8	IANA - Reserved
+28.0.0.0/8	DSI-North
+29.0.0.0/8	Defense Information Systems Agency
+30.0.0.0/8	Defense Information Systems Agency
+31.0.0.0/8	IANA - Reserved
+32.0.0.0/8	AT&T Global Network Services
+33.0.0.0/8	DLA Systems Automation Center
+34.0.0.0/8	Halliburton Company
+35.0.0.0/8	MERIT Computer Network
+36.0.0.0/7	IANA - Reserved
+38.0.0.0/8	Performance Systems International
+39.0.0.0/8	IANA - Reserved
+40.0.0.0/8	Eli Lily and Company
+41.0.0.0/8	AfriNIC
+42.0.0.0/8	IANA - Reserved
+43.0.0.0/8	Japan Inet
+44.0.0.0/8	Amateur Radio Digital Communications
+45.0.0.0/8	Interop Show Network
+46.0.0.0/8	IANA - Reserved
+47.0.0.0/8	Bell-Northern Research
+48.0.0.0/8	Prudential Securities Inc.
+49.0.0.0/8	IANA - Reserved
+50.0.0.0/8	IANA - Reserved
+51.0.0.0/8	Deparment of Social Security of UK
+52.0.0.0/8	E.I. duPont de Nemours and Co., Inc.
+53.0.0.0/8	Cap Debis CCS
+54.0.0.0/8	Merck and Co., Inc.
+55.0.0.0/8	DoD Network Information Center
+56.0.0.0/8	U.S. Postal Service
+57.0.0.0/8	SITA
+58.0.0.0/7	APNIC
+60.0.0.0/7	APNIC
+62.0.0.0/8	RIPE NCC
+63.0.0.0/8	ARIN
+64.0.0.0/5	ARIN
+72.0.0.0/6	ARIN
+76.0.0.0/8	ARIN
+77.0.0.0/8	RIPE NCC
+78.0.0.0/7	RIPE NCC
+80.0.0.0/4	RIPE NCC
+96.0.0.0/6	ARIN
+100.0.0.0/6	IANA - Reserved
+104.0.0.0/5	IANA - Reserved
+112.0.0.0/6	IANA - Reserved
+116.0.0.0/6	APNIC
+120.0.0.0/6	APNIC
+124.0.0.0/7	APNIC
+126.0.0.0/8	APNIC
+127.0.0.0/8	IANA - Reserved
+128.0.0.0/3	Various Registries
+160.0.0.0/5	Various Registries
+168.0.0.0/6	Various Registries
+172.0.0.0/8	Various Registries
+173.0.0.0/8	IANA - Reserved
+174.0.0.0/7	IANA - Reserved
+176.0.0.0/5	IANA - Reserved
+184.0.0.0/6	IANA - Reserved
+188.0.0.0/8	Various Registries
+189.0.0.0/8	LACNIC
+190.0.0.0/8	LACNIC
+191.0.0.0/8	Various Registries
+192.0.0.0/8	Various Registries
+193.0.0.0/8	RIPE NCC
+194.0.0.0/7	RIPE NCC
+196.0.0.0/8	AfriNIC
+197.0.0.0/8	IANA - Reserved
+198.0.0.0/8	Various Registries
+199.0.0.0/8	ARIN
+200.0.0.0/7	LACNIC
+202.0.0.0/7	APNIC
+204.0.0.0/6	ARIN
+208.0.0.0/7	ARIN
+210.0.0.0/7	APNIC
+212.0.0.0/7	RIPE NCC
+214.0.0.0/7	US-DOD
+216.0.0.0/8	ARIN
+217.0.0.0/8	RIPE NCC
+218.0.0.0/7	APNIC
+220.0.0.0/7	APNIC
+222.0.0.0/8	APNIC
+223.0.0.0/8	IANA - Reserved
+224.0.0.0/4	Multicast
+240.0.0.0/4	IANA - Reserved

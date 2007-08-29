@@ -15,6 +15,7 @@
 #include <string.h>
 #include <err.h>
 #include <assert.h>
+#include <math.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -29,7 +30,10 @@
 
 gdImagePtr image = NULL;
 int colors[256];
-int mode_1 = 0;
+int debug = 0;
+
+extern void annotate_file(const char *fn);
+const char *annotations = NULL;
 
 void
 initialize(void)
@@ -44,6 +48,8 @@ initialize(void)
 	hue = 240.0 * i / 255;
 	PIX_HSV_TO_RGB_COMMON(hue, 1.0, 1.0, r, g, b);
 	colors[i] = gdImageColorAllocate(image, r, g, b);
+	if (debug)
+		fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
     }
 }
 
@@ -79,62 +85,70 @@ hil_xy_from_s(unsigned s, int n, unsigned *xp,
 void
 paint(void)
 {
-    FILE *pngout;
     char buf[512];
     unsigned int line = 0;
     while (fgets(buf, 512, stdin)) {
 	unsigned int i;
-	unsigned int k;
 	unsigned int x;
 	unsigned int y;
+	int color = -1;
 
 	//get the "address"
 	    char *t = strtok(buf, " \t\r\n");
 	if (NULL == t)
 	    continue;
 	if (strspn(t, "0123456789") == strlen(t))
-	    i = atoi(t);
+	    i = atoi(t) >> 8;
 	else if (1 == inet_pton(AF_INET, t, &i))
-	    (void)0;
+	    i = ntohl(i) >> 8;
 	else
 	    errx(1, "bad input on line %d: %s", line, t);
 	hil_xy_from_s(i, 12, &x, &y);
+	if (debug)
+	    fprintf(stderr, "%s => (%d,%d)\n", t, x, y);
 
 	t = strtok(NULL, " \t\r\n");
-	if (NULL != t)
-	    k = atoi(t);
-	else {
-	    int c = gdImageGetPixel(image, x, y);
-	    k = gdImageColorExact(image,
-		gdImageRed(image, c),
-		gdImageGreen(image, c),
-		gdImageBlue(image, c));
-	    assert(k >= 0);
-	    assert(k < 255);
-	    k++;
+	if (NULL != t) {
+	    unsigned int k = atoi(t);
+	    color = colors[k];
+	} else {
+	    color = gdImageGetPixel(image, x, y);
+	    if (debug)
+	        fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
+	    assert(color >= 0);
+	    assert(color < 255);
+	    color++;
 	}
 
-	gdImageSetPixel(image, x, y, colors[k]);
+	gdImageSetPixel(image, x, y, color);
 	line++;
     }
+}
 
-    pngout = fopen("map.png", "wb");
+void
+save(void)
+{
+    FILE *pngout = fopen("map.png", "wb");
     gdImagePng(image, pngout);
     fclose(pngout);
     gdImageDestroy(image);
+    image = NULL;
 }
 
 int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "1")) != -1) {
+    while ((ch = getopt(argc, argv, "da:")) != -1) {
 	switch (ch) {
-	case '1':
-	    mode_1 = 1;
+	case 'd':
+	    debug++;
+	    break;
+	case 'a':
+	    annotations = strdup(optarg);
 	    break;
 	default:
-	    fprintf(stderr, "usage: %s [-1]\n", argv[0]);
+	    fprintf(stderr, "usage: %s [-d]\n", argv[0]);
 	    exit(1);
 	    break;
 	}
@@ -144,5 +158,8 @@ main(int argc, char *argv[])
 
     initialize();
     paint();
+    if (annotations)
+        annotate_file(annotations);
+    save();
     return 0;
 }
