@@ -87,6 +87,22 @@ bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int
 }
 
 void
+annotate_text(const char *text, int xmin, int ymin, int xmax, int ymax)
+{
+	int fi;
+	for (fi = 0; fi < NFONTS; fi++) {
+		int rendered_width = fonts[fi]->w * strlen(text);
+		if (rendered_width > (xmax-xmin))
+			continue;
+		gdImageString(image, fonts[fi],
+			((xmin+xmax) / 2) - (strlen(text) * fonts[fi]->w / 2),
+			((ymin+ymax) / 2) - (fonts[fi]->h / 2),
+			(char *) text, fontColor);
+		break;
+	}
+}
+
+void
 annotate_cidr(const char *cidr, const char *label)
 {
 	char cidr_copy[24];
@@ -96,7 +112,6 @@ annotate_cidr(const char *cidr, const char *label)
 	unsigned int last;
 	int xmin, ymin, xmax, ymax;
 	gdPoint points[4];
-	int fi;		/* font index */
 	strncpy(cidr_copy, cidr, 24);
 	t = strchr(cidr_copy, '/');
 	if (NULL == t) {
@@ -138,17 +153,7 @@ annotate_cidr(const char *cidr, const char *label)
 	points[2].y = ymax;
 	points[3].y = ymax;
 	gdImagePolygon(image, points, 4, fontColor);
-
-	for (fi = 0; fi < NFONTS; fi++) {
-		int rendered_width = fonts[fi]->w * strlen(label);
-		if (rendered_width > (xmax-xmin))
-			continue;
-		gdImageString(image, fonts[fi],
-			((xmin+xmax) / 2) - (strlen(label) * fonts[fi]->w / 2),
-			((ymin+ymax) / 2) - (fonts[fi]->h / 2),
-			(char *) label, fontColor);
-		break;
-	}
+	annotate_text(label, xmin, ymin, xmax, ymax);
 }
 
 /*
