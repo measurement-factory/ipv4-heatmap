@@ -94,15 +94,15 @@ annotate_text(const char *text, const char *text2, struct bb box)
     double sz;
     int brect[8];
     char *errmsg;
+    int tw, th;
     for (sz = 128.0; sz > 0.0; sz *= 0.9) {
 	errmsg = gdImageStringFT(NULL, &brect[0], 0,
 		(char *) font_file_or_name,
 		sz, 0.0, 0, 0, (char*)text);
-	int tw, th;
 	if (NULL != errmsg)
 		errx(1, errmsg);
 	tw = brect[2] - brect[0];
-	th = brect[5] - brect[3];
+	th = brect[3] - brect[5];
 	if (tw > ((box.xmax - box.xmin)*95/100))
 		continue;
 	if (th > ((box.ymax - box.ymin)*95/100))
@@ -110,10 +110,24 @@ annotate_text(const char *text, const char *text2, struct bb box)
 	gdImageStringFT(image, &brect[0], fontColor,
 		(char*) font_file_or_name, sz, 0.0,
 		((box.xmin + box.xmax) / 2) - (tw/2),
-		((box.ymin + box.ymax) / 2) - (th/2),
+		((box.ymin + box.ymax) / 2) + (th/2),
 		(char*)text);
 	break;
     }
+    if (NULL == text2)
+	return;
+
+    sz = 12.0;
+    errmsg = gdImageStringFT(NULL, &brect[0], 0,
+		(char *) font_file_or_name,
+		sz, 0.0, 0, 0, (char*)text2);
+    tw = brect[2] - brect[0];
+    /* don't update th, we need the previous value */
+    gdImageStringFT(image, &brect[0], fontColor,
+		(char*) font_file_or_name, sz, 0.0,
+		((box.xmin + box.xmax) / 2) - (tw/2),
+		((box.ymin + box.ymax) / 2) + (th/2) + (sz*2),
+		(char*)text2);
 }
 
 struct bb
