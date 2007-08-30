@@ -95,7 +95,7 @@ annotate_cidr(const char *cidr, const char *label)
 	unsigned int first;
 	unsigned int last;
 	int xmin, ymin, xmax, ymax;
-	gdPoint points[5];
+	gdPoint points[4];
 	int fi;		/* font index */
 	strncpy(cidr_copy, cidr, 24);
 	t = strchr(cidr_copy, '/');
@@ -133,15 +133,12 @@ annotate_cidr(const char *cidr, const char *label)
 	points[1].x = xmax;
 	points[2].x = xmax;
 	points[3].x = xmin;
-	points[4].x = xmin;
 	points[0].y = ymin;
 	points[1].y = ymin;
 	points[2].y = ymax;
 	points[3].y = ymax;
-	points[4].y = ymin;
-	gdImagePolygon(image, points, 5, fontColor);
+	gdImagePolygon(image, points, 4, fontColor);
 
-	
 	for (fi = 0; fi < NFONTS; fi++) {
 		int rendered_width = fonts[fi]->w * strlen(label);
 		if (rendered_width > (xmax-xmin))
