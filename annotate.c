@@ -22,17 +22,11 @@
 #include <arpa/inet.h>
 
 #include <gd.h>
-#include <gdfontt.h>
-#include <gdfonts.h>
-#include <gdfontmb.h>
-#include <gdfontl.h>
-#include <gdfontg.h>
 
 extern gdImagePtr image;
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
-#define NFONTS 5
-gdFontPtr fonts[NFONTS];
+extern const char *font_file_or_name;
 int fontColor = -1;
 unsigned int allones = ~0;
 
@@ -97,20 +91,27 @@ bounding_box(unsigned int first, int slash)
 void
 annotate_text(const char *text, const char *text2, struct bb box)
 {
-    int fi;
-    for (fi = 0; fi < NFONTS; fi++) {
-	int rendered_width = fonts[fi]->w * strlen(text);
-	if (rendered_width > (box.xmax - box.xmin))
-	    continue;
-	gdImageString(image, fonts[fi],
-	    ((box.xmin + box.xmax) / 2) - (strlen(text) * fonts[fi]->w / 2),
-	    ((box.ymin + box.ymax) / 2) - (fonts[fi]->h / 1),
-	    (char *)text, fontColor);
-	if (text2)
-	gdImageString(image, fonts[fi],
-	    ((box.xmin + box.xmax) / 2) - (strlen(text2) * fonts[fi]->w / 2),
-	    ((box.ymin + box.ymax) / 2) + (fonts[fi]->h / 1),
-	    (char *)text2, fontColor);
+    double sz;
+    int brect[8];
+    char *errmsg;
+    for (sz = 64.0; sz > 0.0; sz *= 0.9) {
+	errmsg = gdImageStringFT(NULL, &brect[0], 0,
+		(char *) font_file_or_name,
+		sz, 0.0, 0, 0, (char*)text);
+	int tw, th;
+	if (NULL != errmsg)
+		errx(1, errmsg);
+	tw = brect[2] - brect[0];
+	th = brect[5] - brect[3];
+	if (tw > (box.xmax - box.xmin))
+		continue;
+	if (th > (box.ymax - box.ymin))
+		continue;
+	gdImageStringFT(image, &brect[0], fontColor,
+		(char*) font_file_or_name, sz, 0.0,
+		((box.xmin + box.xmax) / 2) - (tw/2),
+		((box.ymin + box.ymax) / 2) - (th/2),
+		(char*)text);
 	break;
     }
 }
@@ -155,8 +156,6 @@ annotate_cidr(const char *cidr, const char *label)
 	    cidr, fstr, lstr, last - first,
 	    bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax);
     }
-    if (fontColor < 0)
-	fontColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 64);
     points[0].x = bbox.xmin;
     points[1].x = bbox.xmax;
     points[2].x = bbox.xmax;
@@ -180,11 +179,10 @@ annotate_file(const char *fn)
     FILE *fp = fopen(fn, "r");
     if (NULL == fp)
 	err(1, fn);
-    fonts[4] = gdFontGetTiny();
-    fonts[3] = gdFontGetSmall();
-    fonts[2] = gdFontGetMediumBold();
-    fonts[1] = gdFontGetLarge();
-    fonts[0] = gdFontGetGiant();
+    if (fontColor < 0)
+	fontColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 45);
+    if (!gdFTUseFontConfig(1))
+	warnx("fontconfig not available");
     while (NULL != fgets(buf, 512, fp)) {
 	char *cidr;
 	char *label;

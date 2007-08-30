@@ -32,6 +32,7 @@ gdImagePtr image = NULL;
 #define NUM_DATA_COLORS 256
 int colors[NUM_DATA_COLORS];
 int debug = 0;
+const char *font_file_or_name = "Luxi Mono:style=Regular";
 
 extern void annotate_file(const char *fn);
 const char *annotations = NULL;
@@ -154,13 +155,16 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "da:")) != -1) {
+    while ((ch = getopt(argc, argv, "da:f:")) != -1) {
 	switch (ch) {
 	case 'd':
 	    debug++;
 	    break;
 	case 'a':
 	    annotations = strdup(optarg);
+	    break;
+	case 'f':
+	    font_file_or_name = strdup(optarg);
 	    break;
 	default:
 	    fprintf(stderr, "usage: %s [-d]\n", argv[0]);
