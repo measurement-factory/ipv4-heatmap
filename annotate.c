@@ -22,12 +22,12 @@
 #include <arpa/inet.h>
 
 #include <gd.h>
-#include <gdfonts.h>
+#include <gdfontl.h>
 
 extern gdImagePtr image;
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
-int grey = -1;
+int fontColor = -1;
 unsigned int allones = ~0;
 
 #ifndef MIN
@@ -90,7 +90,7 @@ annotate_cidr(const char *cidr, const char *label)
 	unsigned int last;
 	int xmin, ymin, xmax, ymax;
 	gdPoint points[5];
-	gdFontPtr font = gdFontGetSmall();
+	gdFontPtr font = gdFontGetLarge();
 	strncpy(cidr_copy, cidr, 24);
 	t = strchr(cidr_copy, '/');
 	if (NULL == t) {
@@ -121,8 +121,8 @@ annotate_cidr(const char *cidr, const char *label)
 			cidr, fstr, lstr, last-first, 
 			xmin, ymin, xmax, ymax);
 	}
-	if (grey < 0)
-		grey = gdImageColorAllocate(image, 255, 255, 255);
+	if (fontColor < 0)
+		fontColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 64);
 	points[0].x = xmin;
 	points[1].x = xmax;
 	points[2].x = xmax;
@@ -133,14 +133,14 @@ annotate_cidr(const char *cidr, const char *label)
 	points[2].y = ymax;
 	points[3].y = ymax;
 	points[4].y = ymin;
-	gdImagePolygon(image, points, 5, grey);
+	gdImagePolygon(image, points, 5, fontColor);
 
 	
 
 	gdImageString(image, font,
 		((xmin+xmax) / 2) - (strlen(label) * font->w / 2),
 		((ymin+ymax) / 2) - (font->h / 2),
-		(char *) label, grey);
+		(char *) label, fontColor);
 }
 
 /*

@@ -39,7 +39,7 @@ void
 initialize(void)
 {
     int i;
-    image = gdImageCreate(4096, 4096);
+    image = gdImageCreateTrueColor(4096, 4096);
     /* first allocated color becomes background by default */
     gdImageColorAllocate(image, 0, 0, 0);
     for (i = 0; i < 256; i++) {
