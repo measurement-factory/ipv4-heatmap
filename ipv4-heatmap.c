@@ -29,7 +29,8 @@
 
 
 gdImagePtr image = NULL;
-int colors[256];
+#define NUM_DATA_COLORS 256
+int colors[NUM_DATA_COLORS];
 int debug = 0;
 
 extern void annotate_file(const char *fn);
@@ -42,14 +43,14 @@ initialize(void)
     image = gdImageCreateTrueColor(4096, 4096);
     /* first allocated color becomes background by default */
     gdImageColorAllocate(image, 0, 0, 0);
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < NUM_DATA_COLORS; i++) {
 	double hue;
 	double r, g, b;
 	hue = 240.0 * i / 255;
 	PIX_HSV_TO_RGB_COMMON(hue, 1.0, 1.0, r, g, b);
 	colors[i] = gdImageColorAllocate(image, r, g, b);
 	if (debug)
-		fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
+	    fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
     }
 }
 
@@ -112,12 +113,26 @@ paint(void)
 	    unsigned int k = atoi(t);
 	    color = colors[k];
 	} else {
+	    unsigned int k;
 	    color = gdImageGetPixel(image, x, y);
 	    if (debug)
-	        fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
+		fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
+#if PNG_256_COLORS
 	    assert(color >= 0);
-	    assert(color < 255);
+	    assert(color < NUM_DATA_COLORS);
 	    color++;
+#else
+	    for (k = 0; k < NUM_DATA_COLORS; k++) {
+		if (colors[k] == color) {
+	            if (debug)
+		        fprintf(stderr, "color %d has index %d\n", color, k);
+		    break;
+		}
+	    }
+	    if (k == NUM_DATA_COLORS)
+		k = 0;
+	    color = colors[k+1];
+#endif
 	}
 
 	gdImageSetPixel(image, x, y, color);
@@ -159,7 +174,7 @@ main(int argc, char *argv[])
     initialize();
     paint();
     if (annotations)
-        annotate_file(annotations);
+	annotate_file(annotations);
     save();
     return 0;
 }
