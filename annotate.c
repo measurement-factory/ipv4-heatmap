@@ -116,8 +116,8 @@ annotate_text(const char *text, const char *text2, struct bb box)
     }
 }
 
-void
-annotate_cidr(const char *cidr, const char *label)
+struct bb
+cidr_to_bbox(const char *cidr)
 {
     char cidr_copy[24];
     char *t;
@@ -125,18 +125,18 @@ annotate_cidr(const char *cidr, const char *label)
     unsigned int first;
     unsigned int last;
     struct bb bbox;
-    gdPoint points[4];
+    memset(&bbox, '\0', sizeof(bbox));
     strncpy(cidr_copy, cidr, 24);
     t = strchr(cidr_copy, '/');
     if (NULL == t) {
-	fprintf(stderr, "WARNING: missing / on CIDR '%s'\n", cidr_copy);
-	return;
+	warnx("missing / on CIDR '%s'\n", cidr_copy);
+	return bbox;
     }
     *t++ = '\0';
     slash = atoi(t);
     if (1 != inet_pton(AF_INET, cidr_copy, &first)) {
-	fprintf(stderr, "WARNING: inet_pton failed on '%s'\n", cidr_copy);
-	return;
+	warnx("inet_pton failed on '%s'\n", cidr_copy);
+	return bbox;
     }
     first = ntohl(first);
     last = first | (allones >> slash);
@@ -156,6 +156,14 @@ annotate_cidr(const char *cidr, const char *label)
 	    cidr, fstr, lstr, last - first,
 	    bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax);
     }
+    return bbox;
+}
+
+void
+annotate_cidr(const char *cidr, const char *label)
+{
+    struct bb bbox = cidr_to_bbox(cidr);
+    gdPoint points[4];
     points[0].x = bbox.xmin;
     points[1].x = bbox.xmax;
     points[2].x = bbox.xmax;
@@ -193,6 +201,62 @@ annotate_file(const char *fn)
 	if (NULL == label)
 	    continue;
 	annotate_cidr(cidr, label);
+    }
+    fclose(fp);
+}
+
+void
+shade_cidr(const char *cidr, unsigned int rgb, int alpha)
+{
+    struct bb bbox = cidr_to_bbox(cidr);
+    int color = gdImageColorAllocateAlpha(image,
+	rgb >> 16,
+	(rgb >> 8) & 0xFF,
+	rgb & 0xFF,
+	alpha);
+    gdPoint points[4];
+    points[0].x = bbox.xmin;
+    points[1].x = bbox.xmax;
+    points[2].x = bbox.xmax;
+    points[3].x = bbox.xmin;
+    points[0].y = bbox.ymin;
+    points[1].y = bbox.ymin;
+    points[2].y = bbox.ymax;
+    points[3].y = bbox.ymax;
+    gdImageFilledPolygon(image, points, 4, color);
+}
+
+/*
+ * Input is a text file with TAB-separated fields
+ * First field is a CIDR address
+ * Second field is an RGB value
+ * Third field is an alpha value
+ */
+void
+shade_file(const char *fn)
+{
+    char buf[512];
+    FILE *fp = fopen(fn, "r");
+    if (NULL == fp)
+	err(1, fn);
+    while (NULL != fgets(buf, 512, fp)) {
+	char *cidr;
+	char *rgbhex;
+	char *alpha_str;
+	unsigned int rgb;
+	int alpha;
+	cidr = strtok(buf, "\t");
+	if (NULL == cidr)
+	    continue;
+	rgbhex = strtok(NULL, "\t\r\n");
+	if (NULL == rgbhex)
+	    continue;
+	rgb = strtol(rgbhex, NULL, 16);
+	alpha_str = strtok(NULL, "\t\r\n");
+	if (NULL == alpha_str)
+	    continue;
+	alpha = strtol(alpha_str, NULL, 10);
+	shade_cidr(cidr, rgb, alpha);
     }
     fclose(fp);
 }

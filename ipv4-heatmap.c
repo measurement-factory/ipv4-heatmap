@@ -35,7 +35,9 @@ int debug = 0;
 const char *font_file_or_name = "Luxi Mono:style=Regular";
 
 extern void annotate_file(const char *fn);
+extern void shade_file(const char *fn);
 const char *annotations = NULL;
+const char *shadings = NULL;
 
 void
 initialize(void)
@@ -155,13 +157,16 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "da:f:")) != -1) {
+    while ((ch = getopt(argc, argv, "da:f:s:")) != -1) {
 	switch (ch) {
 	case 'd':
 	    debug++;
 	    break;
 	case 'a':
 	    annotations = strdup(optarg);
+	    break;
+	case 's':
+	    shadings = strdup(optarg);
 	    break;
 	case 'f':
 	    font_file_or_name = strdup(optarg);
@@ -177,6 +182,8 @@ main(int argc, char *argv[])
 
     initialize();
     paint();
+    if (shadings)
+	shade_file(shadings);
     if (annotations)
 	annotate_file(annotations);
     save();
