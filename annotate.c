@@ -95,7 +95,7 @@ bounding_box(unsigned int first, int slash)
 }
 
 void
-annotate_text(const char *text, struct bb box)
+annotate_text(const char *text, const char *text2, struct bb box)
 {
     int fi;
     for (fi = 0; fi < NFONTS; fi++) {
@@ -104,8 +104,13 @@ annotate_text(const char *text, struct bb box)
 	    continue;
 	gdImageString(image, fonts[fi],
 	    ((box.xmin + box.xmax) / 2) - (strlen(text) * fonts[fi]->w / 2),
-	    ((box.ymin + box.ymax) / 2) - (fonts[fi]->h / 2),
+	    ((box.ymin + box.ymax) / 2) - (fonts[fi]->h / 1),
 	    (char *)text, fontColor);
+	if (text2)
+	gdImageString(image, fonts[fi],
+	    ((box.xmin + box.xmax) / 2) - (strlen(text2) * fonts[fi]->w / 2),
+	    ((box.ymin + box.ymax) / 2) + (fonts[fi]->h / 1),
+	    (char *)text2, fontColor);
 	break;
     }
 }
@@ -161,7 +166,7 @@ annotate_cidr(const char *cidr, const char *label)
     points[2].y = bbox.ymax;
     points[3].y = bbox.ymax;
     gdImagePolygon(image, points, 4, fontColor);
-    annotate_text(label, bbox);
+    annotate_text(label, cidr, bbox);
 }
 
 /*
