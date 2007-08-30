@@ -22,11 +22,17 @@
 #include <arpa/inet.h>
 
 #include <gd.h>
+#include <gdfontt.h>
+#include <gdfonts.h>
+#include <gdfontmb.h>
 #include <gdfontl.h>
+#include <gdfontg.h>
 
 extern gdImagePtr image;
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
+#define NFONTS 5
+gdFontPtr fonts[NFONTS];
 int fontColor = -1;
 unsigned int allones = ~0;
 
@@ -90,7 +96,7 @@ annotate_cidr(const char *cidr, const char *label)
 	unsigned int last;
 	int xmin, ymin, xmax, ymax;
 	gdPoint points[5];
-	gdFontPtr font = gdFontGetLarge();
+	int fi;		/* font index */
 	strncpy(cidr_copy, cidr, 24);
 	t = strchr(cidr_copy, '/');
 	if (NULL == t) {
@@ -136,11 +142,16 @@ annotate_cidr(const char *cidr, const char *label)
 	gdImagePolygon(image, points, 5, fontColor);
 
 	
-
-	gdImageString(image, font,
-		((xmin+xmax) / 2) - (strlen(label) * font->w / 2),
-		((ymin+ymax) / 2) - (font->h / 2),
-		(char *) label, fontColor);
+	for (fi = 0; fi < NFONTS; fi++) {
+		int rendered_width = fonts[fi]->w * strlen(label);
+		if (rendered_width > (xmax-xmin))
+			continue;
+		gdImageString(image, fonts[fi],
+			((xmin+xmax) / 2) - (strlen(label) * fonts[fi]->w / 2),
+			((ymin+ymax) / 2) - (fonts[fi]->h / 2),
+			(char *) label, fontColor);
+		break;
+	}
 }
 
 /*
@@ -155,6 +166,11 @@ annotate_file(const char *fn)
 	FILE *fp = fopen(fn, "r");
 	if (NULL == fp)
 		err(1, fn);
+	fonts[4] = gdFontGetTiny();
+	fonts[3] = gdFontGetSmall();
+	fonts[2] = gdFontGetMediumBold();
+	fonts[1] = gdFontGetLarge();
+	fonts[0] = gdFontGetGiant();
 	while (NULL != fgets(buf, 512, fp)) {
 		char *cidr;
 		char *label;
