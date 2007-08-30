@@ -5,7 +5,8 @@ LDFLAGS=-g
 OBJS=\
 	ipv4-heatmap.o \
 	annotate.o \
-	shade.o
+	shade.o \
+	legend.o
 
 all: ipv4-heatmap
 
