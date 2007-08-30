@@ -43,13 +43,13 @@ struct bb {
 };
 
 /*
- * Find the "bounding box" for the CIDR prefix starting at 'first'
- * and having "slash" value of 'slash'
+ * Find the "bounding box" for the CIDR prefix starting at 'first' and having
+ * "slash" value of 'slash'
  * 
- * For square areas this is pretty easy.  We know how to find the
- * point diagonally opposite the first value (add 1010..1010). Its
- * a little harder for rectangular areas, so I cheat a little and
- * divide it into the two smaller squares.
+ * For square areas this is pretty easy.  We know how to find the point diagonally
+ * opposite the first value (add 1010..1010). Its a little harder for
+ * rectangular areas, so I cheat a little and divide it into the two smaller
+ * squares.
  */
 struct bb
 bounding_box(unsigned int first, int slash)
@@ -97,21 +97,21 @@ annotate_text(const char *text, const char *text2, struct bb box)
     int tw, th;
     for (sz = 128.0; sz > 0.0; sz *= 0.9) {
 	errmsg = gdImageStringFT(NULL, &brect[0], 0,
-		(char *) font_file_or_name,
-		sz, 0.0, 0, 0, (char*)text);
+	    (char *)font_file_or_name,
+	    sz, 0.0, 0, 0, (char *)text);
 	if (NULL != errmsg)
-		errx(1, errmsg);
+	    errx(1, errmsg);
 	tw = brect[2] - brect[0];
 	th = brect[3] - brect[5];
-	if (tw > ((box.xmax - box.xmin)*95/100))
-		continue;
-	if (th > ((box.ymax - box.ymin)*95/100))
-		continue;
+	if (tw > ((box.xmax - box.xmin) * 95 / 100))
+	    continue;
+	if (th > ((box.ymax - box.ymin) * 95 / 100))
+	    continue;
 	gdImageStringFT(image, &brect[0], fontColor,
-		(char*) font_file_or_name, sz, 0.0,
-		((box.xmin + box.xmax) / 2) - (tw/2),
-		((box.ymin + box.ymax) / 2) + (th/2),
-		(char*)text);
+	    (char *)font_file_or_name, sz, 0.0,
+	    ((box.xmin + box.xmax) / 2) - (tw / 2),
+	    ((box.ymin + box.ymax) / 2) + (th / 2),
+	    (char *)text);
 	break;
     }
     if (NULL == text2)
@@ -119,15 +119,15 @@ annotate_text(const char *text, const char *text2, struct bb box)
 
     sz = 12.0;
     errmsg = gdImageStringFT(NULL, &brect[0], 0,
-		(char *) font_file_or_name,
-		sz, 0.0, 0, 0, (char*)text2);
+	(char *)font_file_or_name,
+	sz, 0.0, 0, 0, (char *)text2);
     tw = brect[2] - brect[0];
     /* don't update th, we need the previous value */
     gdImageStringFT(image, &brect[0], fontColor,
-		(char*) font_file_or_name, sz, 0.0,
-		((box.xmin + box.xmax) / 2) - (tw/2),
-		((box.ymin + box.ymax) / 2) + (th/2) + (sz*2),
-		(char*)text2);
+	(char *)font_file_or_name, sz, 0.0,
+	((box.xmin + box.xmax) / 2) - (tw / 2),
+	((box.ymin + box.ymax) / 2) + (th / 2) + (sz * 2),
+	(char *)text2);
 }
 
 struct bb
@@ -241,10 +241,8 @@ shade_cidr(const char *cidr, unsigned int rgb, int alpha)
 }
 
 /*
- * Input is a text file with TAB-separated fields
- * First field is a CIDR address
- * Second field is an RGB value
- * Third field is an alpha value
+ * Input is a text file with TAB-separated fields First field is a CIDR address
+ * Second field is an RGB value Third field is an alpha value
  */
 void
 shade_file(const char *fn)
