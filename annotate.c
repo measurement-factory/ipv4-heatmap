@@ -42,33 +42,40 @@ unsigned int allones = ~0;
 #endif
 
 /*
- * Find the "bounding box" for the CIDR prefix starting at 'first' and having
- * "slash" value of 'slash'
- * 
- * For square areas this is pretty easy.  We know how to find the point diagonally
- * opposite the first value (add 1010..1010). Its a little harder for
- * rectangular areas, so I cheat a little and divide it into the two smaller
- * squares.
+ * A bounding box
  */
-void
-bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int *ymax)
+struct bb {
+    int xmin, ymin, xmax, ymax;
+};
+
+/*
+ * Find the "bounding box" for the CIDR prefix starting at 'first'
+ * and having "slash" value of 'slash'
+ * 
+ * For square areas this is pretty easy.  We know how to find the
+ * point diagonally opposite the first value (add 1010..1010). Its
+ * a little harder for rectangular areas, so I cheat a little and
+ * divide it into the two smaller squares.
+ */
+struct bb
+bounding_box(unsigned int first, int slash)
 {
+    struct bb box;
     unsigned int diag = 0xAAAAAAAA;
     int x1, y1, x2, y2;
 
     /*
      * find the point diagonally opposite the first point
      */
-    diag = 0xAAAAAAAA;
     if (0 == (slash & 1)) {
 	/* square */
 	diag >>= slash;
 	hil_xy_from_s(first >> 8, 12, &x1, &y1);
 	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
-	*xmin = MIN(x1, x2);
-	*ymin = MIN(y1, y2);
-	*xmax = MAX(x1, x2);
-	*ymax = MAX(y1, y2);
+	box.xmin = MIN(x1, x2);
+	box.ymin = MIN(y1, y2);
+	box.xmax = MAX(x1, x2);
+	box.ymax = MAX(y1, y2);
     } else {
 	/* rectangle */
 	int x3, y3, x4, y4;
@@ -79,24 +86,25 @@ bounding_box(unsigned int first, int slash, int *xmin, int *ymin, int *xmax, int
 	first += (1 << (32 - slash));
 	hil_xy_from_s((first) >> 8, 12, &x3, &y3);
 	hil_xy_from_s((first + diag) >> 8, 12, &x4, &y4);
-	*xmin = MIN(MIN(x1, x2), MIN(x3, x4));
-	*ymin = MIN(MIN(y1, y2), MIN(y3, y4));
-	*xmax = MAX(MAX(x1, x2), MAX(x3, x4));
-	*ymax = MAX(MAX(y1, y2), MAX(y3, y4));
+	box.xmin = MIN(MIN(x1, x2), MIN(x3, x4));
+	box.ymin = MIN(MIN(y1, y2), MIN(y3, y4));
+	box.xmax = MAX(MAX(x1, x2), MAX(x3, x4));
+	box.ymax = MAX(MAX(y1, y2), MAX(y3, y4));
     }
+    return box;
 }
 
 void
-annotate_text(const char *text, int xmin, int ymin, int xmax, int ymax)
+annotate_text(const char *text, struct bb box)
 {
     int fi;
     for (fi = 0; fi < NFONTS; fi++) {
 	int rendered_width = fonts[fi]->w * strlen(text);
-	if (rendered_width > (xmax - xmin))
+	if (rendered_width > (box.xmax - box.xmin))
 	    continue;
 	gdImageString(image, fonts[fi],
-	    ((xmin + xmax) / 2) - (strlen(text) * fonts[fi]->w / 2),
-	    ((ymin + ymax) / 2) - (fonts[fi]->h / 2),
+	    ((box.xmin + box.xmax) / 2) - (strlen(text) * fonts[fi]->w / 2),
+	    ((box.ymin + box.ymax) / 2) - (fonts[fi]->h / 2),
 	    (char *)text, fontColor);
 	break;
     }
@@ -110,7 +118,7 @@ annotate_cidr(const char *cidr, const char *label)
     int slash;
     unsigned int first;
     unsigned int last;
-    int xmin, ymin, xmax, ymax;
+    struct bb bbox;
     gdPoint points[4];
     strncpy(cidr_copy, cidr, 24);
     t = strchr(cidr_copy, '/');
@@ -126,7 +134,7 @@ annotate_cidr(const char *cidr, const char *label)
     }
     first = ntohl(first);
     last = first | (allones >> slash);
-    bounding_box(first, slash, &xmin, &ymin, &xmax, &ymax);
+    bbox = bounding_box(first, slash);
     if (debug) {
 	char fstr[24];
 	char lstr[24];
@@ -140,20 +148,20 @@ annotate_cidr(const char *cidr, const char *label)
 	    ", bbox=%d,%d to %d,%d"
 	    "\n",
 	    cidr, fstr, lstr, last - first,
-	    xmin, ymin, xmax, ymax);
+	    bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax);
     }
     if (fontColor < 0)
 	fontColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 64);
-    points[0].x = xmin;
-    points[1].x = xmax;
-    points[2].x = xmax;
-    points[3].x = xmin;
-    points[0].y = ymin;
-    points[1].y = ymin;
-    points[2].y = ymax;
-    points[3].y = ymax;
+    points[0].x = bbox.xmin;
+    points[1].x = bbox.xmax;
+    points[2].x = bbox.xmax;
+    points[3].x = bbox.xmin;
+    points[0].y = bbox.ymin;
+    points[1].y = bbox.ymin;
+    points[2].y = bbox.ymax;
+    points[3].y = bbox.ymax;
     gdImagePolygon(image, points, 4, fontColor);
-    annotate_text(label, xmin, ymin, xmax, ymax);
+    annotate_text(label, bbox);
 }
 
 /*
