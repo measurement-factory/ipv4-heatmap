@@ -26,6 +26,7 @@
 
 extern gdImagePtr image;
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
+extern int debug;
 int grey = -1;
 unsigned int allones = ~0;
 
@@ -104,11 +105,22 @@ annotate_cidr(const char *cidr, const char *label)
 	}
 	first = ntohl(first);
 	last = first | (allones >> slash);
-	fprintf(stderr, "cidr=%s, first=%u, last=%x, last-first=%x\n", 
-		cidr, first, last, last-first);
 	bounding_box(first, slash, &xmin, &ymin, &xmax, &ymax);
-
-fprintf(stderr, "(%d,%d) to (%d,%d)\n", xmin, ymin, xmax, ymax);
+	if (debug) {
+		char fstr[24];
+		char lstr[24];
+		unsigned int tmp;
+		tmp = htonl(first);
+		inet_ntop(AF_INET, &tmp, fstr, 24);
+		tmp = htonl(last);
+		inet_ntop(AF_INET, &tmp, lstr, 24);
+		fprintf(stderr, "cidr=%s"
+			", first=%s, last=%s, last-first=%u"
+			", bbox=%d,%d to %d,%d"
+			"\n", 
+			cidr, fstr, lstr, last-first, 
+			xmin, ymin, xmax, ymax);
+	}
 	if (grey < 0)
 		grey = gdImageColorAllocate(image, 255, 255, 255);
 	points[0].x = xmin;
