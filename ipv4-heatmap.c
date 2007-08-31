@@ -93,7 +93,7 @@ void
 paint(void)
 {
     char buf[512];
-    unsigned int line = 0;
+    unsigned int line = 1;
     while (fgets(buf, 512, stdin)) {
 	unsigned int i;
 	unsigned int x;
