@@ -38,6 +38,7 @@ const char *font_file_or_name = "Luxi Mono:style=Regular";
 
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
+extern void legend(const char *);
 const char *annotations = NULL;
 const char *shadings = NULL;
 const char *title = NULL;
