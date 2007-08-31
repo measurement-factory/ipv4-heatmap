@@ -21,7 +21,7 @@
 21.0.0.0/8	DDN-RVN
 22.0.0.0/8	DISA
 23.0.0.0/8	Reserved
-24.0.0.0/8	ARIN - Cable Block
+24.0.0.0/8	Cable
 25.0.0.0/8	UK Ministry of Defense
 26.0.0.0/8	DISA
 27.0.0.0/8	Reserved
