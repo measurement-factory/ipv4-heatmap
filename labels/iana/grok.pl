@@ -58,7 +58,7 @@ while (<>) {
 	$desc =~ s/DoD Network Information Center/DoD NIC/;
 	$desc =~ s/U\.S\. Postal Service/USPS/;
 
-	$desc = 'Reserved' if ($sdate > $when);
+	$desc = 'Reserved' if ($when && $sdate > $when);
 
 	my $prefix = sprintf "%d.0.0.0/8", $block;
 	if ($last_desc && $desc ne $last_desc) {
