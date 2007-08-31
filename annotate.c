@@ -95,7 +95,7 @@ annotate_text(const char *text, const char *text2, struct bb box)
     int brect[8];
     char *errmsg;
     int tw, th;
-    for (sz = 128.0; sz > 0.0; sz *= 0.9) {
+    for (sz = 128.0; sz > 6.0; sz *= 0.9) {
 	errmsg = gdImageStringFT(NULL, &brect[0], 0,
 	    (char *)font_file_or_name,
 	    sz, 0.0, 0, 0, (char *)text);
