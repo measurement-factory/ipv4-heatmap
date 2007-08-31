@@ -10,7 +10,8 @@ use warnings;
 use Net::CIDR::Lite;
 
 # if $when is specified, then blocks assigned after $when
-# will be changed to "IANA - Reserved"
+# will be changed to "IANA - Reserved".  Format of $when
+# is YYYYMMDD -- ugh.
 #
 my $when = shift;
 
@@ -27,10 +28,37 @@ while (<>) {
 
 	$year += $year < 70 ? 2000 : 1900;
 
+	my $sdate = $year * 10000 + $M{$month} * 100;
+
+	# Clean up descriptions
 	$desc =~ s/\s+$//g;
 	$desc =~ s/\s+\(.*\)$//;
 	$desc =~ s/\s+See \[.*$//;
 	$desc =~ s/IANA - Multicast/Multicast/;
+	$desc =~ s/ARIN - Cable Block/Cable/;
+	$desc =~ s/IANA - Reserved/Reserved/;
+	$desc =~ s/RIPE NCC/RIPE/;
+	$desc =~ s/Level 3 Communications, Inc\./Level3/;
+	$desc =~ s/General Electric Company/GE/;
+	$desc =~ s/Army Information Systems Center/US Army/;
+	$desc =~ s/IANA - Private Use/RFC1918/;
+	$desc =~ s/AT\&T Bell Laboratories/AT\&T/;
+	$desc =~ s/Xerox Corporation/Xerox/;
+	$desc =~ s/Hewlett-Packard Company/HP/;
+	$desc =~ s/Digital Equipment Corporation/DEC/;
+	$desc =~ s/Apple Computer Inc\./Apple/;
+	$desc =~ s/Defense Information Systems Agency/DISA/;
+	$desc =~ s/AT\&T Global Network Services/AT\&T/;
+	$desc =~ s/Halliburton Company/Halliburton/;
+	$desc =~ s/MERIT Computer Network/Merit/;
+	$desc =~ s/Performance Systems International/PSI/;
+	$desc =~ s/Eli Lily and Company/Eli Lily/;
+	$desc =~ s/Interop Show Network/Interop/;
+	$desc =~ s/Prudential Securities Inc\./Prudential/;
+	$desc =~ s/DoD Network Information Center/DoD NIC/;
+	$desc =~ s/U\.S\. Postal Service/USPS/;
+
+	$desc = 'Reserved' if ($sdate > $when);
 
 	my $prefix = sprintf "%d.0.0.0/8", $block;
 	if ($last_desc && $desc ne $last_desc) {
