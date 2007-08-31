@@ -32,6 +32,7 @@
 gdImagePtr image = NULL;
 #define NUM_DATA_COLORS 256
 int colors[NUM_DATA_COLORS];
+int num_colors = NUM_DATA_COLORS;
 int debug = 0;
 const char *font_file_or_name = "Luxi Mono:style=Regular";
 
