@@ -53,7 +53,7 @@ initialize(void)
     for (i = 0; i < NUM_DATA_COLORS; i++) {
 	double hue;
 	double r, g, b;
-	hue = 240.0 * (i-255) / 255;
+	hue = 240.0 * (255-i) / 255;
 	PIX_HSV_TO_RGB_COMMON(hue, 1.0, 1.0, r, g, b);
 	colors[i] = gdImageColorAllocate(image, r, g, b);
 	if (debug)

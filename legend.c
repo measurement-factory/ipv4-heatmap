@@ -88,8 +88,8 @@ legend_legend(void)
     annotate_text("Utilization", NULL, desc_bb);
     for (i = 0; i < num_colors; i++) {
 	gdImageFilledRectangle(image,
-	    legend_legend_bb.xmin, legend_legend_bb.ymin + (i * 4),
-	    legend_legend_bb.xmax, legend_legend_bb.ymin + (i * 4) + 3,
+	    legend_legend_bb.xmin, legend_legend_bb.ymin + ((num_colors-i-1) * 4),
+	    legend_legend_bb.xmax, legend_legend_bb.ymin + ((num_colors-i-1) * 4) + 3,
 	    colors[i]);
     }
 
@@ -99,8 +99,8 @@ legend_legend(void)
 	snprintf(tmp, 10, "%d%%", i);
 	box.xmin = legend_legend_bb.xmax;
 	box.xmax = legend_legend_bb.xmax + 256;
-	box.ymin = legend_legend_bb.ymin + (i * 4 * 2.55) - 30;
-	box.ymax = legend_legend_bb.ymin + (i * 4 * 2.55) + 30;
+	box.ymin = legend_legend_bb.ymin + ((num_colors-i-1) * 4 * 2.55) - 30;
+	box.ymax = legend_legend_bb.ymin + ((num_colors-i-1) * 4 * 2.55) + 30;
 	annotate_text(tmp, NULL, box);
     }
 }
