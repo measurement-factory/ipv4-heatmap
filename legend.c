@@ -65,7 +65,7 @@ legend_samples(void)
 	box.ymax += samplebox_ctr_y - hh;
 	gdImageFilledRectangle(image,
 	    box.xmin, box.ymin, box.xmax, box.ymax,
-	    colors[0]);
+	    colors[127]);
 	tbox.xmin = samplebox_ctr_x + 128;
 	tbox.xmax = tbox.xmin + 256;
 	tbox.ymin = ((box.ymin+box.ymax)/2) - 30;
@@ -99,8 +99,8 @@ legend_legend(void)
 	snprintf(tmp, 10, "%d%%", i);
 	box.xmin = legend_legend_bb.xmax;
 	box.xmax = legend_legend_bb.xmax + 256;
-	box.ymin = legend_legend_bb.ymin + ((num_colors-i-1) * 4 * 2.55) - 30;
-	box.ymax = legend_legend_bb.ymin + ((num_colors-i-1) * 4 * 2.55) + 30;
+	box.ymin = legend_legend_bb.ymin + ((num_colors-(i*2.55)-1) * 4) - 30;
+	box.ymax = legend_legend_bb.ymin + ((num_colors-(i*2.55)-1) * 4) + 30;
 	annotate_text(tmp, NULL, box);
     }
 }
