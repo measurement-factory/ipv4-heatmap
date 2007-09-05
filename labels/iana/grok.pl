@@ -34,9 +34,9 @@ while (<>) {
 	$desc =~ s/\s+$//g;
 	$desc =~ s/\s+\(.*\)$//;
 	$desc =~ s/\s+See \[.*$//;
-	$desc =~ s/IANA - Multicast/Multicast/;
 	$desc =~ s/ARIN - Cable Block/Cable/;
-	$desc =~ s/IANA - Reserved/Reserved/;
+	$desc =~ s/IANA - Private Use/RFC1918/;
+	$desc =~ s/IANA - (.*)/$1/;
 	$desc =~ s/RIPE NCC/RIPE/;
 	$desc =~ s/Level 3 Communications, Inc\./Level3/;
 	$desc =~ s/General Electric Company/GE/;
@@ -59,6 +59,22 @@ while (<>) {
 	$desc =~ s/U\.S\. Postal Service/USPS/;
 
 	$desc = 'Reserved' if ($when && $sdate > $when);
+
+	# try to differentiate "Reserved" from "Unallocated" blocks
+	# more ugh
+	if ($desc eq 'Reserved') {
+		if ($block == 0) {
+			1;
+		} elsif ($block == 14) {
+			1;
+		} elsif ($block == 127) {
+			1;
+		} elsif ($block >= 240) {
+			1;
+		} else {
+			$desc = 'Unallocated';
+		}
+	}
 
 	my $prefix = sprintf "%d.0.0.0/8", $block;
 	if ($last_desc && $desc ne $last_desc) {
