@@ -27,7 +27,7 @@ extern gdImagePtr image;
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
 extern const char *font_file_or_name;
-int fontColor = -1;
+int annotateColor = -1;
 unsigned int allones = ~0;
 
 #ifndef MIN
@@ -89,7 +89,7 @@ bounding_box(unsigned int first, int slash)
 }
 
 void
-annotate_text(const char *text, const char *text2, struct bb box)
+annotate_text(const char *text, const char *text2, struct bb box, int color)
 {
     double sz;
     int brect[8];
@@ -107,7 +107,7 @@ annotate_text(const char *text, const char *text2, struct bb box)
 	    continue;
 	if (th > ((box.ymax - box.ymin) * 95 / 100))
 	    continue;
-	gdImageStringFT(image, &brect[0], fontColor,
+	gdImageStringFT(image, &brect[0], color,
 	    (char *)font_file_or_name, sz, 0.0,
 	    ((box.xmin + box.xmax) / 2) - (tw / 2),
 	    ((box.ymin + box.ymax) / 2) + (th / 2),
@@ -123,7 +123,7 @@ annotate_text(const char *text, const char *text2, struct bb box)
 	sz, 0.0, 0, 0, (char *)text2);
     tw = brect[2] - brect[0];
     /* don't update th, we need the previous value */
-    gdImageStringFT(image, &brect[0], fontColor,
+    gdImageStringFT(image, &brect[0], color,
 	(char *)font_file_or_name, sz, 0.0,
 	((box.xmin + box.xmax) / 2) - (tw / 2),
 	((box.ymin + box.ymax) / 2) + (th / 2) + (sz * 2),
@@ -186,8 +186,8 @@ annotate_cidr(const char *cidr, const char *label)
     points[1].y = bbox.ymin;
     points[2].y = bbox.ymax;
     points[3].y = bbox.ymax;
-    gdImagePolygon(image, points, 4, fontColor);
-    annotate_text(label, cidr, bbox);
+    gdImagePolygon(image, points, 4, annotateColor);
+    annotate_text(label, cidr, bbox, annotateColor);
 }
 
 /*
@@ -201,8 +201,8 @@ annotate_file(const char *fn)
     FILE *fp = fopen(fn, "r");
     if (NULL == fp)
 	err(1, fn);
-    if (fontColor < 0)
-	fontColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 45);
+    if (annotateColor < 0)
+	annotateColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 45);
     if (!gdFTUseFontConfig(1))
 	warnx("fontconfig not available");
     while (NULL != fgets(buf, 512, fp)) {

@@ -7,7 +7,6 @@
  * Hacker's Delight (Henry S. Warren, Jr. 2002), sec 14-2, fig 14-5
  * 
  * output is a 4096x4096 PNG file
- * output is a 5120x4096 PNG file when legend is enabled
  */
 
 #include <stdio.h>
@@ -38,7 +37,7 @@ const char *font_file_or_name = "Luxi Mono:style=Regular";
 
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
-extern void legend(const char *);
+extern void legend(const char *, const char *orient);
 const char *annotations = NULL;
 const char *shadings = NULL;
 const char *title = NULL;
@@ -47,7 +46,7 @@ void
 initialize(void)
 {
     int i;
-    image = gdImageCreateTrueColor(title ? 5120 : 4096, 4096);
+    image = gdImageCreateTrueColor(4096, 4096);
     /* first allocated color becomes background by default */
     gdImageColorAllocate(image, 0, 0, 0);
     for (i = 0; i < NUM_DATA_COLORS; i++) {
@@ -193,8 +192,8 @@ main(int argc, char *argv[])
 	shade_file(shadings);
     if (annotations)
 	annotate_file(annotations);
-    if (title)
-	legend(title);
     save();
+    if (title)
+	legend(title, "horiz");
     return 0;
 }
