@@ -125,10 +125,11 @@ legend_samples(void)
 
 
 static void
-legend_legend(void)
+legend_legend(const char *orient)
 {
     unsigned int i;
     struct bb tbox;
+    int pct_inc = 10;
     BOX_SET(tbox,
 	BBB.xmin,
 	BBB.ymin,
@@ -136,24 +137,41 @@ legend_legend(void)
 	BBB.ymin + 128);
     legend_text("Utilization", tbox);
     for (i = 0; i < num_colors; i++) {
-	BOX_SET(tbox,
+	if (0 == strcmp(orient, "vert")) {
+	    BOX_SET(tbox,
 		BBB.xmin + 128,
 		BBB.ymin + 256 + ((num_colors-i-1) * 4),
 		BBB.xmin + 256,
 		BBB.ymin + 256 + ((num_colors-i-1) * 4) + 3);
+	} else {
+	    pct_inc = 25;
+	    BOX_SET(tbox,
+		BBB.xmin + 256 + (i * 4),
+		BBB.ymin + 256,
+		BBB.xmin + 256 + (i * 4) + 3,
+		BBB.ymin + 384);
+	}
 	gdImageFilledRectangle(image,
 	    tbox.xmin, tbox.ymin, tbox.xmax, tbox.ymax,
 	    colors[i]);
     }
 
-    for (i = 0; i <= 100; i += 10) {
+    for (i = 0; i <= 100; i += pct_inc) {
 	char tmp[10];
 	snprintf(tmp, 10, "%d%%", i);
-	BOX_SET(tbox,
+	if (0 == strcmp(orient, "vert")) {
+	    BOX_SET(tbox,
 		 BBB.xmin + 256,
 		 BBB.ymin + 256 + ((num_colors-(i*2.55)-1) * 4) - 30,
 		 BBB.xmin + 512,
 		 BBB.ymin + 256 + ((num_colors-(i*2.55)-1) * 4) + 30);
+	} else {
+	    BOX_SET(tbox,
+		 BBB.xmin + 256 + (i*2.55 * 4) - 256,
+		 BBB.ymin + 442,
+		 BBB.xmin + 256 + (i*2.55 * 4) + 256,
+		 BBB.ymin + 442 + 72);
+	}
 	legend_text(tmp, tbox);
     }
 }
@@ -243,14 +261,12 @@ legend(const char *title, const char *orient)
 	legend_bb.ymax,
 	annotateColor);
 
-    BOX_PRINT(AAA);
     draw_box(AAA);
-    BOX_PRINT(BBB);
     draw_box(BBB);
     draw_box(CCC);
 
     legend_title(title);
-    legend_legend();
+    legend_legend(orient);
     legend_samples();
     legend_save();
 }
