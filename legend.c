@@ -212,14 +212,14 @@ legend(const char *title, const char *orient)
     if (0 == strcmp(orient, "vert")) {
 	BBOX_SET(legend_bb, 0, 0, 1024, 4096);
 	BBOX_SET(AAA,
-	    legend_bb.xmin + 128,
-	    legend_bb.ymin + 128,
-	    legend_bb.xmin + 1024 - 128,
-	    legend_bb.ymin + 1024 - 128);
+	    legend_bb.xmin,
+	    legend_bb.ymin,
+	    legend_bb.xmin + 1024,
+	    legend_bb.ymin + 1024);
 	BBOX_SET(BBB,
-	    AAA.xmin,
+	    AAA.xmin + 128,
 	    AAA.ymax + 128,
-	    AAA.xmax,
+	    AAA.xmax - 128,
 	    AAA.ymax + 128 + 1400);
 	BBOX_SET(CCC,
 	    BBB.xmin,
@@ -229,15 +229,15 @@ legend(const char *title, const char *orient)
     } else if (0 == strcmp(orient, "horiz")) {
 	BBOX_SET(legend_bb, 0, 0, 4096, 1024);
 	BBOX_SET(AAA,
-	    legend_bb.xmin + 128,
-	    legend_bb.ymin + 128,
-	    legend_bb.xmin + 1024 - 128,
-	    legend_bb.ymin + 1024 - 128);
+	    legend_bb.xmin,
+	    legend_bb.ymin,
+	    legend_bb.xmin + 1024,
+	    legend_bb.ymin + 1024);
 	BBOX_SET(BBB,
 	    AAA.xmax + 128,
-	    AAA.ymin,
+	    AAA.ymin + 128,
 	    AAA.xmax + 128 + 1400,
-	    AAA.ymax);
+	    AAA.ymax - 128);
 	BBOX_SET(CCC,
 	    BBB.xmax + 128,
 	    BBB.ymin,
