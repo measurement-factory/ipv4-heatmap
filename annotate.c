@@ -16,80 +16,22 @@
 #include <err.h>
 #include <assert.h>
 
+#if 0
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-
-#include <gd.h>
-
-extern gdImagePtr image;
-extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-extern int debug;
-extern const char *font_file_or_name;
-int annotateColor = -1;
-unsigned int allones = ~0;
-
-#ifndef MIN
-#define MIN(a,b) (a<b?a:b)
-#define MAX(a,b) (a>b?a:b)
 #endif
 
-/*
- * A bounding box
- */
-struct bb {
-    int xmin, ymin, xmax, ymax;
-};
+#include <gd.h>
+#include "bbox.h"
 
-/*
- * Find the "bounding box" for the CIDR prefix starting at 'first' and having
- * "slash" value of 'slash'
- * 
- * For square areas this is pretty easy.  We know how to find the point diagonally
- * opposite the first value (add 1010..1010). Its a little harder for
- * rectangular areas, so I cheat a little and divide it into the two smaller
- * squares.
- */
-struct bb
-bounding_box(unsigned int first, int slash)
-{
-    struct bb box;
-    unsigned int diag = 0xAAAAAAAA;
-    int x1, y1, x2, y2;
-
-    /*
-     * find the point diagonally opposite the first point
-     */
-    if (0 == (slash & 1)) {
-	/* square */
-	diag >>= slash;
-	hil_xy_from_s(first >> 8, 12, &x1, &y1);
-	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
-	box.xmin = MIN(x1, x2);
-	box.ymin = MIN(y1, y2);
-	box.xmax = MAX(x1, x2);
-	box.ymax = MAX(y1, y2);
-    } else {
-	/* rectangle */
-	int x3, y3, x4, y4;
-	slash += 1;
-	diag >>= slash;
-	hil_xy_from_s(first >> 8, 12, &x1, &y1);
-	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
-	first += (1 << (32 - slash));
-	hil_xy_from_s((first) >> 8, 12, &x3, &y3);
-	hil_xy_from_s((first + diag) >> 8, 12, &x4, &y4);
-	box.xmin = MIN(MIN(x1, x2), MIN(x3, x4));
-	box.ymin = MIN(MIN(y1, y2), MIN(y3, y4));
-	box.xmax = MAX(MAX(x1, x2), MAX(x3, x4));
-	box.ymax = MAX(MAX(y1, y2), MAX(y3, y4));
-    }
-    return box;
-}
+extern gdImagePtr image;
+extern const char *font_file_or_name;
+int annotateColor = -1;
 
 void
-annotate_text(const char *text, const char *text2, struct bb box, int color)
+annotate_text(const char *text, const char *text2, bbox box, int color)
 {
     double sz;
     int brect[8];
@@ -130,64 +72,12 @@ annotate_text(const char *text, const char *text2, struct bb box, int color)
 	(char *)text2);
 }
 
-struct bb
-cidr_to_bbox(const char *cidr)
-{
-    char cidr_copy[24];
-    char *t;
-    int slash;
-    unsigned int first;
-    unsigned int last;
-    struct bb bbox;
-    memset(&bbox, '\0', sizeof(bbox));
-    strncpy(cidr_copy, cidr, 24);
-    t = strchr(cidr_copy, '/');
-    if (NULL == t) {
-	warnx("missing / on CIDR '%s'\n", cidr_copy);
-	return bbox;
-    }
-    *t++ = '\0';
-    slash = atoi(t);
-    if (1 != inet_pton(AF_INET, cidr_copy, &first)) {
-	warnx("inet_pton failed on '%s'\n", cidr_copy);
-	return bbox;
-    }
-    first = ntohl(first);
-    last = first | (allones >> slash);
-    bbox = bounding_box(first, slash);
-    if (debug) {
-	char fstr[24];
-	char lstr[24];
-	unsigned int tmp;
-	tmp = htonl(first);
-	inet_ntop(AF_INET, &tmp, fstr, 24);
-	tmp = htonl(last);
-	inet_ntop(AF_INET, &tmp, lstr, 24);
-	fprintf(stderr, "cidr=%s"
-	    ", first=%s, last=%s, last-first=%u"
-	    ", bbox=%d,%d to %d,%d"
-	    "\n",
-	    cidr, fstr, lstr, last - first,
-	    bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax);
-    }
-    return bbox;
-}
-
 void
 annotate_cidr(const char *cidr, const char *label)
 {
-    struct bb bbox = cidr_to_bbox(cidr);
-    gdPoint points[4];
-    points[0].x = bbox.xmin;
-    points[1].x = bbox.xmax;
-    points[2].x = bbox.xmax;
-    points[3].x = bbox.xmin;
-    points[0].y = bbox.ymin;
-    points[1].y = bbox.ymin;
-    points[2].y = bbox.ymax;
-    points[3].y = bbox.ymax;
-    gdImagePolygon(image, points, 4, annotateColor);
-    annotate_text(label, cidr, bbox, annotateColor);
+    bbox box = bbox_from_cidr(cidr);
+    bbox_draw_outline(box, image, annotateColor);
+    annotate_text(label, cidr, box, annotateColor);
 }
 
 /*

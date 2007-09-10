@@ -10,34 +10,21 @@
 #include <assert.h>
 
 #include <gd.h>
-
-struct bb {
-    int xmin, ymin, xmax, ymax;
-};
+#include "bbox.h"
 
 extern gdImagePtr image;
 extern int debug;
-extern struct bb cidr_to_bbox(const char *);
 
 void
 shade_cidr(const char *cidr, unsigned int rgb, int alpha)
 {
-    struct bb bbox = cidr_to_bbox(cidr);
+    bbox box = bbox_from_cidr(cidr);
     int color = gdImageColorAllocateAlpha(image,
 	rgb >> 16,
 	(rgb >> 8) & 0xFF,
 	rgb & 0xFF,
 	alpha);
-    gdPoint points[4];
-    points[0].x = bbox.xmin;
-    points[1].x = bbox.xmax;
-    points[2].x = bbox.xmax;
-    points[3].x = bbox.xmin;
-    points[0].y = bbox.ymin;
-    points[1].y = bbox.ymin;
-    points[2].y = bbox.ymax;
-    points[3].y = bbox.ymax;
-    gdImageFilledPolygon(image, points, 4, color);
+    bbox_draw_filled(box, image, color);
 }
 
 /*

@@ -52,7 +52,7 @@ initialize(void)
     for (i = 0; i < NUM_DATA_COLORS; i++) {
 	double hue;
 	double r, g, b;
-	hue = 240.0 * (255-i) / 255;
+	hue = 240.0 * (255 - i) / 255;
 	PIX_HSV_TO_RGB_COMMON(hue, 1.0, 1.0, r, g, b);
 	colors[i] = gdImageColorAllocate(image, r, g, b);
 	if (debug)
@@ -130,14 +130,14 @@ paint(void)
 #else
 	    for (k = 0; k < NUM_DATA_COLORS; k++) {
 		if (colors[k] == color) {
-	            if (debug)
-		        fprintf(stderr, "color %d has index %d\n", color, k);
+		    if (debug)
+			fprintf(stderr, "color %d has index %d\n", color, k);
 		    break;
 		}
 	    }
 	    if (k == NUM_DATA_COLORS)
 		k = 0;
-	    color = colors[k+1];
+	    color = colors[k + 1];
 #endif
 	}
 

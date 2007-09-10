@@ -1,7 +1,8 @@
-// ######################################################################
-// T. Nathan Mundhenk
-// mundhenk@usc.edu
-// C/C++ Macro HSV to RGB
+//
+######################################################################
+//T.Nathan Mundhenk
+// mundhenk @ usc.edu
+// C / C++ Macro HSV to RGB
 #define PIX_HSV_TO_RGB_COMMON(H,S,V,R,G,B)                          \
 if( V == 0 )                                                        \
 { R = 0; G = 0; B = 0; }                                            \
