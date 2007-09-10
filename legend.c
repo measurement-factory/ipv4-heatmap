@@ -192,9 +192,12 @@ legend_title(const char *text)
 }
 
 static void
-legend_save(void)
+legend_save(const char *orient)
 {
-    FILE *pngout = fopen("legend.png", "wb");
+    FILE *pngout;
+    char fname[128];
+    snprintf(fname, 128, "legend-%s.png", orient);
+    pngout = fopen(fname, "wb");
     gdImagePng(image, pngout);
     fclose(pngout);
     gdImageDestroy(image);
@@ -258,5 +261,5 @@ legend(const char *title, const char *orient)
     legend_title(title);
     legend_legend(orient);
     legend_samples();
-    legend_save();
+    legend_save(orient);
 }

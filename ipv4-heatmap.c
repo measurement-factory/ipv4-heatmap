@@ -193,7 +193,9 @@ main(int argc, char *argv[])
     if (annotations)
 	annotate_file(annotations);
     save();
-    if (title)
+    if (title) {
 	legend(title, "horiz");
+	legend(title, "vert");
+    }
     return 0;
 }
