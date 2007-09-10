@@ -28,6 +28,21 @@ extern int colors[];
 extern int num_colors;
 extern const char *font_file_or_name;
 
+int *
+legend_text_width_height(const char *text, double sz, int *w, int *h)
+{
+    static int brect[8];
+    char *errmsg = gdImageStringFT(NULL, &brect[0], 0,
+	    (char *)font_file_or_name,
+	    sz, 0.0, 0, 0, (char *)text);
+	if (NULL != errmsg)
+	    errx(1, errmsg);
+	*w = brect[2] - brect[0];
+	*h = brect[3] - brect[5];
+	return &brect[0];
+}
+
+
 /*
  * XXX too much like annotate_text().  need to merge them.
  */
@@ -35,26 +50,30 @@ void
 legend_text(const char *text, bbox box)
 {
     double sz;
-    int brect[8];
-    char *errmsg;
     int tw, th;
+    int oneline_h;
+    int *brectPtr;
+    char *text_copy = calloc(1, strlen(text)+1);
+    const char *s;
+    char *d;
+    for (s=text, d=text_copy; *s; s++, d++) {
+	if (*s == '\\' && *(s+1) == 'n')
+		s++, *d = '\n';
+	else
+		*d = *s;
+    }
     for (sz = 128.0; sz > 6.0; sz *= 0.9) {
-	errmsg = gdImageStringFT(NULL, &brect[0], 0,
-	    (char *)font_file_or_name,
-	    sz, 0.0, 0, 0, (char *)text);
-	if (NULL != errmsg)
-	    errx(1, errmsg);
-	tw = brect[2] - brect[0];
-	th = brect[3] - brect[5];
+	(void) legend_text_width_height("ABCD", sz, &tw, &oneline_h);
+	brectPtr = legend_text_width_height(text_copy, sz, &tw, &th);
 	if (tw > ((box.xmax - box.xmin) * 95 / 100))
 	    continue;
 	if (th > ((box.ymax - box.ymin) * 95 / 100))
 	    continue;
-	gdImageStringFT(image, &brect[0], textColor,
+	gdImageStringFT(image, brectPtr, textColor,
 	    (char *)font_file_or_name, sz, 0.0,
 	    ((box.xmin + box.xmax) / 2) - (tw / 2),
-	    ((box.ymin + box.ymax) / 2) + (th / 2),
-	    (char *)text);
+	    ((box.ymin + box.ymax) / 2) - (th / 2) + oneline_h,
+	    text_copy);
 	break;
     }
 }
