@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <string.h>
 #include <err.h>
-#include <assert.h>
 
 #include <gd.h>
 #include "bbox.h"
