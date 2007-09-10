@@ -16,13 +16,6 @@
 #include <err.h>
 #include <assert.h>
 
-#if 0
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#endif
-
 #include <gd.h>
 #include "bbox.h"
 
