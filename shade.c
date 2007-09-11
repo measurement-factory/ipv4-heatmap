@@ -23,7 +23,10 @@ shade_cidr(const char *cidr, unsigned int rgb, int alpha)
 	(rgb >> 8) & 0xFF,
 	rgb & 0xFF,
 	alpha);
-    bbox_draw_filled(box, image, color);
+    if (box.xmin != box.xmax || box.ymin != box.ymax)
+        bbox_draw_filled(box, image, color);
+    else
+        bbox_draw_outline(box, image, color);
 }
 
 /*

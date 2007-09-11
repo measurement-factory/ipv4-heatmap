@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <memory.h>
 #include <err.h>
+#include <assert.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -65,12 +66,18 @@ bounding_box(unsigned int first, int slash)
 {
     bbox box;
     unsigned int diag = 0xAAAAAAAA;
-    int x1, y1, x2, y2;
+    int x1 = -1, y1 = -1, x2 = -1, y2 = -1;
 
     /*
      * find the point diagonally opposite the first point
      */
-    if (0 == (slash & 1)) {
+    if (slash > 31) {
+	hil_xy_from_s(first >> 8, 12, &x1, &y1);
+	box.xmin = x1;
+	box.ymin = y1;
+	box.xmax = x1;
+	box.ymax = y1;
+    } else if (0 == (slash & 1)) {
 	/* square */
 	diag >>= slash;
 	hil_xy_from_s(first >> 8, 12, &x1, &y1);
@@ -80,19 +87,13 @@ bounding_box(unsigned int first, int slash)
 	box.xmax = MAX(x1, x2);
 	box.ymax = MAX(y1, y2);
     } else {
-	/* rectangle */
-	int x3, y3, x4, y4;
-	slash += 1;
-	diag >>= slash;
-	hil_xy_from_s(first >> 8, 12, &x1, &y1);
-	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
-	first += (1 << (32 - slash));
-	hil_xy_from_s((first) >> 8, 12, &x3, &y3);
-	hil_xy_from_s((first + diag) >> 8, 12, &x4, &y4);
-	box.xmin = MIN(MIN(x1, x2), MIN(x3, x4));
-	box.ymin = MIN(MIN(y1, y2), MIN(y3, y4));
-	box.xmax = MAX(MAX(x1, x2), MAX(x3, x4));
-	box.ymax = MAX(MAX(y1, y2), MAX(y3, y4));
+	/* rectangle; divide, conquer */
+	bbox b1 = bounding_box(first, slash+1);
+	bbox b2 = bounding_box(first + (1 << (32 - (slash+1))), slash+1);
+	box.xmin = MIN(b1.xmin, b2.xmin);
+	box.ymin = MIN(b1.ymin, b2.ymin);
+	box.xmax = MAX(b1.xmax, b2.xmax);
+	box.ymax = MAX(b1.ymax, b2.ymax);
     }
     return box;
 }
@@ -120,7 +121,10 @@ bbox_from_cidr(const char *cidr)
 	return bbox;
     }
     first = ntohl(first);
-    last = first | (allones >> slash);
+    if (slash < 32)
+        last = first | (allones >> slash);
+    else
+	last = first;
     bbox = bounding_box(first, slash);
     if (debug) {
 	char fstr[24];
