@@ -29,6 +29,7 @@ extern int num_colors;
 extern const char *font_file_or_name;
 extern int legend_utilization_flag;
 extern int legend_prefixes_flag;
+extern const char *legend_keyfile;
 
 int *
 legend_text_width_height(const char *text, double sz, int *w, int *h)
@@ -134,7 +135,6 @@ legend_prefixes(void)
     }
 }
 
-
 static void
 legend_utilization(const char *orient)
 {
@@ -185,6 +185,99 @@ legend_utilization(const char *orient)
 	}
 	legend_text(tmp, tbox);
     }
+}
+
+/*
+ * Read a "key" file and draw a legend
+ * First line of the key file is a description of the legend (e.g.
+ * "Announcement Size".  Remaining lines begin with hex RGB color
+ * values (e.g., "0x00FF00").  An optional label follows the color.
+ * This code currently makes assumptions about the length of the
+ * label strings.  It also assumes that not every color will be
+ * labelled -- that is, text is larger than the boxes
+ */
+static void
+legend_key(const char *orient, const char *file)
+{
+    unsigned int i = 0;
+    bbox tbox;
+    char buf[128];
+    FILE *fp = fopen(file, "r");
+    if (NULL == fp)
+	return;
+    BBOX_SET(tbox,
+	BBB.xmin,
+	BBB.ymin,
+	BBB.xmax,
+	BBB.ymin + 128);
+    if (NULL != fgets(buf, 128, fp)) {
+	strtok(buf, "\r\n");
+    	legend_text(buf, tbox);
+    }
+    while (NULL != fgets(buf, 128, fp)) {
+	char *rgbhex;
+	char *label;
+	unsigned int rgb;
+	int color;
+	bbox sbox;
+	if (NULL == (rgbhex = strtok(buf, " \t")))
+		continue;
+        rgb = strtol(rgbhex, NULL, 16);
+	if (0 == strcmp(orient, "vert")) {
+	    BBOX_SET(tbox,
+		BBB.xmin + 128,
+		BBB.ymin + 256 + (i * 80),
+		BBB.xmin + 256,
+		BBB.ymin + 256 + (i * 80) + 64);
+	    BBOX_SET(sbox,
+		tbox.xmax + 32,
+		tbox.ymin - 64,
+		tbox.xmax + 32 + 256,
+		tbox.ymax + 64);
+	} else {
+	    BBOX_SET(tbox,
+		BBB.xmin + 256 + (i * 80),
+		BBB.ymin + 256,
+		BBB.xmin + 256 + (i * 80) + 64,
+		BBB.ymin + 384);
+	    BBOX_SET(sbox,
+		tbox.xmin - 64,
+		tbox.ymax + 16,
+		tbox.xmax + 64,
+		tbox.ymax + 16 + 128);
+	}
+	color = gdImageColorAllocate(image,
+            rgb >> 16,
+            (rgb >> 8) & 0xFF,
+            rgb & 0xFF);
+	gdImageFilledRectangle(image,
+	    tbox.xmin, tbox.ymin, tbox.xmax, tbox.ymax,
+	    color);
+	if (NULL != (label = strtok(NULL, " \t\r\n")))
+		legend_text(label, sbox);
+	i++;
+    }
+
+#if 0
+    for (i = 0; i <= 100; i += pct_inc) {
+	char tmp[10];
+	snprintf(tmp, 10, "%d%%", i);
+	if (0 == strcmp(orient, "vert")) {
+	    BBOX_SET(tbox,
+		BBB.xmin + 256,
+		BBB.ymin + 256 + ((num_colors - (i * 2.55) - 1) * 4) - 30,
+		BBB.xmin + 512,
+		BBB.ymin + 256 + ((num_colors - (i * 2.55) - 1) * 4) + 30);
+	} else {
+	    BBOX_SET(tbox,
+		BBB.xmin + 256 + (i * 2.55 * 4) - 256,
+		BBB.ymin + 442,
+		BBB.xmin + 256 + (i * 2.55 * 4) + 256,
+		BBB.ymin + 442 + 72);
+	}
+	legend_text(tmp, tbox);
+    }
+#endif
 }
 
 static void
@@ -263,6 +356,8 @@ legend(const char *title, const char *orient)
     legend_title(title);
     if (legend_utilization_flag)
 	legend_utilization(orient);
+    if (legend_keyfile)
+	legend_key(orient, legend_keyfile);
     if (legend_prefixes_flag)
 	legend_prefixes();
     legend_save(orient);

@@ -43,6 +43,7 @@ const char *shadings = NULL;
 const char *title = NULL;
 int legend_utilization_flag = 0;
 int legend_prefixes_flag = 0;
+const char *legend_keyfile = NULL;
 
 void
 initialize(void)
@@ -162,7 +163,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "da:f:s:t:pu")) != -1) {
+    while ((ch = getopt(argc, argv, "a:df:k:s:t:pu")) != -1) {
 	switch (ch) {
 	case 'd':
 	    debug++;
@@ -175,6 +176,9 @@ main(int argc, char *argv[])
 	    break;
 	case 'f':
 	    font_file_or_name = strdup(optarg);
+	    break;
+	case 'k':
+	    legend_keyfile = strdup(optarg);
 	    break;
 	case 't':
 	    title = strdup(optarg);
