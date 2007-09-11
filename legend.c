@@ -27,6 +27,8 @@ extern int annotateColor;
 extern int colors[];
 extern int num_colors;
 extern const char *font_file_or_name;
+extern int legend_utilization_flag;
+extern int legend_prefixes_flag;
 
 int *
 legend_text_width_height(const char *text, double sz, int *w, int *h)
@@ -83,7 +85,7 @@ legend_text(const char *text, bbox box)
  * Show how big various blocks are
  */
 static void
-legend_samples(void)
+legend_prefixes(void)
 {
     char *sample_cidr[] = {
 	"0.0.0.0/8",
@@ -134,7 +136,7 @@ legend_samples(void)
 
 
 static void
-legend_legend(const char *orient)
+legend_utilization(const char *orient)
 {
     unsigned int i;
     bbox tbox;
@@ -259,7 +261,9 @@ legend(const char *title, const char *orient)
 	annotateColor);
 
     legend_title(title);
-    legend_legend(orient);
-    legend_samples();
+    if (legend_utilization_flag)
+	legend_utilization(orient);
+    if (legend_prefixes_flag)
+	legend_prefixes();
     legend_save(orient);
 }

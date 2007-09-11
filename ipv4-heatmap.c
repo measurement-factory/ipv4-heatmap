@@ -41,6 +41,8 @@ extern void legend(const char *, const char *orient);
 const char *annotations = NULL;
 const char *shadings = NULL;
 const char *title = NULL;
+int legend_utilization_flag = 0;
+int legend_prefixes_flag = 0;
 
 void
 initialize(void)
@@ -160,7 +162,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "da:f:s:t:")) != -1) {
+    while ((ch = getopt(argc, argv, "da:f:s:t:pu")) != -1) {
 	switch (ch) {
 	case 'd':
 	    debug++;
@@ -176,6 +178,12 @@ main(int argc, char *argv[])
 	    break;
 	case 't':
 	    title = strdup(optarg);
+	    break;
+	case 'p':
+	    legend_prefixes_flag = 1;
+	    break;
+	case 'u':
+	    legend_utilization_flag = 1;
 	    break;
 	default:
 	    fprintf(stderr, "usage: %s [-d]\n", argv[0]);
