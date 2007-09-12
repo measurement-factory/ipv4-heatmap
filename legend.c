@@ -346,12 +346,21 @@ legend(const char *title, const char *orient)
     gdImageColorAllocate(image, 0, 0, 0);
     textColor = gdImageColorAllocate(image, 255, 255, 255);
 
-    gdImageLine(image,
-	legend_bb.xmin,
-	legend_bb.ymin,
-	legend_bb.xmin,
-	legend_bb.ymax,
-	annotateColor);
+    if (0 == strcmp(orient, "vert")) {
+	gdImageLine(image,
+	    legend_bb.xmin,
+	    legend_bb.ymin,
+	    legend_bb.xmin,
+	    legend_bb.ymax,
+	    annotateColor);
+    } else {
+	gdImageLine(image,
+	    legend_bb.xmin,
+	    legend_bb.ymin,
+	    legend_bb.xmax,
+	    legend_bb.ymin,
+	    annotateColor);
+    }
 
     legend_title(title);
     if (legend_utilization_flag)
