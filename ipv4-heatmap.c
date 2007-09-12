@@ -108,7 +108,7 @@ paint(void)
 	if (NULL == t)
 	    continue;
 	if (strspn(t, "0123456789") == strlen(t))
-	    i = atoi(t) >> 8;
+	    i = strtoul(t, NULL, 10) >> 8;
 	else if (1 == inet_pton(AF_INET, t, &i))
 	    i = ntohl(i) >> 8;
 	else
