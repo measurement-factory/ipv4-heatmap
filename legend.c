@@ -27,7 +27,7 @@ extern int annotateColor;
 extern int colors[];
 extern int num_colors;
 extern const char *font_file_or_name;
-extern int legend_utilization_flag;
+extern const char *legend_scale_name;
 extern int legend_prefixes_flag;
 extern const char *legend_keyfile;
 
@@ -146,7 +146,7 @@ legend_utilization(const char *orient)
 	BBB.ymin,
 	BBB.xmax,
 	BBB.ymin + 128);
-    legend_text("Utilization", tbox);
+    legend_text(legend_scale_name, tbox);
     for (i = 0; i < num_colors; i++) {
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
@@ -363,7 +363,7 @@ legend(const char *title, const char *orient)
     }
 
     legend_title(title);
-    if (legend_utilization_flag)
+    if (legend_scale_name)
 	legend_utilization(orient);
     if (legend_keyfile)
 	legend_key(orient, legend_keyfile);
