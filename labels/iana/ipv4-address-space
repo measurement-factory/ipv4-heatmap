@@ -1,6 +1,6 @@
 Internet Protocol v4 Address Space
 
-(last updated 2007-08-06)
+(last updated 2007-09-27)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to
 various registries is listed here. Originally, all the IPv4 address
@@ -12,7 +12,7 @@ documents most of these allocations.
 Address
 Block   Date     Registry - Purpose                  Notes or Reference
 -----   ------   ---------------------------         ------------------
-000/8   Sep 81   IANA - Reserved
+000/8   Sep 81   IANA - Reserved                     See [RFC3330]
 001/8   Sep 81   IANA - Reserved
 002/8   Sep 81   IANA - Reserved
 003/8   May 94   General Electric Company
@@ -37,7 +37,7 @@ Block   Date     Registry - Purpose                  Notes or Reference
 022/8   May 93   Defense Information Systems Agency
 023/8   Jul 95   IANA - Reserved
 024/8   May 01   ARIN - Cable Block                  (Formerly IANA - Jul 95)
-025/8   Jan 95   UK Ministry of Defense              (Updated - Jan 06)
+025/8   Jan 95   UK Ministry of Defence              (Updated - Jan 06)
 026/8   May 95   Defense Information Systems Agency
 027/8   Apr 95   IANA - Reserved
 028/8   Jul 92   DSI-North
