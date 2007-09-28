@@ -81,7 +81,8 @@
 173.0.0.0/8	Unallocated
 174.0.0.0/7	Unallocated
 176.0.0.0/5	Unallocated
-184.0.0.0/6	Unallocated
+184.0.0.0/7	Unallocated
+186.0.0.0/7	LACNIC
 188.0.0.0/8	Various Registries
 189.0.0.0/8	LACNIC
 190.0.0.0/8	LACNIC

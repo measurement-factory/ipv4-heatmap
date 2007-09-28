@@ -1,6 +1,6 @@
 Internet Protocol v4 Address Space
 
-(last updated 2007-09-27)
+(last updated 2007-09-28)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to
 various registries is listed here. Originally, all the IPv4 address
@@ -198,8 +198,8 @@ Block   Date     Registry - Purpose                  Notes or Reference
 183/8   Apr 03   IANA - Reserved
 184/8   Apr 03   IANA - Reserved
 185/8   Apr 03   IANA - Reserved
-186/8   Apr 03   IANA - Reserved
-187/8   Apr 03   IANA - Reserved
+186/8   Sep 07   LACNIC                              (whois.lacnic.net)
+187/8   Sep 07   LACNIC                              (whois.lacnic.net)
 188/8   May 93   Various Registries
 189/8   Jun 05   LACNIC                              (whois.lacnic.net)
 190/8   Jun 05   LACNIC                              (whois.lacnic.net)
