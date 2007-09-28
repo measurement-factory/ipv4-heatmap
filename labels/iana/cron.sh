@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+export PATH
 cd `dirname $0`
 
 fetch http://www.iana.org/assignments/ipv4-address-space
