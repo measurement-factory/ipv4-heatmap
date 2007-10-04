@@ -177,7 +177,7 @@ legend_utilization(const char *orient)
 	if (0.0 == log_A) {
 		snprintf(tmp, 10, "%d%%", i);
 	} else {
-		snprintf(tmp, 10, "%d%%", (int) (log_A * exp(((double)i - log_C)/log_B) + 0.5));
+		snprintf(tmp, 10, "%d", (int) (log_A * exp(((double)i - log_C)/log_B) + 0.5));
 	}
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
