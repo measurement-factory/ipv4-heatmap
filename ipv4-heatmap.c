@@ -184,7 +184,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:C:a:df:k:s:t:pur")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:C:a:df:k:s:t:pu:r")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
