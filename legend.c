@@ -8,6 +8,7 @@
 #include <string.h>
 #include <err.h>
 #include <assert.h>
+#include <math.h>
 
 #include <gd.h>
 #include "bbox.h"
@@ -31,6 +32,9 @@ extern const char *legend_scale_name;
 extern int legend_prefixes_flag;
 extern const char *legend_keyfile;
 extern int reverse_flag;
+extern double log_A;
+extern double log_B;
+extern double log_C;
 
 int *
 legend_text_width_height(const char *text, double sz, int *w, int *h)
@@ -170,7 +174,11 @@ legend_utilization(const char *orient)
 
     for (i = 0; i <= 100; i += pct_inc) {
 	char tmp[10];
-	snprintf(tmp, 10, "%d%%", i);
+	if (0.0 == log_A) {
+		snprintf(tmp, 10, "%d%%", i);
+	} else {
+		snprintf(tmp, 10, "%d%%", (int) (log_A * exp(((double)i - log_C)/log_B) + 0.5));
+	}
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
 		BBB.xmin + 256,
