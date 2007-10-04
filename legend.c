@@ -30,6 +30,7 @@ extern const char *font_file_or_name;
 extern const char *legend_scale_name;
 extern int legend_prefixes_flag;
 extern const char *legend_keyfile;
+extern int reverse_flag;
 
 int *
 legend_text_width_height(const char *text, double sz, int *w, int *h)
@@ -343,8 +344,12 @@ legend(const char *title, const char *orient)
     }
 
     image = gdImageCreateTrueColor(legend_bb.xmax, legend_bb.ymax);
-    gdImageColorAllocate(image, 0, 0, 0);
-    textColor = gdImageColorAllocate(image, 255, 255, 255);
+    if (reverse_flag)
+	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
+    if (!reverse_flag) 
+	textColor = gdImageColorAllocate(image, 255, 255, 255);
+    else
+	textColor = gdImageColorAllocate(image, 0, 0, 0);
 
     if (0 == strcmp(orient, "vert")) {
 	gdImageLine(image,

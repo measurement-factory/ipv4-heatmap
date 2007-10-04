@@ -43,6 +43,7 @@ const char *shadings = NULL;
 const char *title = NULL;
 const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
+int reverse_flag = 0;	/* reverse background/font colors */
 const char *legend_keyfile = NULL;
 
 void
@@ -51,14 +52,20 @@ initialize(void)
     int i;
     image = gdImageCreateTrueColor(4096, 4096);
     /* first allocated color becomes background by default */
-    gdImageColorAllocate(image, 0, 0, 0);
+#if 0
+    if (!reverse_flag)
+        gdImageColorAllocate(image, 0, 0, 0);
+    else
+#endif
+    if (reverse_flag)
+	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
     for (i = 0; i < NUM_DATA_COLORS; i++) {
 	double hue;
 	double r, g, b;
 	hue = 240.0 * (255 - i) / 255;
 	PIX_HSV_TO_RGB_COMMON(hue, 1.0, 1.0, r, g, b);
 	colors[i] = gdImageColorAllocate(image, r, g, b);
-	if (debug)
+	if (debug > 1)
 	    fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
     }
 }
@@ -163,7 +170,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "a:df:k:s:t:pu:")) != -1) {
+    while ((ch = getopt(argc, argv, "a:df:k:s:t:pur")) != -1) {
 	switch (ch) {
 	case 'd':
 	    debug++;
@@ -188,6 +195,9 @@ main(int argc, char *argv[])
 	    break;
 	case 'u':
 	    legend_scale_name = strdup(optarg);
+	    break;
+	case 'r':
+	    reverse_flag = 1;
 	    break;
 	default:
 	    fprintf(stderr, "usage: %s [-d]\n", argv[0]);
