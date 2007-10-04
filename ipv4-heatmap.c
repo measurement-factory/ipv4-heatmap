@@ -45,8 +45,13 @@ const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
 const char *legend_keyfile = NULL;
+/*
+ * if log_A and log_B are set, then the input data will be
+ * scaled logarithmically such that log_A -> 0 and log_B -> 255.
+ * log_C is calculated such that log_B -> 255.
+ */
 double log_A = 0.0;
-double log_B = 1.0;
+double log_B = 0.0;
 double log_C = 0.0;
 
 void
@@ -71,6 +76,9 @@ initialize(void)
 	if (debug > 1)
 	    fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
     }
+    if (0.0 != log_A && 0.0 == log_B)
+	log_B = 10.0 * log_A;
+    log_C = 255.0/log(log_B/log_A);
 }
 
 /* from Hacker's Delight, fig 14-5 */
@@ -132,10 +140,9 @@ paint(void)
 	    unsigned int k = atoi(t);
 	    if (0.0 != log_A) {
 		/*
-		 * apply logarithmic conversion function: k_new = B *
-		 * log(k_old/A) + C
+		 * apply logarithmic stretching
 		 */
-		k = (int)((log_B * log((double)k / log_A)) + log_C + 0.5);
+		k = (int)((log_C * log((double)k / log_A)) + 0.5);
 	    }
 	    if (k < 0)
 		k = 0;
@@ -191,9 +198,6 @@ main(int argc, char *argv[])
 	    break;
 	case 'B':
 	    log_B = atof(optarg);
-	    break;
-	case 'C':
-	    log_C = atof(optarg);
 	    break;
 	case 'd':
 	    debug++;
