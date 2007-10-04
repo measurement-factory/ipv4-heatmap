@@ -43,8 +43,11 @@ const char *shadings = NULL;
 const char *title = NULL;
 const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
-int reverse_flag = 0;	/* reverse background/font colors */
+int reverse_flag = 0;		/* reverse background/font colors */
 const char *legend_keyfile = NULL;
+double log_A = 0.0;
+double log_B = 1.0;
+double log_C = 0.0;
 
 void
 initialize(void)
@@ -54,7 +57,7 @@ initialize(void)
     /* first allocated color becomes background by default */
 #if 0
     if (!reverse_flag)
-        gdImageColorAllocate(image, 0, 0, 0);
+	gdImageColorAllocate(image, 0, 0, 0);
     else
 #endif
     if (reverse_flag)
@@ -127,6 +130,17 @@ paint(void)
 	t = strtok(NULL, " \t\r\n");
 	if (NULL != t) {
 	    unsigned int k = atoi(t);
+	    if (0.0 != log_A) {
+		/*
+		 * apply logarithmic conversion function: k_new = B *
+		 * log(k_old/A) + C
+		 */
+		k = (int)((log_B * log((double)k / log_A)) + log_C + 0.5);
+	    }
+	    if (k < 0)
+		k = 0;
+	    if (k >= NUM_DATA_COLORS)
+		k = NUM_DATA_COLORS - 1;
 	    color = colors[k];
 	} else {
 	    unsigned int k;
@@ -170,8 +184,17 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "a:df:k:s:t:pur")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:C:a:df:k:s:t:pur")) != -1) {
 	switch (ch) {
+	case 'A':
+	    log_A = atof(optarg);
+	    break;
+	case 'B':
+	    log_B = atof(optarg);
+	    break;
+	case 'C':
+	    log_C = atof(optarg);
+	    break;
 	case 'd':
 	    debug++;
 	    break;
