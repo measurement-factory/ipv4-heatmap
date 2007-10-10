@@ -1,12 +1,5 @@
 /*
- * input is a list of IPv4 addrs (or thier integer representation) and an
- * intensity value 0--255.
- * 
- * data is drawn using a hilbert curve, which preserves grouping see
- * http://xkcd.com/195/ see http://en.wikipedia.org/wiki/Hilbert_curve see
- * Hacker's Delight (Henry S. Warren, Jr. 2002), sec 14-2, fig 14-5
- * 
- * output is a 4096x4096 PNG file
+ * Draws text on the image
  */
 
 #include <stdio.h>
@@ -18,10 +11,27 @@
 #include <gd.h>
 #include "bbox.h"
 
+/*
+ * FONT_ALPHA sets the transparency for the annotations. in libgd,
+ * 0 means 100% transparent, and 127 means 100% opaque.
+ */
+#define FONT_ALPHA 45
+
 extern gdImagePtr image;
 extern const char *font_file_or_name;
 int annotateColor = -1;
 
+
+/*
+ * Draws 'text' inside the bbox bounding box with color color.
+ * The text is sized to be as large as possible and still
+ * fit within the box.
+ *
+ * If the optional 'text2' is given, then it is drawn below
+ * the first text, always in a 12-point size.  This is mainly
+ * to print the CIDR prefix values underneath their owner names
+ * in each /8 box.
+ */
 void
 annotate_text(const char *text, const char *text2, bbox box, int color)
 {
@@ -64,6 +74,10 @@ annotate_text(const char *text, const char *text2, bbox box, int color)
 	(char *)text2);
 }
 
+/*
+ * Calculate the bounding box, draw an outline of the box,
+ * then render the text.
+ */
 void
 annotate_cidr(const char *cidr, const char *label)
 {
@@ -84,7 +98,7 @@ annotate_file(const char *fn)
     if (NULL == fp)
 	err(1, fn);
     if (annotateColor < 0)
-	annotateColor = gdImageColorAllocateAlpha(image, 255, 255, 255, 45);
+	annotateColor = gdImageColorAllocateAlpha(image, 255, 255, 255, FONT_ALPHA);
     if (!gdFTUseFontConfig(1))
 	warnx("fontconfig not available");
     while (NULL != fgets(buf, 512, fp)) {
