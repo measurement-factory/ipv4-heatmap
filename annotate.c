@@ -12,8 +12,8 @@
 #include "bbox.h"
 
 /*
- * FONT_ALPHA sets the transparency for the annotations. in libgd,
- * 0 means 100% transparent, and 127 means 100% opaque.
+ * FONT_ALPHA sets the transparency for the annotations. in libgd, 0 means 100%
+ * transparent, and 127 means 100% opaque.
  */
 #define FONT_ALPHA 45
 
@@ -26,8 +26,8 @@ extern int _text_last_height;
 extern double _text_last_sz;
 
 /*
- * Calculate the bounding box, draw an outline of the box,
- * then render the text.
+ * Calculate the bounding box, draw an outline of the box, then render the
+ * text.
  */
 void
 annotate_cidr(const char *cidr, const char *label)
@@ -37,7 +37,7 @@ annotate_cidr(const char *cidr, const char *label)
     bbox_draw_outline(box, image, annotateColor);
     text_in_bbox(label, box, annotateColor, 128.0);
     box2 = box;
-    box2.ymin = (box.ymin+box.ymax)/2 + (int)(_text_last_sz/2) + 6;
+    box2.ymin = (box.ymin + box.ymax) / 2 + (int)(_text_last_sz / 2) + 6;
     box2.ymax = box2.ymin + 24;
     text_in_bbox(cidr, box2, annotateColor, 12.0);
 }

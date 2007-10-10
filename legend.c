@@ -125,9 +125,9 @@ legend_utilization(const char *orient)
     for (i = 0; i <= 100; i += pct_inc) {
 	char tmp[10];
 	if (0.0 == log_A) {
-		snprintf(tmp, 10, "%d%%", i);
+	    snprintf(tmp, 10, "%d%%", i);
 	} else {
-		snprintf(tmp, 10, "%d", (int) (log_A * exp(2.55*i/log_C) + 0.5));
+	    snprintf(tmp, 10, "%d", (int)(log_A * exp(2.55 * i / log_C) + 0.5));
 	}
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
@@ -147,13 +147,12 @@ legend_utilization(const char *orient)
 }
 
 /*
- * Read a "key" file and draw a legend
- * First line of the key file is a description of the legend (e.g.
- * "Announcement Size".  Remaining lines begin with hex RGB color
- * values (e.g., "0x00FF00").  An optional label follows the color.
- * This code currently makes assumptions about the length of the
- * label strings.  It also assumes that not every color will be
- * labelled -- that is, text is larger than the boxes
+ * Read a "key" file and draw a legend First line of the key file is a
+ * description of the legend (e.g. "Announcement Size".  Remaining lines begin
+ * with hex RGB color values (e.g., "0x00FF00").  An optional label follows the
+ * color. This code currently makes assumptions about the length of the label
+ * strings.  It also assumes that not every color will be labelled -- that is,
+ * text is larger than the boxes
  */
 static void
 legend_key(const char *orient, const char *file)
@@ -171,7 +170,7 @@ legend_key(const char *orient, const char *file)
 	BBB.ymin + 128);
     if (NULL != fgets(buf, 128, fp)) {
 	strtok(buf, "\r\n");
-    	text_in_bbox(buf, tbox, textColor, 0.0);
+	text_in_bbox(buf, tbox, textColor, 0.0);
     }
     while (NULL != fgets(buf, 128, fp)) {
 	char *rgbhex;
@@ -180,8 +179,8 @@ legend_key(const char *orient, const char *file)
 	int color;
 	bbox sbox;
 	if (NULL == (rgbhex = strtok(buf, " \t")))
-		continue;
-        rgb = strtol(rgbhex, NULL, 16);
+	    continue;
+	rgb = strtol(rgbhex, NULL, 16);
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
 		BBB.xmin + 128,
@@ -206,14 +205,14 @@ legend_key(const char *orient, const char *file)
 		tbox.ymax + 16 + 128);
 	}
 	color = gdImageColorAllocate(image,
-            rgb >> 16,
-            (rgb >> 8) & 0xFF,
-            rgb & 0xFF);
+	    rgb >> 16,
+	    (rgb >> 8) & 0xFF,
+	    rgb & 0xFF);
 	gdImageFilledRectangle(image,
 	    tbox.xmin, tbox.ymin, tbox.xmax, tbox.ymax,
 	    color);
 	if (NULL != (label = strtok(NULL, " \t\r\n")))
-		text_in_bbox(label, sbox, textColor, 0.0);
+	    text_in_bbox(label, sbox, textColor, 0.0);
 	i++;
     }
 }
@@ -288,7 +287,7 @@ legend(const char *title, const char *orient)
     if (reverse_flag)
 	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
 #endif
-    if (!reverse_flag) 
+    if (!reverse_flag)
 	textColor = gdImageColorAllocate(image, 255, 255, 255);
     else
 	textColor = gdImageColorAllocate(image, 0, 0, 0);

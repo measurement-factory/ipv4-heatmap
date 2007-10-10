@@ -1,15 +1,13 @@
 /*
- *
  * ipv4-heatmap produces a "map" of IPv4 address space.
- *
+ * 
  * input is a list of IPv4 addrs and optional value.
  * 
  * data is drawn using a hilbert curve, which preserves grouping see
  * http://xkcd.com/195/ see http://en.wikipedia.org/wiki/Hilbert_curve see
  * Hacker's Delight (Henry S. Warren, Jr. 2002), sec 14-2, fig 14-5
  * 
- * output is a 4096x4096 PNG file
- */
+ * output is a 4096x4096 PNG file */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,9 +35,8 @@ extern void legend(const char *, const char *orient);
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 
 /*
- * For now, the Hilbert curve order is hard-coded at 12.  To produce
- * a 4096x4096 image we need a 12th-order Hilbert curve.  That is,
- * 2^12 = 4096.
+ * For now, the Hilbert curve order is hard-coded at 12.  To produce a
+ * 4096x4096 image we need a 12th-order Hilbert curve.  That is, 2^12 = 4096.
  */
 int hilbert_curve_order = 12;
 
@@ -59,9 +56,9 @@ const char *legend_keyfile = NULL;
 const char *savename = "map.png";
 
 /*
- * if log_A and log_B are set, then the input data will be
- * scaled logarithmically such that log_A -> 0 and log_B -> 255.
- * log_C is calculated such that log_B -> 255.
+ * if log_A and log_B are set, then the input data will be scaled
+ * logarithmically such that log_A -> 0 and log_B -> 255. log_C is calculated
+ * such that log_B -> 255.
  */
 double log_A = 0.0;
 double log_B = 0.0;
@@ -74,7 +71,7 @@ initialize(void)
     int w = 4096;
     int h = 4096;
     if (NULL == title)
-	(void) 0;		/* no legend */
+	(void)0;		/* no legend */
     else if (0 == strcmp(legend_orient, "horiz"))
 	h += 1024;
     else
@@ -98,12 +95,12 @@ initialize(void)
     }
 
     /*
-     * If the input data should be logarithmically scaled,
-     * then calculate the value of log_C.
+     * If the input data should be logarithmically scaled, then calculate the
+     * value of log_C.
      */
     if (0.0 != log_A && 0.0 == log_B)
 	log_B = 10.0 * log_A;
-    log_C = 255.0/log(log_B/log_A);
+    log_C = 255.0 / log(log_B / log_A);
 }
 
 void
@@ -118,8 +115,8 @@ paint(void)
 	int color = -1;
 
 	/*
-         * First field is an IP address.  We also accept
-	 * its integer notation equivalent.
+	 * First field is an IP address.  We also accept its integer notation
+	 * equivalent.
 	 */
 	char *t = strtok(buf, " \t\r\n");
 	if (NULL == t)
@@ -136,8 +133,8 @@ paint(void)
 
 	/*
 	 * Second field is an optional value, which might also be
-	 * logarithmically scaled by us.  If no value is given, then
-	 * find the existing value at that point and increment by one.
+	 * logarithmically scaled by us.  If no value is given, then find the
+	 * existing value at that point and increment by one.
 	 */
 	t = strtok(NULL, " \t\r\n");
 	if (NULL != t) {
@@ -194,22 +191,22 @@ save(void)
 void
 usage(const char *argv0)
 {
-	const char *t = strrchr(argv0, '/');
-	fprintf(stderr, "usage: %s [options] < iplist\n", t ? t+1 : argv0);
-	fprintf(stderr, "\t-A float   logarithmic scaling, min value\n");
-	fprintf(stderr, "\t-B float   logarithmic scaling, max value\n");
-	fprintf(stderr, "\t-a file    annotations file\n");
-	fprintf(stderr, "\t-d         increase debugging\n");
-	fprintf(stderr, "\t-f font    fontconfig name or .ttf file\n");
-	fprintf(stderr, "\t-h         draw horizontal legend instead\n");
-	fprintf(stderr, "\t-k file    key file for legend\n");
-	fprintf(stderr, "\t-o file    output filename\n");
-	fprintf(stderr, "\t-p         show size of prefixes in legend\n");
-	fprintf(stderr, "\t-r         reverse; white background, black text\n");
-	fprintf(stderr, "\t-s file    shading file\n");
-	fprintf(stderr, "\t-t str     map title\n");
-	fprintf(stderr, "\t-u str     scale title in legend\n");
-	exit(1);
+    const char *t = strrchr(argv0, '/');
+    fprintf(stderr, "usage: %s [options] < iplist\n", t ? t + 1 : argv0);
+    fprintf(stderr, "\t-A float   logarithmic scaling, min value\n");
+    fprintf(stderr, "\t-B float   logarithmic scaling, max value\n");
+    fprintf(stderr, "\t-a file    annotations file\n");
+    fprintf(stderr, "\t-d         increase debugging\n");
+    fprintf(stderr, "\t-f font    fontconfig name or .ttf file\n");
+    fprintf(stderr, "\t-h         draw horizontal legend instead\n");
+    fprintf(stderr, "\t-k file    key file for legend\n");
+    fprintf(stderr, "\t-o file    output filename\n");
+    fprintf(stderr, "\t-p         show size of prefixes in legend\n");
+    fprintf(stderr, "\t-r         reverse; white background, black text\n");
+    fprintf(stderr, "\t-s file    shading file\n");
+    fprintf(stderr, "\t-t str     map title\n");
+    fprintf(stderr, "\t-u str     scale title in legend\n");
+    exit(1);
 }
 
 int

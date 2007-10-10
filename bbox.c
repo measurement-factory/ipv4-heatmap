@@ -93,8 +93,8 @@ bounding_box(unsigned int first, int slash)
 	/*
 	 * rectangle: divide, conquer
 	 */
-	bbox b1 = bounding_box(first, slash+1);
-	bbox b2 = bounding_box(first + (1 << (32 - (slash+1))), slash+1);
+	bbox b1 = bounding_box(first, slash + 1);
+	bbox b2 = bounding_box(first + (1 << (32 - (slash + 1))), slash + 1);
 	box.xmin = MIN(b1.xmin, b2.xmin);
 	box.ymin = MIN(b1.ymin, b2.ymin);
 	box.xmax = MAX(b1.xmax, b2.xmax);
@@ -130,7 +130,7 @@ bbox_from_cidr(const char *cidr)
     }
     first = ntohl(first);
     if (slash < 32)
-        last = first | (allones >> slash);
+	last = first | (allones >> slash);
     else
 	last = first;
     bbox = bounding_box(first, slash);
