@@ -1,6 +1,8 @@
 /*
- * input is a list of IPv4 addrs (or thier integer representation) and an
- * intensity value 0--255.
+ *
+ * ipv4-heatmap produces a "map" of IPv4 address space.
+ *
+ * input is a list of IPv4 addrs and optional value.
  * 
  * data is drawn using a hilbert curve, which preserves grouping see
  * http://xkcd.com/195/ see http://en.wikipedia.org/wiki/Hilbert_curve see
@@ -27,18 +29,26 @@
 
 #include "hsv2rgb.h"
 
-
-gdImagePtr image = NULL;
 #define NUM_DATA_COLORS 256
-int colors[NUM_DATA_COLORS];
-int num_colors = NUM_DATA_COLORS;
-int debug = 0;
-const char *font_file_or_name = "Luxi Mono:style=Regular";
 
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
 extern void legend(const char *, const char *orient);
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
+
+/*
+ * For now, the Hilbert curve order is hard-coded at 12.  To produce
+ * a 4096x4096 image we need a 12th-order Hilbert curve.  That is,
+ * 2^12 = 4096.
+ */
+int hilbert_curve_order = 12;
+
+gdImagePtr image = NULL;
+int colors[NUM_DATA_COLORS];
+int num_colors = NUM_DATA_COLORS;
+int debug = 0;
+const char *font_file_or_name = "Luxi Mono:style=Regular";
+const char *legend_orient = "vert";
 const char *annotations = NULL;
 const char *shadings = NULL;
 const char *title = NULL;
@@ -46,6 +56,8 @@ const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
 const char *legend_keyfile = NULL;
+const char *savename = "map.png";
+
 /*
  * if log_A and log_B are set, then the input data will be
  * scaled logarithmically such that log_A -> 0 and log_B -> 255.
@@ -61,13 +73,12 @@ initialize(void)
     int i;
     image = gdImageCreateTrueColor(4096, 4096);
     /* first allocated color becomes background by default */
-#if 0
-    if (!reverse_flag)
-	gdImageColorAllocate(image, 0, 0, 0);
-    else
-#endif
     if (reverse_flag)
 	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
+
+    /*
+     * The default color map ranges from red to blue
+     */
     for (i = 0; i < NUM_DATA_COLORS; i++) {
 	double hue;
 	double r, g, b;
@@ -77,6 +88,11 @@ initialize(void)
 	if (debug > 1)
 	    fprintf(stderr, "colors[%d]=%d\n", i, colors[i]);
     }
+
+    /*
+     * If the input data should be logarithmically scaled,
+     * then calculate the value of log_C.
+     */
     if (0.0 != log_A && 0.0 == log_B)
 	log_B = 10.0 * log_A;
     log_C = 255.0/log(log_B/log_A);
@@ -93,8 +109,11 @@ paint(void)
 	unsigned int y;
 	int color = -1;
 
-	//get the "address"
-	    char *t = strtok(buf, " \t\r\n");
+	/*
+         * First field is an IP address.  We also accept
+	 * its integer notation equivalent.
+	 */
+	char *t = strtok(buf, " \t\r\n");
 	if (NULL == t)
 	    continue;
 	if (strspn(t, "0123456789") == strlen(t))
@@ -103,10 +122,15 @@ paint(void)
 	    i = ntohl(i) >> 8;
 	else
 	    errx(1, "bad input on line %d: %s", line, t);
-	hil_xy_from_s(i, 12, &x, &y);
+	hil_xy_from_s(i, hilbert_curve_order, &x, &y);
 	if (debug)
 	    fprintf(stderr, "%s => (%d,%d)\n", t, x, y);
 
+	/*
+	 * Second field is an optional value, which might also be
+	 * logarithmically scaled by us.  If no value is given, then
+	 * find the existing value at that point and increment by one.
+	 */
 	t = strtok(NULL, " \t\r\n");
 	if (NULL != t) {
 	    unsigned int k = atoi(t);
@@ -152,18 +176,39 @@ paint(void)
 void
 save(void)
 {
-    FILE *pngout = fopen("map.png", "wb");
+    FILE *pngout = fopen(savename, "wb");
     gdImagePng(image, pngout);
     fclose(pngout);
     gdImageDestroy(image);
     image = NULL;
 }
 
+void
+usage(const char *argv0)
+{
+	const char *t = strrchr(argv0, '/');
+	fprintf(stderr, "usage: %s [options] < iplist\n", t ? t+1 : argv0);
+	fprintf(stderr, "\t-A float   logarithmic scaling, min value\n");
+	fprintf(stderr, "\t-B float   logarithmic scaling, max value\n");
+	fprintf(stderr, "\t-a file    annotations file\n");
+	fprintf(stderr, "\t-d         increase debugging\n");
+	fprintf(stderr, "\t-f font    fontconfig name or .ttf file\n");
+	fprintf(stderr, "\t-h         draw horizontal legend instead\n");
+	fprintf(stderr, "\t-k file    key file for legend\n");
+	fprintf(stderr, "\t-o file    output filename\n");
+	fprintf(stderr, "\t-p         show size of prefixes in legend\n");
+	fprintf(stderr, "\t-r         reverse; white background, black text\n");
+	fprintf(stderr, "\t-s file    shading file\n");
+	fprintf(stderr, "\t-t str     map title\n");
+	fprintf(stderr, "\t-u str     scale title in legend\n");
+	exit(1);
+}
+
 int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:C:a:df:k:s:t:pu:r")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:df:hk:o:prs:t:u:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -183,8 +228,14 @@ main(int argc, char *argv[])
 	case 'f':
 	    font_file_or_name = strdup(optarg);
 	    break;
+	case 'h':
+	    legend_orient = "horiz";
+	    break;
 	case 'k':
 	    legend_keyfile = strdup(optarg);
+	    break;
+	case 'o':
+	    savename = strdup(optarg);
 	    break;
 	case 't':
 	    title = strdup(optarg);
@@ -199,8 +250,7 @@ main(int argc, char *argv[])
 	    reverse_flag = 1;
 	    break;
 	default:
-	    fprintf(stderr, "usage: %s [-d]\n", argv[0]);
-	    exit(1);
+	    usage(argv[0]);
 	    break;
 	}
     }
@@ -214,9 +264,7 @@ main(int argc, char *argv[])
     if (annotations)
 	annotate_file(annotations);
     save();
-    if (title) {
-	legend(title, "horiz");
-	legend(title, "vert");
-    }
+    if (title)
+	legend(title, legend_orient);
     return 0;
 }
