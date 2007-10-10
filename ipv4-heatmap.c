@@ -38,6 +38,7 @@ const char *font_file_or_name = "Luxi Mono:style=Regular";
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
 extern void legend(const char *, const char *orient);
+extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 const char *annotations = NULL;
 const char *shadings = NULL;
 const char *title = NULL;
@@ -80,35 +81,6 @@ initialize(void)
 	log_B = 10.0 * log_A;
     log_C = 255.0/log(log_B/log_A);
 }
-
-/* from Hacker's Delight, fig 14-5 */
-void
-hil_xy_from_s(unsigned s, int n, unsigned *xp,
-    unsigned *yp)
-{
-
-    int i;
-    unsigned state, x, y, row;
-
-    state = 0;
-    //Initialize.
-	x = y = 0;
-
-    for (i = 2 * n - 2; i >= 0; i -= 2) {
-	//Do n times.
-	    row = 4 * state | ((s >> i) & 3);
-	//Row in table.
-	    x = (x << 1) | ((0x936C >> row) & 1);
-	y = (y << 1) | ((0x39C6 >> row) & 1);
-	state = (0x3E6B94C1 >> 2 * row) & 3;
-	//New state.
-    }
-    *xp = x;
-    //Pass back
-	* yp = y;
-    //results.
-}
-
 
 void
 paint(void)
