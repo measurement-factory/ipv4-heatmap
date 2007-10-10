@@ -68,17 +68,19 @@ bounding_box(unsigned int first, int slash)
     unsigned int diag = 0xAAAAAAAA;
     int x1 = -1, y1 = -1, x2 = -1, y2 = -1;
 
-    /*
-     * find the point diagonally opposite the first point
-     */
     if (slash > 31) {
+	/*
+	 * treat /32 as a special case
+	 */
 	hil_xy_from_s(first >> 8, 12, &x1, &y1);
 	box.xmin = x1;
 	box.ymin = y1;
 	box.xmax = x1;
 	box.ymax = y1;
     } else if (0 == (slash & 1)) {
-	/* square */
+	/*
+	 * square
+	 */
 	diag >>= slash;
 	hil_xy_from_s(first >> 8, 12, &x1, &y1);
 	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
@@ -87,7 +89,9 @@ bounding_box(unsigned int first, int slash)
 	box.xmax = MAX(x1, x2);
 	box.ymax = MAX(y1, y2);
     } else {
-	/* rectangle; divide, conquer */
+	/*
+	 * rectangle: divide, conquer
+	 */
 	bbox b1 = bounding_box(first, slash+1);
 	bbox b2 = bounding_box(first + (1 << (32 - (slash+1))), slash+1);
 	box.xmin = MIN(b1.xmin, b2.xmin);
@@ -98,6 +102,9 @@ bounding_box(unsigned int first, int slash)
     return box;
 }
 
+/*
+ * Calculate the bounding box of a CIDR prefix string
+ */
 bbox
 bbox_from_cidr(const char *cidr)
 {
