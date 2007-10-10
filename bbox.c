@@ -21,6 +21,7 @@
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 unsigned int allones = ~0;
 extern int debug;
+extern int hilbert_curve_order;
 
 void
 bbox_draw_outline(bbox box, gdImagePtr image, int color)
@@ -72,7 +73,7 @@ bounding_box(unsigned int first, int slash)
 	/*
 	 * treat /32 as a special case
 	 */
-	hil_xy_from_s(first >> 8, 12, &x1, &y1);
+	hil_xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
 	box.xmin = x1;
 	box.ymin = y1;
 	box.xmax = x1;
@@ -82,8 +83,8 @@ bounding_box(unsigned int first, int slash)
 	 * square
 	 */
 	diag >>= slash;
-	hil_xy_from_s(first >> 8, 12, &x1, &y1);
-	hil_xy_from_s((first + diag) >> 8, 12, &x2, &y2);
+	hil_xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
+	hil_xy_from_s((first + diag) >> 8, hilbert_curve_order, &x2, &y2);
 	box.xmin = MIN(x1, x2);
 	box.ymin = MIN(y1, y2);
 	box.xmax = MAX(x1, x2);
