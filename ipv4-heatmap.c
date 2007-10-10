@@ -1,13 +1,21 @@
 /*
+ * IPv4 Heatmap
+ * (C) 2007 The Measurement Factory, Inc
+ * Licensed under the GPL, version 2.0
+ * http://maps.measurement-factory.com/
+ */
+
+/*
  * ipv4-heatmap produces a "map" of IPv4 address space.
  * 
- * input is a list of IPv4 addrs and optional value.
+ * input is a list of IPv4 addrs and optional value for each.
  * 
- * data is drawn using a hilbert curve, which preserves grouping see
- * http://xkcd.com/195/ see http://en.wikipedia.org/wiki/Hilbert_curve see
+ * Data is drawn using a hilbert curve, which preserves grouping see
+ * http://xkcd.com/195/ and http://en.wikipedia.org/wiki/Hilbert_curve see
  * Hacker's Delight (Henry S. Warren, Jr. 2002), sec 14-2, fig 14-5
  * 
- * output is a 4096x4096 PNG file */
+ * output is a 4096x4096 PNG file
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

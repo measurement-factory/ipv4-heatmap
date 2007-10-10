@@ -1,5 +1,12 @@
 /*
- * Draws text on the image
+ * IPv4 Heatmap
+ * (C) 2007 The Measurement Factory, Inc
+ * Licensed under the GPL, version 2.0
+ * http://maps.measurement-factory.com/
+ */
+
+/*
+ * Place annotations (text) on the image.
  */
 
 #include <stdio.h>

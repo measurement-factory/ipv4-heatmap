@@ -1,3 +1,10 @@
+/*
+ * IPv4 Heatmap
+ * (C) 2007 The Measurement Factory, Inc
+ * Licensed under the GPL, version 2.0
+ * http://maps.measurement-factory.com/
+ */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
