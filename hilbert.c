@@ -2,6 +2,8 @@
 /*
  * Figure 14-5 from Hacker's Delight (by Henry S. Warren, Jr. published by
  * Addison Wesley, 2002)
+ *
+ * See also http://www.hackersdelight.org/permissions.htm
  */
 
 void

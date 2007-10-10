@@ -8,7 +8,8 @@ OBJS=\
 	annotate.o \
 	shade.o \
 	legend.o \
-	bbox.o
+	bbox.o \
+	text.o
 
 all: ipv4-heatmap
 

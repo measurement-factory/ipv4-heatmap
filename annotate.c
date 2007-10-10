@@ -21,58 +21,9 @@ extern gdImagePtr image;
 extern const char *font_file_or_name;
 int annotateColor = -1;
 
-
-/*
- * Draws 'text' inside the bbox bounding box with color color.
- * The text is sized to be as large as possible and still
- * fit within the box.
- *
- * If the optional 'text2' is given, then it is drawn below
- * the first text, always in a 12-point size.  This is mainly
- * to print the CIDR prefix values underneath their owner names
- * in each /8 box.
- */
-void
-annotate_text(const char *text, const char *text2, bbox box, int color)
-{
-    double sz;
-    int brect[8];
-    char *errmsg;
-    int tw, th;
-    for (sz = 128.0; sz > 6.0; sz *= 0.9) {
-	errmsg = gdImageStringFT(NULL, &brect[0], 0,
-	    (char *)font_file_or_name,
-	    sz, 0.0, 0, 0, (char *)text);
-	if (NULL != errmsg)
-	    errx(1, errmsg);
-	tw = brect[2] - brect[0];
-	th = brect[3] - brect[5];
-	if (tw > ((box.xmax - box.xmin) * 95 / 100))
-	    continue;
-	if (th > ((box.ymax - box.ymin) * 95 / 100))
-	    continue;
-	gdImageStringFT(image, &brect[0], color,
-	    (char *)font_file_or_name, sz, 0.0,
-	    ((box.xmin + box.xmax) / 2) - (tw / 2),
-	    ((box.ymin + box.ymax) / 2) + (th / 2),
-	    (char *)text);
-	break;
-    }
-    if (NULL == text2)
-	return;
-
-    sz = 12.0;
-    errmsg = gdImageStringFT(NULL, &brect[0], 0,
-	(char *)font_file_or_name,
-	sz, 0.0, 0, 0, (char *)text2);
-    tw = brect[2] - brect[0];
-    /* don't update th, we need the previous value */
-    gdImageStringFT(image, &brect[0], color,
-	(char *)font_file_or_name, sz, 0.0,
-	((box.xmin + box.xmax) / 2) - (tw / 2),
-	((box.ymin + box.ymax) / 2) + (th / 2) + (sz * 2),
-	(char *)text2);
-}
+extern void text_in_bbox(const char *text, bbox box, int color, double maxsize);
+extern int _text_last_height;
+extern double _text_last_sz;
 
 /*
  * Calculate the bounding box, draw an outline of the box,
@@ -82,8 +33,13 @@ void
 annotate_cidr(const char *cidr, const char *label)
 {
     bbox box = bbox_from_cidr(cidr);
+    bbox box2;
     bbox_draw_outline(box, image, annotateColor);
-    annotate_text(label, cidr, box, annotateColor);
+    text_in_bbox(label, box, annotateColor, 128.0);
+    box2 = box;
+    box2.ymin = (box.ymin+box.ymax)/2 + (int)(_text_last_sz/2) + 6;
+    box2.ymax = box2.ymin + 24;
+    text_in_bbox(cidr, box2, annotateColor, 12.0);
 }
 
 /*

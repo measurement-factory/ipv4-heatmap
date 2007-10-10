@@ -71,7 +71,15 @@ void
 initialize(void)
 {
     int i;
-    image = gdImageCreateTrueColor(4096, 4096);
+    int w = 4096;
+    int h = 4096;
+    if (NULL == title)
+	(void) 0;		/* no legend */
+    else if (0 == strcmp(legend_orient, "horiz"))
+	h += 1024;
+    else
+	w += 1024;
+    image = gdImageCreateTrueColor(w, h);
     /* first allocated color becomes background by default */
     if (reverse_flag)
 	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
@@ -263,8 +271,8 @@ main(int argc, char *argv[])
 	shade_file(shadings);
     if (annotations)
 	annotate_file(annotations);
-    save();
     if (title)
 	legend(title, legend_orient);
+    save();
     return 0;
 }

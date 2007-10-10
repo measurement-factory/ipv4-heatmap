@@ -20,7 +20,7 @@ bbox AAA;
 bbox BBB;
 bbox CCC;
 
-static gdImagePtr image;
+extern gdImagePtr image;
 static int textColor;
 
 extern int debug;
@@ -34,56 +34,7 @@ extern const char *legend_keyfile;
 extern int reverse_flag;
 extern double log_A;
 extern double log_C;
-
-int *
-legend_text_width_height(const char *text, double sz, int *w, int *h)
-{
-    static int brect[8];
-    char *errmsg = gdImageStringFT(NULL, &brect[0], 0,
-	    (char *)font_file_or_name,
-	    sz, 0.0, 0, 0, (char *)text);
-	if (NULL != errmsg)
-	    errx(1, errmsg);
-	*w = brect[2] - brect[0];
-	*h = brect[3] - brect[5];
-	return &brect[0];
-}
-
-
-/*
- * XXX too much like annotate_text().  need to merge them.
- */
-void
-legend_text(const char *text, bbox box)
-{
-    double sz;
-    int tw, th;
-    int oneline_h;
-    int *brectPtr;
-    char *text_copy = calloc(1, strlen(text)+1);
-    const char *s;
-    char *d;
-    for (s=text, d=text_copy; *s; s++, d++) {
-	if (*s == '\\' && *(s+1) == 'n')
-		s++, *d = '\n';
-	else
-		*d = *s;
-    }
-    for (sz = 128.0; sz > 6.0; sz *= 0.9) {
-	(void) legend_text_width_height("ABCD", sz, &tw, &oneline_h);
-	brectPtr = legend_text_width_height(text_copy, sz, &tw, &th);
-	if (tw > ((box.xmax - box.xmin) * 95 / 100))
-	    continue;
-	if (th > ((box.ymax - box.ymin) * 95 / 100))
-	    continue;
-	gdImageStringFT(image, brectPtr, textColor,
-	    (char *)font_file_or_name, sz, 0.0,
-	    ((box.xmin + box.xmax) / 2) - (tw / 2),
-	    ((box.ymin + box.ymax) / 2) - (th / 2) + oneline_h,
-	    text_copy);
-	break;
-    }
-}
+extern void text_in_bbox(const char *text, bbox box, int color, double maxsize);
 
 
 /*
@@ -109,7 +60,7 @@ legend_prefixes(void)
 	CCC.ymin,
 	CCC.xmax,
 	CCC.ymin + 128);
-    legend_text("Prefix Sizes", tbox);
+    text_in_bbox("Prefix Sizes", tbox, textColor, 0.0);
     samplebox_ctr_x = CCC.xmin + 256;
     samplebox_ctr_y = tbox.ymax + 192;
     while (sample_cidr[i]) {
@@ -133,7 +84,7 @@ legend_prefixes(void)
 	tbox.ymin = ((box.ymin + box.ymax) / 2) - 30;
 	tbox.ymax = ((box.ymin + box.ymax) / 2) + 30;
 	snprintf(tstr, 10, "= %s", strchr(sample_cidr[i], '/'));
-	legend_text(tstr, tbox);
+	text_in_bbox(tstr, tbox, textColor, 0.0);
 	samplebox_ctr_y += MAX(hh + 64, 64);
 	i++;
     }
@@ -150,7 +101,7 @@ legend_utilization(const char *orient)
 	BBB.ymin,
 	BBB.xmax,
 	BBB.ymin + 128);
-    legend_text(legend_scale_name, tbox);
+    text_in_bbox(legend_scale_name, tbox, textColor, 0.0);
     for (i = 0; i < num_colors; i++) {
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
@@ -191,7 +142,7 @@ legend_utilization(const char *orient)
 		BBB.xmin + 256 + (i * 2.55 * 4) + 256,
 		BBB.ymin + 442 + 72);
 	}
-	legend_text(tmp, tbox);
+	text_in_bbox(tmp, tbox, textColor, 0.0);
     }
 }
 
@@ -220,7 +171,7 @@ legend_key(const char *orient, const char *file)
 	BBB.ymin + 128);
     if (NULL != fgets(buf, 128, fp)) {
 	strtok(buf, "\r\n");
-    	legend_text(buf, tbox);
+    	text_in_bbox(buf, tbox, textColor, 0.0);
     }
     while (NULL != fgets(buf, 128, fp)) {
 	char *rgbhex;
@@ -262,38 +213,18 @@ legend_key(const char *orient, const char *file)
 	    tbox.xmin, tbox.ymin, tbox.xmax, tbox.ymax,
 	    color);
 	if (NULL != (label = strtok(NULL, " \t\r\n")))
-		legend_text(label, sbox);
+		text_in_bbox(label, sbox, textColor, 0.0);
 	i++;
     }
-
-#if 0
-    for (i = 0; i <= 100; i += pct_inc) {
-	char tmp[10];
-	snprintf(tmp, 10, "%d%%", i);
-	if (0 == strcmp(orient, "vert")) {
-	    BBOX_SET(tbox,
-		BBB.xmin + 256,
-		BBB.ymin + 256 + ((num_colors - (i * 2.55) - 1) * 4) - 30,
-		BBB.xmin + 512,
-		BBB.ymin + 256 + ((num_colors - (i * 2.55) - 1) * 4) + 30);
-	} else {
-	    BBOX_SET(tbox,
-		BBB.xmin + 256 + (i * 2.55 * 4) - 256,
-		BBB.ymin + 442,
-		BBB.xmin + 256 + (i * 2.55 * 4) + 256,
-		BBB.ymin + 442 + 72);
-	}
-	legend_text(tmp, tbox);
-    }
-#endif
 }
 
 static void
 legend_title(const char *text)
 {
-    legend_text(text, AAA);
+    text_in_bbox(text, AAA, textColor, 0.0);
 }
 
+#if SEPARATE_LEGEND_FILE
 static void
 legend_save(const char *orient)
 {
@@ -306,14 +237,16 @@ legend_save(const char *orient)
     gdImageDestroy(image);
     image = NULL;
 }
+#endif
 
 /*
- * */
+ * Render a legend
+ */
 void
 legend(const char *title, const char *orient)
 {
     if (0 == strcmp(orient, "vert")) {
-	BBOX_SET(legend_bb, 0, 0, 1024, 4096);
+	BBOX_SET(legend_bb, 4096, 0, 1024, 4096);
 	BBOX_SET(AAA,
 	    legend_bb.xmin,
 	    legend_bb.ymin,
@@ -330,7 +263,7 @@ legend(const char *title, const char *orient)
 	    BBB.xmax,
 	    BBB.ymax + 128 + 1024);
     } else if (0 == strcmp(orient, "horiz")) {
-	BBOX_SET(legend_bb, 0, 0, 4096, 1024);
+	BBOX_SET(legend_bb, 0, 4096, 4096, 1024);
 	BBOX_SET(AAA,
 	    legend_bb.xmin,
 	    legend_bb.ymin,
@@ -350,9 +283,11 @@ legend(const char *title, const char *orient)
 	errx(1, "bad orientation: %s\n", orient);
     }
 
+#if SEPARATE_LEGEND_FILE
     image = gdImageCreateTrueColor(legend_bb.xmax, legend_bb.ymax);
     if (reverse_flag)
 	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
+#endif
     if (!reverse_flag) 
 	textColor = gdImageColorAllocate(image, 255, 255, 255);
     else
@@ -381,5 +316,7 @@ legend(const char *title, const char *orient)
 	legend_key(orient, legend_keyfile);
     if (legend_prefixes_flag)
 	legend_prefixes();
+#if SEPARATE_LEGEND_FILE
     legend_save(orient);
+#endif
 }
