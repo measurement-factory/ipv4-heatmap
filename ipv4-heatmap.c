@@ -24,6 +24,7 @@
 
 
 #include <gd.h>
+#include <gdfonts.h>
 
 #include "hsv2rgb.h"
 
@@ -179,6 +180,16 @@ paint(void)
 }
 
 void
+watermark(void)
+{
+    int color = gdImageColorAllocateAlpha(image, 127, 127, 127, 63);
+    gdImageStringUp(image,
+	gdFontGetSmall(),
+	4096 - 20, 220,
+	"IPv4 Heatmap / Measurement Factory", color);
+}
+
+void
 save(void)
 {
     FILE *pngout = fopen(savename, "wb");
@@ -270,6 +281,7 @@ main(int argc, char *argv[])
 	annotate_file(annotations);
     if (title)
 	legend(title, legend_orient);
+    watermark();
     save();
     return 0;
 }
