@@ -211,20 +211,25 @@ void
 usage(const char *argv0)
 {
     const char *t = strrchr(argv0, '/');
-    fprintf(stderr, "usage: %s [options] < iplist\n", t ? t + 1 : argv0);
-    fprintf(stderr, "\t-A float   logarithmic scaling, min value\n");
-    fprintf(stderr, "\t-B float   logarithmic scaling, max value\n");
-    fprintf(stderr, "\t-a file    annotations file\n");
-    fprintf(stderr, "\t-d         increase debugging\n");
-    fprintf(stderr, "\t-f font    fontconfig name or .ttf file\n");
-    fprintf(stderr, "\t-h         draw horizontal legend instead\n");
-    fprintf(stderr, "\t-k file    key file for legend\n");
-    fprintf(stderr, "\t-o file    output filename\n");
-    fprintf(stderr, "\t-p         show size of prefixes in legend\n");
-    fprintf(stderr, "\t-r         reverse; white background, black text\n");
-    fprintf(stderr, "\t-s file    shading file\n");
-    fprintf(stderr, "\t-t str     map title\n");
-    fprintf(stderr, "\t-u str     scale title in legend\n");
+    printf("IPv4 Heatmap\n");
+    printf("(C) 2007 The Measurement Factory, Inc\n");
+    printf("Licensed under the GPL, version 2.0\n");
+    printf("http://maps.measurement-factory.com/\n");
+    printf("\n");
+    printf("usage: %s [options] < iplist\n", t ? t + 1 : argv0);
+    printf("\t-A float   logarithmic scaling, min value\n");
+    printf("\t-B float   logarithmic scaling, max value\n");
+    printf("\t-a file    annotations file\n");
+    printf("\t-d         increase debugging\n");
+    printf("\t-f font    fontconfig name or .ttf file\n");
+    printf("\t-h         draw horizontal legend instead\n");
+    printf("\t-k file    key file for legend\n");
+    printf("\t-o file    output filename\n");
+    printf("\t-p         show size of prefixes in legend\n");
+    printf("\t-r         reverse; white background, black text\n");
+    printf("\t-s file    shading file\n");
+    printf("\t-t str     map title\n");
+    printf("\t-u str     scale title in legend\n");
     exit(1);
 }
 
