@@ -122,6 +122,7 @@ paint(void)
 	unsigned int x;
 	unsigned int y;
 	int color = -1;
+	int k;
 
 	/*
 	 * First field is an IP address.  We also accept its integer notation
@@ -147,20 +148,14 @@ paint(void)
 	 */
 	t = strtok(NULL, " \t\r\n");
 	if (NULL != t) {
-	    unsigned int k = atoi(t);
+	    k = atoi(t);
 	    if (0.0 != log_A) {
 		/*
 		 * apply logarithmic stretching
 		 */
 		k = (int)((log_C * log((double)k / log_A)) + 0.5);
 	    }
-	    if (k < 0)
-		k = 0;
-	    if (k >= NUM_DATA_COLORS)
-		k = NUM_DATA_COLORS - 1;
-	    color = colors[k];
 	} else {
-	    unsigned int k;
 	    color = gdImageGetPixel(image, x, y);
 	    if (debug)
 		fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
@@ -176,11 +171,16 @@ paint(void)
 		    break;
 		}
 	    }
-	    if (k == NUM_DATA_COLORS)
+	    if (k == NUM_DATA_COLORS)	/* not found */
 		k = 0;
-	    color = colors[k + 1];
+	    k++;
 #endif
 	}
+	    if (k < 0)
+		k = 0;
+	    if (k >= NUM_DATA_COLORS)
+		k = NUM_DATA_COLORS - 1;
+	    color = colors[k];
 
 	gdImageSetPixel(image, x, y, color);
 	line++;
