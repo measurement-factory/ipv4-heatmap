@@ -195,7 +195,7 @@ watermark(void)
     gdImageStringUp(image,
 	gdFontGetSmall(),
 	4096 - 20, 220,
-	"IPv4 Heatmap / Measurement Factory", color);
+	(u_char *) "IPv4 Heatmap / Measurement Factory", color);
 }
 
 void
