@@ -1,0 +1,148 @@
+.\" 
+.\"   IPv4 Heatmap
+.\"   (C) 2007 The Measurement Factory, Inc
+.\"   Licensed under the GPL, version 2.0
+.\"   http://maps.measurement-factory.com/
+.\"
+.Dd 10 October, 2007
+.Dt ipv4-heatmap 1
+.Os
+.Sh NAME
+.Nm ipv4-heatmap
+.Nd Create a map of IPv4 address data
+.Sh SYNOPSIS
+.Nm
+.Op Fl dhpr
+.Op Fl A Ar float
+.Op Fl B Ar float
+.Op Fl a Ar file
+.Op Fl f Ar font
+.Op Fl k Ar file
+.Op Fl o Ar file
+.Op Fl s Ar file
+.Op Fl t Ar string
+.Op Fl u Ar string
+< iplist
+.Sh DESCRIPTION
+.Nm
+is a program that generates a map of IPv4 address data using the
+space-filling Hilbert Curve.  Inspiration for
+.Nm
+comes from the xkcd comic (http://www.xkcd.org/195/).
+.Pp
+The output of
+.Nm
+is a 4096x4096 PNG image.
+Each pixel in the image represents a single /24 network.  The value
+of each pixel ranges from 0 to 255.  Typically, the pixel value
+represents the number of hosts within the /24 belonging to a
+dataset or having some property, such as being pingable or
+being the source of some traffic.
+.Pp
+Pixels are colored based on their value ranging from blue (1)
+to red (255), while black represents no data (0).
+.Pp
+The map may be annotated by placing transparent
+text labels over specific regions of address space.
+.Pp
+.Nm
+also supports shading of areas specified by CIDR netblocks.  This is
+useful to show reserved and other special address space, for example.
+.Pp
+.Nm
+can also add an optional legend to the map.
+.Pp
+.Nm
+uses the GD library (libgd) to create the map image.
+.Sh COMMAND LINE OPTIONS
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl A Ar logmin
+Input data will be scaled logarithmically such that
+input values less than or equal to
+.Pa logmin
+will be set to 1.
+.It Fl A Ar logmax
+Input data will be scaled logarithmically such that
+input values greater than or equal to
+.Pa logmax
+will be set to 255.
+.It Fl a Ar annotations
+The
+.Pa annotations
+file contains a list of annotations for the map.  See ANNOTATIONS below
+for the format of this file.
+.It Fl d
+increase debugging levels.
+.It Fl f Ar font
+Specifies the font to use for the legend and annotations.  If
+libgd was compiled with fontconfig support, then this can be a
+fontconfig string such as "Times-12:bold".  Otherwise, you can
+also specify the pathname to a True Type Font (.ttf) file.
+.It Fl h
+Attach a horizontal legend to the bottom of the map.  Note that
+the legend is drawn only if the
+.Fl t
+option is given.
+.It Fl k Ar keyfile
+Use
+.Pa keyfile
+to create the legend scale, rather than the built-in blue-to-red scale.
+.It Fl o Ar outfile
+Output file name.
+.It Fl p
+Include a section in the legend that shows the size of CIDR prefixes.
+Boxes and labels will be drawn to show the size of /8, /12, /16, /20, and /24
+prefixes.
+.It Fl r
+Reverse the background and foreground colors.
+.It Fl s Ar shades
+The
+.Ar shades
+file can be used to shade certain areas of the map with specific colors
+and transparency levels.  See SHADING below for the format of this file.
+.It Fl t Ar title
+Instructs
+.Nm
+to draw a legend for the map and place the
+.Ar title
+string in the top (or right) section.
+You may use "\\n" to create multi-line titles.  By default the legend
+will be drawn vertically and attached to the right side of the map.
+Use the
+.Fl h
+option to create a horizontal legend instead.
+.It Fl u Ar string
+Instructs
+.Nm
+to draw a scale in the legend showing the range of colors
+and their values.
+.Ar string
+will be placed above the scale.  Currently,
+.Nm
+always assumes the data represents some kind of utilization 
+and prints percentages from 0 to 100% next to the scale.
+.El
+.Sh INPUT MODES
+.Nm
+accepts three input modes:
+.Bl -enum
+.It
+Increment mode.
+.Pp
+In this mode, the input consists of IPv4 addresses only, one
+address per line.  Each address in the list increments the pixel
+value for the corresponding /24.
+If the input values are unique, then there is no risk of
+an overflow. XXX
+.It
+bbb
+.El
+.Sh ANNOTATIONS
+.Sh COPYRIGHT
+.Sh BUGS
+.Pp
+check for overflow/fencepost bug of 256 unique addrs in increment mode.
+.Pp
+check for 0 pixel values when input equals logmin in log mode
