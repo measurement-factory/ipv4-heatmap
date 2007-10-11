@@ -25,7 +25,7 @@
 < iplist
 .Sh DESCRIPTION
 .Nm
-is a program that generates a map of IPv4 address data using the
+is a program that generates a map of IPv4 address data using a
 space-filling Hilbert Curve.  Inspiration for
 .Nm
 comes from the xkcd comic (http://www.xkcd.org/195/).
@@ -174,5 +174,82 @@ k = 255 * --------------------
 .Ed
 .El
 .Sh ANNOTATIONS
+The annotations file consists of two TAB-separated fields.  The first field
+is a CIDR prefix, and the second is the annotation string.  The annotation string
+is rendered within
+the boundary of that prefix, centered both vertically and horizontally.  
+In addition, the CIDR prefix itself is also rendered just below the 
+annotation text in a 12-point font.
+.Pp
+The annotations file might look like this, for example:
+.Bd -literal -offset indent
+15.0.0.0/8      HP
+16.0.0.0/8      DEC
+17.0.0.0/8      Apple
+.Ed
+.Pp
+The
+.Nm
+source code distribution should include a file named iana-labels.txt,
+which is based on the list of IPv4 assignments made by IANA.
+.Pp
+The font can be selected with the
+.Fl f
+command line option.
+At this time, however, the text color and transparency are hard-coded in the
+.Nm
+program.
+.Sh SHADING
+Areas of the map can be "shaded" by using the
+.Fl s Ar shades
+option.  This was originally developed simply to highlight address space that
+is designated reserved or unallocated, but is also a useful way to
+render complex map data.  The
+.Ar shades
+file consists of three TAB-separated fields: prefix, color, and alpha value.
+.Pp
+The CIDR prefix specifies the area to be shaded.  The color should
+be specified has a hexadecimal value beginning with "0x".  The alpha value
+controls the transparency of the shaded area and is passed directly to
+the GD library functions.  An alpha value of 0 means full transparency, while
+a value of 127 means no transparency (full opacity).  Here is an example that
+shows RFC 1918 address space in a light purple color:
+.Bd -literal -offset indent
+10.0.0.0/8      0x7F7FFF        64
+172.16.0.0/12   0x7F7FFF        64
+192.168.0.0/16  0x7F7FFF        64
+.Ed
+.Sh HILBERT CURVE
+.Nm
+uses a 12th-order Hilbert Curve to represnet the entire IPv4 address
+space.  Locating a particular IP address along the curve can
+be confusing at first.  
+Here is what a 2nd-order Hilbert curve looks like:
+.Bd -literal -offset indent
+    0---1   14--15
+        |   |
+    3---2   13--12
+    |            |
+    4   7---8   11
+    |   |   |    |
+    5---6   9---10
+.Ed
+.Pp
+The best way to understand how the Hilbert Curve works is to try
+drawing your own!
 .Sh COPYRIGHT
+.Bd -literal -offset indent
+IPv4 Heatmap
+(C) 2007 The Measurement Factory, Inc
+Licensed under the GPL, version 2.0
+http://maps.measurement-factory.com/
+.Ed
+.Sh AUTHORS
+.Nm
+was written by Duane Wessels of The Measurement Factory, Inc.
 .Sh BUGS
+Can't draw IPv6 address maps.
+.Pp
+The legends don't look all that great.  You can use an image editing
+program like The Gimp to rearrange the legend and add better-looking
+text.
