@@ -98,7 +98,7 @@ legend_prefixes(void)
 }
 
 static void
-legend_utilization(const char *orient)
+legend_scale(const char *orient)
 {
     unsigned int i;
     bbox tbox;
@@ -317,7 +317,7 @@ legend(const char *title, const char *orient)
 
     legend_title(title);
     if (legend_scale_name)
-	legend_utilization(orient);
+	legend_scale(orient);
     if (legend_keyfile)
 	legend_key(orient, legend_keyfile);
     if (legend_prefixes_flag)
