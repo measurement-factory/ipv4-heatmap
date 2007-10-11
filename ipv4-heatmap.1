@@ -33,14 +33,16 @@ comes from the xkcd comic (http://www.xkcd.org/195/).
 The output of
 .Nm
 is a 4096x4096 PNG image.
-Each pixel in the image represents a single /24 network.  The value
-of each pixel ranges from 0 to 255.  Typically, the pixel value
+Each pixel in the image represents a single /24 network and is assigned
+one of 256 colors.  Typically, the pixel color
 represents the number of hosts within the /24 belonging to a
 dataset or having some property, such as being pingable or
 being the source of some traffic.
 .Pp
-Pixels are colored based on their value ranging from blue (1)
-to red (255), while black represents no data (0).
+Pixel colors range from blue (1 host) to red (256 hosts),
+while black represents no data (0 hosts).  Of course, the colors
+and pixel values may also be used to represent other properties of
+IPv4 addresses.
 .Pp
 The map may be annotated by placing transparent
 text labels over specific regions of address space.
@@ -90,7 +92,8 @@ Use
 .Pa keyfile
 to create the legend scale, rather than the built-in blue-to-red scale.
 .It Fl o Ar outfile
-Output file name.
+Output file name.  If none is given, the image is saved as map.png by
+default.
 .It Fl p
 Include a section in the legend that shows the size of CIDR prefixes.
 Boxes and labels will be drawn to show the size of /8, /12, /16, /20, and /24
@@ -134,15 +137,42 @@ Increment mode.
 In this mode, the input consists of IPv4 addresses only, one
 address per line.  Each address in the list increments the pixel
 value for the corresponding /24.
-If the input values are unique, then there is no risk of
-an overflow. XXX
+In this mode, repeated addresses may lead to false results because
+.Nm
+does not check for uniqueness of the input values.  It silently
+limits pixels to the maximum value.  The user should run the data
+through
+.Xr sort 1
+and
+.Xr uniq 1
+beforehand, if necessary.
 .It
-bbb
+Exact mode.
+.Pp
+In this mode, the input consists of two whitespace-separated fields:
+an IPv4 address and a color index.  The color index is an integer
+in the range 0--255.  Be careful with this mode because later
+addresses may overwrite earlier ones in the same /24.
+.It
+Logarithmic mode.
+.Pp
+Very similar to Exact mode, except that the second column is
+logarithmically scaled to calculate the color index.  In order to
+use this mode the input must have two fields, and the
+.Fl A Ar logmin
+and
+.Fl B Ar logmax
+command line options must be given.  Color index
+.Vt k
+is calculated from input value
+.Vt i
+according to this formula:
+.Bd -literal -offset indent
+            ln ( i / logmin)
+k = 255 * -------------------- 
+          ln (logmax / logmin)
+.Ed
 .El
 .Sh ANNOTATIONS
 .Sh COPYRIGHT
 .Sh BUGS
-.Pp
-check for overflow/fencepost bug of 256 unique addrs in increment mode.
-.Pp
-check for 0 pixel values when input equals logmin in log mode
