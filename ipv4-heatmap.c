@@ -37,6 +37,7 @@
 #include "hsv2rgb.h"
 
 #define NUM_DATA_COLORS 256
+#undef RELEASE_VER
 
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
@@ -211,7 +212,11 @@ void
 usage(const char *argv0)
 {
     const char *t = strrchr(argv0, '/');
-    printf("IPv4 Heatmap\n");
+    printf("IPv4 Heatmap"
+#ifdef RELEASE_VER
+	" (release " RELEASE_VER ")"
+#endif
+	"\n");
     printf("(C) 2007 The Measurement Factory, Inc\n");
     printf("Licensed under the GPL, version 2.0\n");
     printf("http://maps.measurement-factory.com/\n");
