@@ -1,7 +1,7 @@
 /*
  * IPv4 Heatmap
  * (C) 2007 The Measurement Factory, Inc
- * Licensed under the GPL, version 2.0
+ * Licensed under the GPL, version 2
  * http://maps.measurement-factory.com/
  */
 
@@ -218,7 +218,7 @@ usage(const char *argv0)
 #endif
 	"\n");
     printf("(C) 2007 The Measurement Factory, Inc\n");
-    printf("Licensed under the GPL, version 2.0\n");
+    printf("Licensed under the GPL, version 2\n");
     printf("http://maps.measurement-factory.com/\n");
     printf("\n");
     printf("usage: %s [options] < iplist\n", t ? t + 1 : argv0);
