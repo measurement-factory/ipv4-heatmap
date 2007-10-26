@@ -64,6 +64,7 @@ int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
 const char *legend_keyfile = NULL;
 const char *savename = "map.png";
+extern int annotateColor;
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -225,6 +226,7 @@ usage(const char *argv0)
     printf("\t-A float   logarithmic scaling, min value\n");
     printf("\t-B float   logarithmic scaling, max value\n");
     printf("\t-a file    annotations file\n");
+    printf("\t-c color   color of annotations (0xRRGGBB)\n");
     printf("\t-d         increase debugging\n");
     printf("\t-f font    fontconfig name or .ttf file\n");
     printf("\t-h         draw horizontal legend instead\n");
@@ -242,7 +244,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:df:hk:o:prs:t:u:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:o:prs:t:u:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -255,6 +257,9 @@ main(int argc, char *argv[])
 	    break;
 	case 'a':
 	    annotations = strdup(optarg);
+	    break;
+	case 'c':
+	    annotateColor = strtol(optarg, NULL, 16);
 	    break;
 	case 's':
 	    shadings = strdup(optarg);
