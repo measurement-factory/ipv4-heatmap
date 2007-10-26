@@ -177,12 +177,13 @@ k = 255 * --------------------
 .Ed
 .El
 .Sh ANNOTATIONS
-The annotations file consists of two TAB-separated fields.  The first field
+The annotations file consists of two or three TAB-separated fields.  The first field
 is a CIDR prefix, and the second is the annotation string.  The annotation string
 is rendered within
 the boundary of that prefix, centered both vertically and horizontally.  
-In addition, the CIDR prefix itself is also rendered just below the 
-annotation text in a 12-point font.
+The third field, if present, is also rendered just below the 
+annotation text in a fixed-size 12-point font.  If the third field is
+equal to the string "prefix" then the CIDR prefix (from field 1) is rendered instead.
 .Pp
 The annotations file might look like this, for example:
 .Bd -literal -offset indent

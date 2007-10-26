@@ -37,16 +37,19 @@ extern double _text_last_sz;
  * text.
  */
 void
-annotate_cidr(const char *cidr, const char *label)
+annotate_cidr(const char *cidr, const char *label, const char *sublabel)
 {
     bbox box = bbox_from_cidr(cidr);
-    bbox box2;
     bbox_draw_outline(box, image, annotateColor);
     text_in_bbox(label, box, annotateColor, 128.0);
-    box2 = box;
-    box2.ymin = (box.ymin + box.ymax) / 2 + (int)(_text_last_sz / 2) + 6;
-    box2.ymax = box2.ymin + 24;
-    text_in_bbox(cidr, box2, annotateColor, 12.0);
+    if (sublabel) {
+	bbox box2 = box;
+	box2.ymin = (box.ymin + box.ymax) / 2 + (int)(_text_last_sz / 2) + 6;
+	box2.ymax = box2.ymin + 24;
+	if (0 == strcmp(sublabel, "prefix"))
+	    sublabel = cidr;
+	text_in_bbox(sublabel, box2, annotateColor, 12.0);
+    }
 }
 
 /*
@@ -67,13 +70,15 @@ annotate_file(const char *fn)
     while (NULL != fgets(buf, 512, fp)) {
 	char *cidr;
 	char *label;
+	char *sublabel = NULL;
 	cidr = strtok(buf, "\t");
 	if (NULL == cidr)
 	    continue;
 	label = strtok(NULL, "\t\r\n");
 	if (NULL == label)
 	    continue;
-	annotate_cidr(cidr, label);
+	sublabel = strtok(NULL, "\t\r\n");
+	annotate_cidr(cidr, label, sublabel);
     }
     fclose(fp);
 }
