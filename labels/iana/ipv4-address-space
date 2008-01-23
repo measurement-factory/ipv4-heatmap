@@ -1,6 +1,6 @@
 Internet Protocol v4 Address Space
 
-(last updated 2007-10-28)
+(last updated 2008-01-22)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to
 various registries is listed here. Originally, all the IPv4 address
@@ -26,7 +26,7 @@ Block   Date     Registry - Purpose                  Notes or Reference
 011/8   May 93   DoD Intel Information Systems
 012/8   Jun 95   AT&T Bell Laboratories
 013/8   Sep 91   Xerox Corporation
-014/8   Jun 91   IANA - Public Data Network
+014/8   Jan 08   IANA - Reserved
 015/8   Jul 94   Hewlett-Packard Company
 016/8   Nov 94   Digital Equipment Corporation
 017/8   Jul 92   Apple Computer Inc.

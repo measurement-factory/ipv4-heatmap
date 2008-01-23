@@ -12,7 +12,7 @@
 11.0.0.0/8	DoD Intel Information Systems
 12.0.0.0/8	AT&T
 13.0.0.0/8	Xerox
-14.0.0.0/8	Public Data Network
+14.0.0.0/8	Reserved
 15.0.0.0/8	HP
 16.0.0.0/8	DEC
 17.0.0.0/8	Apple
