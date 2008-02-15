@@ -1,6 +1,6 @@
 Internet Protocol v4 Address Space
 
-(last updated 2008-01-22)
+(last updated 2008-02-14)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to
 various registries is listed here. Originally, all the IPv4 address
@@ -185,8 +185,8 @@ Block   Date     Registry - Purpose                  Notes or Reference
 170/8   May 93   Various Registries
 171/8   May 93   Various Registries
 172/8   May 93   Various Registries
-173/8   Apr 03   IANA - Reserved
-174/8   Apr 03   IANA - Reserved
+173/8   Feb 08   ARIN                                (whois.arin.net)
+174/8   Feb 08   ARIN                                (whois.arin.net)
 175/8   Apr 03   IANA - Reserved
 176/8   Apr 03   IANA - Reserved
 177/8   Apr 03   IANA - Reserved

@@ -79,8 +79,9 @@
 160.0.0.0/5	Various Registries
 168.0.0.0/6	Various Registries
 172.0.0.0/8	Various Registries
-173.0.0.0/8	Unallocated
-174.0.0.0/7	Unallocated
+173.0.0.0/8	ARIN
+174.0.0.0/8	ARIN
+175.0.0.0/8	Unallocated
 176.0.0.0/5	Unallocated
 184.0.0.0/7	Unallocated
 186.0.0.0/7	LACNIC
