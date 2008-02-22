@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-my %M = qw (Jan 1 Feb 2 Mar 3 Apr 4 May 5 Jun 6 Jul 7 Aug 8 Sep 8 Oct 10 Nov 11 Dec 12);
-
 # input is http://www.iana.org/assignments/ipv4-address-space
 # output is the same info, but in a better format
 
@@ -20,15 +18,29 @@ my $last_desc = undef;
 
 while (<>) {
         chomp;
-	next unless (/^(\d\d\d)\/8\s+(\w\w\w) (\d\d)\s+(.*)/);
-	my $block = $1;
-	my $month = $2;
-	my $year = $3;
-	my $desc = $4;
+	my $block;
+	my $month;
+	my $year;
+	my $desc;
+	if (/^(\d\d\d)\/8\s+(.*)\s+(\d\d\d\d)-(\d\d)/) {
+		$block = $1;
+		$desc = $2;
+		$year = $3;
+		$month = $4;
+	} elsif (/^(\d\d\d)\/8\s+(.*)\s+UNALLOCATED/) {
+		$block = $1;
+		$desc = $2;
+		$desc =~ s/\s+$//g;
+		$desc .= " - Unallocated";
+		$year = (gmtime(time))[5];
+		$month = (gmtime(time))[4];
+	} else {
+		next;
+	}
 
 	$year += $year < 70 ? 2000 : 1900;
 
-	my $sdate = $year * 10000 + $M{$month} * 100;
+	my $sdate = $year * 10000 + $month * 100;
 
 	# Clean up descriptions
 	$desc =~ s/\s+$//g;
@@ -52,11 +64,13 @@ while (<>) {
 	$desc =~ s/Halliburton Company/Halliburton/;
 	$desc =~ s/MERIT Computer Network/Merit/;
 	$desc =~ s/Performance Systems International/PSI/;
-	$desc =~ s/Eli Lily and Company/Eli Lily/;
+	$desc =~ s/Eli Lily \& Company/Eli Lily/;
 	$desc =~ s/Interop Show Network/Interop/;
 	$desc =~ s/Prudential Securities Inc\./Prudential/;
 	$desc =~ s/DoD Network Information Center/DoD NIC/;
-	$desc =~ s/U\.S\. Postal Service/USPS/;
+	$desc =~ s/US Postal Service/USPS/;
+
+	$desc = "Legacy ($1)" if ($desc =~ /^Administered by (\w+)$/);
 
 	$desc = 'Reserved' if ($when && $sdate > $when);
 
