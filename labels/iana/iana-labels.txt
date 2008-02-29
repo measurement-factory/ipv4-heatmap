@@ -75,65 +75,26 @@
 124.0.0.0/7	APNIC
 126.0.0.0/8	APNIC
 127.0.0.0/8	Loopback
-128.0.0.0/8	Legacy (RIPE)
-129.0.0.0/8	Legacy (AfriNIC)
-130.0.0.0/8	Legacy (RIPE)
-131.0.0.0/8	Legacy (LACNIC)
-132.0.0.0/8	Legacy (LACNIC)
-133.0.0.0/8	Legacy (APNIC)
-134.0.0.0/8	Legacy (RIPE)
-135.0.0.0/8	Legacy (ARIN)
-136.0.0.0/8	Legacy (ARIN)
-137.0.0.0/8	Legacy (AfriNIC)
-138.0.0.0/8	Legacy (LACNIC)
-139.0.0.0/8	Legacy (APNIC)
-140.0.0.0/8	Legacy (APNIC)
-141.0.0.0/8	Legacy (RIPE)
-142.0.0.0/8	Legacy (ARIN)
-143.0.0.0/8	Legacy (LACNIC)
-144.0.0.0/8	Legacy (APNIC)
-145.0.0.0/8	Legacy (RIPE)
-146.0.0.0/8	Legacy (RIPE)
-147.0.0.0/8	Legacy (ARIN)
-148.0.0.0/8	Legacy (LACNIC)
-149.0.0.0/8	Legacy (RIPE)
-150.0.0.0/8	Legacy (APNIC)
-151.0.0.0/8	Legacy (RIPE)
-152.0.0.0/8	Legacy (LACNIC)
-153.0.0.0/8	Legacy (APNIC)
-154.0.0.0/7	Legacy (AfriNIC)
-156.0.0.0/8	Legacy (AfriNIC)
-157.0.0.0/8	Legacy (APNIC)
-158.0.0.0/7	Legacy (RIPE)
-160.0.0.0/8	Legacy (AfriNIC)
-161.0.0.0/8	Legacy (LACNIC)
-162.0.0.0/8	Legacy (ARIN)
-163.0.0.0/8	Legacy (APNIC)
-164.0.0.0/8	Legacy (RIPE)
-165.0.0.0/8	Legacy (AfriNIC)
-166.0.0.0/8	Legacy (ARIN)
-167.0.0.0/8	Legacy (LACNIC)
-168.0.0.0/8	Legacy (LACNIC)
-169.0.0.0/8	Legacy (AfriNIC)
-170.0.0.0/8	Legacy (LACNIC)
-171.0.0.0/8	Legacy (APNIC)
-172.0.0.0/8	Legacy (ARIN)
+128.0.0.0/3	Various Registries
+160.0.0.0/5	Various Registries
+168.0.0.0/6	Various Registries
+172.0.0.0/8	Various Registries
 173.0.0.0/8	ARIN
 174.0.0.0/8	ARIN
 175.0.0.0/8	Unallocated
 176.0.0.0/5	Unallocated
 184.0.0.0/7	Unallocated
 186.0.0.0/7	LACNIC
-188.0.0.0/8	Legacy (RIPE)
+188.0.0.0/8	Various Registries
 189.0.0.0/8	LACNIC
 190.0.0.0/8	LACNIC
-191.0.0.0/8	Legacy (LACNIC)
-192.0.0.0/8	Legacy (ARIN)
+191.0.0.0/8	Various Registries
+192.0.0.0/8	Various Registries
 193.0.0.0/8	RIPE
 194.0.0.0/7	RIPE
-196.0.0.0/8	Legacy (AfriNIC)
+196.0.0.0/8	Various Registries
 197.0.0.0/8	Unallocated
-198.0.0.0/8	Legacy (ARIN)
+198.0.0.0/8	Various Registries
 199.0.0.0/8	ARIN
 200.0.0.0/7	LACNIC
 202.0.0.0/7	APNIC
