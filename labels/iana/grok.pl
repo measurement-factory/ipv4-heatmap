@@ -38,8 +38,6 @@ while (<>) {
 		next;
 	}
 
-	$year += $year < 70 ? 2000 : 1900;
-
 	my $sdate = $year * 10000 + $month * 100;
 
 	# Clean up descriptions
