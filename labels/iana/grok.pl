@@ -68,7 +68,8 @@ while (<>) {
 	$desc =~ s/DoD Network Information Center/DoD NIC/;
 	$desc =~ s/US Postal Service/USPS/;
 
-	$desc = "Legacy ($1)" if ($desc =~ /^Administered by (\w+)$/);
+	#$desc = "Legacy ($1)" if ($desc =~ /^Administered by (\w+)$/);
+	$desc = "Various Registries" if ($desc =~ /^Administered by (\w+)$/ && /LEGACY/);
 
 	$desc = 'Reserved' if ($when && $sdate > $when);
 
