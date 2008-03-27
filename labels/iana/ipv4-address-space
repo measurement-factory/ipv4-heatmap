@@ -1,6 +1,6 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2008-02-14)
+(last updated 2008-03-27)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -139,49 +139,49 @@ Prefix  Designation                          Date      Whois               Statu
 125/8   APNIC                                2005-01   whois.apnic.net     ALLOCATED          
 126/8   APNIC                                2005-01   whois.apnic.net     ALLOCATED          
 127/8   IANA - Loopback                      1981-09                       RESERVED           [5]
-128/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-129/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-130/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-131/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-132/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-133/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
-134/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
+128/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+129/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+130/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+131/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+132/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+133/8   Administered by APNIC                1997-03   whois.apnic.net     LEGACY             
+134/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 135/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 136/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-137/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-138/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-139/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
-140/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
+137/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+138/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+139/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+140/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 141/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
 142/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-143/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-144/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
+143/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+144/8   Administered by ARIN                 1993-05   whois.arin.net     LEGACY             
 145/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-146/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
+146/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 147/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-148/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-149/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
+148/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+149/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 150/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
 151/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-152/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
+152/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 153/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
 154/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-155/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-156/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-157/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
-158/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-159/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-160/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
-161/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
+155/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+156/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+157/8   Administered by ARIN                 1993-05   whois.arin.net     LEGACY             
+158/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+159/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+160/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+161/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 162/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 163/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
-164/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
-165/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
+164/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+165/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 166/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-167/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-168/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
-169/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             [6]
-170/8   Administered by LACNIC               1993-05   whois.lacnic.net    LEGACY             
+167/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+168/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
+169/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             [6]
+170/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 171/8   Administered by APNIC                1993-05   whois.apnic.net     LEGACY             
 172/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             [7]
 173/8   ARIN                                 2008-02   whois.arin.net      ALLOCATED        
