@@ -1,6 +1,6 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2008-03-27)
+(last updated 2008-04-08)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -18,7 +18,7 @@ Prefix  Designation                          Date      Whois               Statu
 004/8   Level 3 Communications, Inc.         1992-12                       LEGACY             
 005/8   IANA                                                               UNALLOCATED        
 006/8   Army Information Systems Center      1994-02                       LEGACY             
-007/8   IANA                                 1995-04                       RESERVED        
+007/8   Administered by ARIN                 1995-04   whois.arin.net      LEGACY        
 008/8   Level 3 Communications, Inc.         1992-12                       LEGACY             
 009/8   IBM                                  1992-08                       LEGACY             
 010/8   IANA - Private Use                   1995-06                       RESERVED           [3]
@@ -155,7 +155,7 @@ Prefix  Designation                          Date      Whois               Statu
 141/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
 142/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 143/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-144/8   Administered by ARIN                 1993-05   whois.arin.net     LEGACY             
+144/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 145/8   Administered by RIPE NCC             1993-05   whois.ripe.net      LEGACY             
 146/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 147/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
@@ -168,7 +168,7 @@ Prefix  Designation                          Date      Whois               Statu
 154/8   Administered by AfriNIC              1993-05   whois.afrinic.net   LEGACY             
 155/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 156/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
-157/8   Administered by ARIN                 1993-05   whois.arin.net     LEGACY             
+157/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 158/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 159/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             
 160/8   Administered by ARIN                 1993-05   whois.arin.net      LEGACY             

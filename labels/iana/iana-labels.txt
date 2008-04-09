@@ -5,7 +5,7 @@
 4.0.0.0/8	Level3
 5.0.0.0/8	Unallocated
 6.0.0.0/8	US Army
-7.0.0.0/8	IANA
+7.0.0.0/8	Various Registries
 8.0.0.0/8	Level3
 9.0.0.0/8	IBM
 10.0.0.0/8	RFC1918
