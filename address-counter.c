@@ -24,10 +24,19 @@ item *
 find(struct in_addr a, int new)
 {
 	unsigned int b = ntohl(a.s_addr) >> 16;
+	item **I;
 	item *i;
-	for (i = array[b]; i; i=i->next)
-		if (i->a.s_addr == a.s_addr)
+	for (I = &array[b]; *I; I=&(*I)->next)
+		if ((*I)->a.s_addr == a.s_addr) {
+			i = *I;
+			if (i != array[b]) {
+				/* move to top */
+				*I = i->next;
+				i->next = array[b];
+				array[b] = i;
+			}
 			return i;
+		}
 	if (!new)
 		return NULL;
 	i = calloc(1, sizeof(*i));
