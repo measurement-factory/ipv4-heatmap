@@ -129,6 +129,20 @@ will be placed above the scale.  Currently,
 .Nm
 always assumes the data represents some kind of utilization 
 and prints percentages from 0 to 100% next to the scale.
+.It Fl y Ar cidr
+Specifies the CIDR netblock that should be rendered.  The default
+is to render the entire IPv4 space (0.0.0.0/0).  The "slash" value
+must be even so that the output image is square.
+The
+.Fl y
+and
+.Fl z
+options together determine the size of the output image.
+.It Fl z Ar bits
+Specifies the number of address space bits assigned to each pixel
+in the output image.  By default each pixel represents a /24 network,
+which corresponds to 8 host bits (i.e., 256 hosts).  Specify 0 here
+for one pixel per host address.
 .El
 .Sh INPUT MODES
 .Nm

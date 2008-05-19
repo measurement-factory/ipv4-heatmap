@@ -18,6 +18,7 @@
 #include <arpa/inet.h>
 
 #include <gd.h>
+#include "cidr.h"
 #include "bbox.h"
 
 #ifndef MIN
@@ -26,7 +27,6 @@
 #endif
 
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-unsigned int allones = ~0;
 extern int debug;
 extern int hilbert_curve_order;
 
@@ -116,30 +116,12 @@ bounding_box(unsigned int first, int slash)
 bbox
 bbox_from_cidr(const char *cidr)
 {
-    char cidr_copy[24];
-    char *t;
     int slash;
     unsigned int first;
     unsigned int last;
     bbox bbox;
+    cidr_parse(cidr, &first, &last, &slash);
     memset(&bbox, '\0', sizeof(bbox));
-    strncpy(cidr_copy, cidr, 24);
-    t = strchr(cidr_copy, '/');
-    if (NULL == t) {
-	warnx("missing / on CIDR '%s'\n", cidr_copy);
-	return bbox;
-    }
-    *t++ = '\0';
-    slash = atoi(t);
-    if (1 != inet_pton(AF_INET, cidr_copy, &first)) {
-	warnx("inet_pton failed on '%s'\n", cidr_copy);
-	return bbox;
-    }
-    first = ntohl(first);
-    if (slash < 32)
-	last = first | (allones >> slash);
-    else
-	last = first;
     bbox = bounding_box(first, slash);
     if (debug) {
 	char fstr[24];

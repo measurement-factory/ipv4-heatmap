@@ -14,7 +14,7 @@
  * http://xkcd.com/195/ and http://en.wikipedia.org/wiki/Hilbert_curve see
  * Hacker's Delight (Henry S. Warren, Jr. 2002), sec 14-2, fig 14-5
  * 
- * output is a 4096x4096 PNG file
+ * output is a squre PNG file
  */
 
 #include <stdio.h>
@@ -35,6 +35,7 @@
 #include <gdfonts.h>
 
 #include "hsv2rgb.h"
+#include "cidr.h"
 
 #define NUM_DATA_COLORS 256
 #undef RELEASE_VER
@@ -43,12 +44,6 @@ extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
 extern void legend(const char *, const char *orient);
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-
-/*
- * For now, the Hilbert curve order is hard-coded at 12.  To produce a
- * 4096x4096 image we need a 12th-order Hilbert curve.  That is, 2^12 = 4096.
- */
-int hilbert_curve_order = 12;
 
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
@@ -67,6 +62,17 @@ const char *savename = "map.png";
 extern int annotateColor;
 
 /*
+ * The default the Hilbert curve order is 12.  This gives a 4096x4096
+ * output image covering the entire space where each pixel represents
+ * a /24.
+ */
+int addr_space_bits_per_image = 32;	/* /0 */
+int addr_space_bits_per_pixel = 8;	/* /24 */
+int hilbert_curve_order;		/* calc'd after getopt() */
+unsigned int addr_space_first_addr = 0;
+unsigned int addr_space_last_addr = ~0;
+
+/*
  * if log_A and log_B are set, then the input data will be scaled
  * logarithmically such that log_A -> 0 and log_B -> 255. log_C is calculated
  * such that log_B -> 255.
@@ -79,14 +85,32 @@ void
 initialize(void)
 {
     int i;
-    int w = 4096;
-    int h = 4096;
+    int w;
+    int h;
+    hilbert_curve_order = (addr_space_bits_per_image - addr_space_bits_per_pixel) / 2;
+    w = 1<<hilbert_curve_order;
+    h = 1<<hilbert_curve_order;
     if (NULL == title)
 	(void)0;		/* no legend */
     else if (0 == strcmp(legend_orient, "horiz"))
-	h += 1024;
+	h += (h>>2);
     else
-	w += 1024;
+	w += (w>>2);
+    if (debug) {
+	struct in_addr a;
+	char buf[20];
+	fprintf(stderr, "addr_space_bits_per_image = %d\n", addr_space_bits_per_image);
+	fprintf(stderr, "addr_space_bits_per_pixel = %d\n", addr_space_bits_per_pixel);
+	fprintf(stderr, "hilbert_curve_order = %d\n", hilbert_curve_order);
+	a.s_addr = htonl(addr_space_first_addr);
+	inet_ntop(AF_INET, &a, buf, 20);
+	fprintf(stderr, "first_address = %s\n", buf);
+	a.s_addr = htonl(addr_space_last_addr);
+	inet_ntop(AF_INET, &a, buf, 20);
+	fprintf(stderr, "last = %s\n", buf);
+	fprintf(stderr, "image width = %d\n", w);
+	fprintf(stderr, "image height = %d\n", h);
+    }
     image = gdImageCreateTrueColor(w, h);
     /* first allocated color becomes background by default */
     if (reverse_flag)
@@ -134,14 +158,26 @@ paint(void)
 	if (NULL == t)
 	    continue;
 	if (strspn(t, "0123456789") == strlen(t))
-	    i = strtoul(t, NULL, 10) >> 8;
+	    i = strtoul(t, NULL, 10);
 	else if (1 == inet_pton(AF_INET, t, &i))
-	    i = ntohl(i) >> 8;
+	    i = ntohl(i);
 	else
 	    errx(1, "bad input on line %d: %s", line, t);
+
+	/*
+	 * See if the address fits inside the area we are rendering
+	 */
+	if (i < addr_space_first_addr)
+	    continue;
+	else if (i > addr_space_last_addr)
+	    continue;
+        else
+	    i -= addr_space_first_addr;
+
+	i >>= addr_space_bits_per_pixel;
 	hil_xy_from_s(i, hilbert_curve_order, &x, &y);
 	if (debug)
-	    fprintf(stderr, "%s => (%d,%d)\n", t, x, y);
+	    fprintf(stderr, "%s => %u => (%d,%d)\n", t, i, x, y);
 
 	/*
 	 * Second field is an optional value, which might also be
@@ -195,7 +231,7 @@ watermark(void)
     int color = gdImageColorAllocateAlpha(image, 127, 127, 127, 63);
     gdImageStringUp(image,
 	gdFontGetSmall(),
-	4096 - 20, 220,
+	gdImageSX(image) - 20, 220,
 	(u_char *) "IPv4 Heatmap / Measurement Factory", color);
 }
 
@@ -237,6 +273,8 @@ usage(const char *argv0)
     printf("\t-s file    shading file\n");
     printf("\t-t str     map title\n");
     printf("\t-u str     scale title in legend\n");
+    printf("\t-y cidr    address space to render\n");
+    printf("\t-z bits    address space bits per pixel\n");
     exit(1);
 }
 
@@ -244,7 +282,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:o:prs:t:u:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:o:prs:t:u:y:z:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -287,6 +325,20 @@ main(int argc, char *argv[])
 	    break;
 	case 'r':
 	    reverse_flag = 1;
+	    break;
+	case 'y':
+	    cidr_parse(optarg,
+		&addr_space_first_addr,
+		&addr_space_last_addr,
+		&addr_space_bits_per_image);
+	    addr_space_bits_per_image = 32 - addr_space_bits_per_image;
+	    if (1 == (addr_space_bits_per_image % 2))
+		errx(1, "Space to render must have even number of CIDR bits");
+	    break;
+	case 'z':
+	    addr_space_bits_per_pixel = strtol(optarg, NULL, 10);
+	    if (1 == (addr_space_bits_per_pixel % 2))
+		errx(1, "CIDR bits per pixel must be even");
 	    break;
 	default:
 	    usage(argv[0]);
