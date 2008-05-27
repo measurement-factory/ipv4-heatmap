@@ -68,9 +68,7 @@
 96.0.0.0/6	ARIN
 100.0.0.0/6	Unallocated
 104.0.0.0/5	Unallocated
-112.0.0.0/7	Unallocated
-114.0.0.0/7	APNIC
-116.0.0.0/6	APNIC
+112.0.0.0/5	APNIC
 120.0.0.0/6	APNIC
 124.0.0.0/7	APNIC
 126.0.0.0/8	APNIC
