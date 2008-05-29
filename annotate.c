@@ -40,6 +40,10 @@ void
 annotate_cidr(const char *cidr, const char *label, const char *sublabel)
 {
     bbox box = bbox_from_cidr(cidr);
+    if (box.xmin < 0) {
+	fprintf(stderr, "Warning: annotation %s is out of range for this image\n", cidr);
+	return;
+    }
     bbox_draw_outline(box, image, annotateColor);
     text_in_bbox(label, box, annotateColor, 128.0);
     if (sublabel) {

@@ -30,6 +30,9 @@ extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
 extern int hilbert_curve_order;
 extern int addr_space_bits_per_pixel;
+extern unsigned int addr_space_first_addr;
+extern unsigned int addr_space_last_addr;
+
 
 void
 bbox_draw_outline(bbox box, gdImagePtr image, int color)
@@ -122,6 +125,10 @@ bbox_from_cidr(const char *cidr)
     unsigned int last;
     bbox bbox;
     cidr_parse(cidr, &first, &last, &slash);
+    if (first < addr_space_first_addr || last > addr_space_last_addr) {
+	bbox.xmin = bbox.ymin = bbox.xmax = bbox.ymax = -1;
+	return bbox;
+    }
     memset(&bbox, '\0', sizeof(bbox));
     bbox = bounding_box(first, slash);
     if (debug) {
