@@ -14,6 +14,8 @@ ipv4-heatmap.c
 legend.c
 shade.c
 text.c
+cidr.h
+cidr.c
 labels/iana/iana-labels.txt
 labels/iana/ipv4-address-space
 labels/iana/reserved
