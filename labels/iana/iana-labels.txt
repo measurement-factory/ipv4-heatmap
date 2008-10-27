@@ -91,7 +91,7 @@
 193.0.0.0/8	RIPE
 194.0.0.0/7	RIPE
 196.0.0.0/8	Various Registries
-197.0.0.0/8	Unallocated
+197.0.0.0/8	AfriNIC
 198.0.0.0/8	Various Registries
 199.0.0.0/8	ARIN
 200.0.0.0/7	LACNIC
