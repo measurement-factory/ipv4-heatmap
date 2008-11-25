@@ -90,6 +90,15 @@ initialize(void)
     hilbert_curve_order = (addr_space_bits_per_image - addr_space_bits_per_pixel) / 2;
     w = 1<<hilbert_curve_order;
     h = 1<<hilbert_curve_order;
+    if (title && 4096 != w) {
+	warnx("Image width/height must be 4096 to render a legend.");
+	fprintf(stderr,
+		"\nIf you are using the -y or -z options, then your image size "
+		"may be smaller\n(or larger) than 4096.  The legend-rendering "
+		"code has a number of hard-coded\nparameters designed to work "
+		"with a 4096x4096 output image.\n");
+	exit(1);
+    }
     if (NULL == title)
 	(void)0;		/* no legend */
     else if (0 == strcmp(legend_orient, "horiz"))
