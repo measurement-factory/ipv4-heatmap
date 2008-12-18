@@ -1,6 +1,6 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2008-11-11)
+(last updated 2008-12-18)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -36,7 +36,7 @@ Prefix  Designation                          Date      Whois               Statu
 022/8   Defense Information Systems Agency   1993-05                       LEGACY             
 023/8   IANA                                                               UNALLOCATED        
 024/8   ARIN                                 2001-05   whois.arin.net      ALLOCATED          
-025/8   UK Ministry of Defence               1995-01                       LEGACY                 
+025/8   UK Ministry of Defence               1995-01   whois.ripe.net      LEGACY                 
 026/8   Defense Information Systems Agency   1995-05                       LEGACY             
 027/8   IANA                                                               UNALLOCATED        
 028/8   DSI-North                            1992-07                       LEGACY             
