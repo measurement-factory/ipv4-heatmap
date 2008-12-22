@@ -1,6 +1,6 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2008-12-18)
+(last updated 2008-12-22)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -119,7 +119,7 @@ Prefix  Designation                          Date      Whois               Statu
 105/8   IANA                                                               UNALLOCATED        
 106/8   IANA                                                               UNALLOCATED        
 107/8   IANA                                                               UNALLOCATED        
-108/8   IANA                                                               UNALLOCATED        
+108/8   ARIN                                 2008-12   whois.arin.net      ALLOCATED        
 109/8   IANA                                                               UNALLOCATED        
 110/8   APNIC                                2008-11   whois.apnic.net     ALLOCATED       
 111/8   APNIC                                2008-11   whois.apnic.net     ALLOCATED      
@@ -195,7 +195,7 @@ Prefix  Designation                          Date      Whois               Statu
 181/8   IANA                                                               UNALLOCATED        
 182/8   IANA                                                               UNALLOCATED        
 183/8   IANA                                                               UNALLOCATED        
-184/8   IANA                                                               UNALLOCATED        
+184/8   ARIN                                 2008-12   whois.arin.net      ALLOCATED         
 185/8   IANA                                                               UNALLOCATED        
 186/8   LACNIC                               2007-09   whois.lacnic.net    ALLOCATED        
 187/8   LACNIC                               2007-09   whois.lacnic.net    ALLOCATED        
