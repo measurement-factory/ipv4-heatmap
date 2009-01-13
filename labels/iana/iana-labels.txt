@@ -48,7 +48,7 @@
 48.0.0.0/8	Prudential
 49.0.0.0/8	Unallocated
 50.0.0.0/8	Unallocated
-51.0.0.0/8	Deparment of Social Security of UK
+51.0.0.0/8	UK Government Department for Work and Pensions
 52.0.0.0/8	E.I. duPont de Nemours and Co., Inc.
 53.0.0.0/8	Cap Debis CCS
 54.0.0.0/8	Merck and Co., Inc.
