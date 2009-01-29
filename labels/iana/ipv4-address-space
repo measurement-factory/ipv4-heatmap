@@ -1,13 +1,13 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2009-01-13)
+(last updated 2009-01-28)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
 address space were allocated to various other registries to manage for particular purposes or 
 regional areas of the world. RFC 1466 [RFC1466] documents most of these allocations.
 
-This registry is also available in XML and XHTML text formats:
+This registry is also available in XML and XHTML formats:
 
 http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml
 http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml
@@ -125,7 +125,7 @@ Prefix  Designation                                      Date      Whois        
 106/8   IANA                                                                           UNALLOCATED        
 107/8   IANA                                                                           UNALLOCATED        
 108/8   ARIN                                             2008-12   whois.arin.net      ALLOCATED        
-109/8   IANA                                                                           UNALLOCATED        
+109/8   RIPE NCC                                         2009-01   whois.ripe.net      ALLOCATED        
 110/8   APNIC                                            2008-11   whois.apnic.net     ALLOCATED       
 111/8   APNIC                                            2008-11   whois.apnic.net     ALLOCATED      
 112/8   APNIC                                            2008-05   whois.apnic.net     ALLOCATED        
@@ -194,7 +194,7 @@ Prefix  Designation                                      Date      Whois        
 175/8   IANA                                                                           UNALLOCATED        
 176/8   IANA                                                                           UNALLOCATED        
 177/8   IANA                                                                           UNALLOCATED        
-178/8   IANA                                                                           UNALLOCATED        
+178/8   RIPE NCC                                         2009-01   whois.ripe.net      ALLOCATED        
 179/8   IANA                                                                           UNALLOCATED        
 180/8   IANA                                                                           UNALLOCATED        
 181/8   IANA                                                                           UNALLOCATED        
