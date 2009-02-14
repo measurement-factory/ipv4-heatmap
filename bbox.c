@@ -26,9 +26,10 @@
 #define MAX(a,b) (a>b?a:b)
 #endif
 
-extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
+extern void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
 extern int hilbert_curve_order;
+extern int morton_flag;
 extern int addr_space_bits_per_pixel;
 extern unsigned int addr_space_first_addr;
 extern unsigned int addr_space_last_addr;
@@ -78,13 +79,15 @@ bounding_box(unsigned int first, int slash)
 {
     bbox box;
     unsigned int diag = 0xAAAAAAAA;
+    if (morton_flag)
+	diag = 0xFFFFFFFF;
     unsigned int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 
     if (slash > 31) {
 	/*
 	 * treat /32 as a special case
 	 */
-	hil_xy_from_s(first >> addr_space_bits_per_pixel, hilbert_curve_order, &x1, &y1);
+	xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
 	box.xmin = x1;
 	box.ymin = y1;
 	box.xmax = x1;
@@ -94,8 +97,8 @@ bounding_box(unsigned int first, int slash)
 	 * square
 	 */
 	diag >>= slash;
-	hil_xy_from_s(first >> addr_space_bits_per_pixel, hilbert_curve_order, &x1, &y1);
-	hil_xy_from_s((first + diag) >> addr_space_bits_per_pixel, hilbert_curve_order, &x2, &y2);
+	xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
+	xy_from_s((first + diag) >> 8, hilbert_curve_order, &x2, &y2);
 	box.xmin = MIN(x1, x2);
 	box.ymin = MIN(y1, y2);
 	box.xmax = MAX(x1, x2);

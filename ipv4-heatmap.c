@@ -44,7 +44,9 @@ extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
 extern void legend(const char *, const char *orient);
 extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
+extern void mor_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 
+void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp) = hil_xy_from_s;
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
@@ -57,6 +59,7 @@ const char *title = NULL;
 const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
+int morton_flag = 0;
 const char *legend_keyfile = NULL;
 const char *savename = "map.png";
 extern int annotateColor;
@@ -184,7 +187,7 @@ paint(void)
 	    i -= addr_space_first_addr;
 
 	i >>= addr_space_bits_per_pixel;
-	hil_xy_from_s(i, hilbert_curve_order, &x, &y);
+	xy_from_s(i, hilbert_curve_order, &x, &y);
 	if (debug)
 	    fprintf(stderr, "%s => %u => (%d,%d)\n", t, i, x, y);
 
@@ -276,6 +279,7 @@ usage(const char *argv0)
     printf("\t-f font    fontconfig name or .ttf file\n");
     printf("\t-h         draw horizontal legend instead\n");
     printf("\t-k file    key file for legend\n");
+    printf("\t-m         use morton order instead of hilbert\n");
     printf("\t-o file    output filename\n");
     printf("\t-p         show size of prefixes in legend\n");
     printf("\t-r         reverse; white background, black text\n");
@@ -291,7 +295,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:o:prs:t:u:y:z:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:mo:prs:t:u:y:z:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -323,6 +327,10 @@ main(int argc, char *argv[])
 	case 'o':
 	    savename = strdup(optarg);
 	    break;
+	case 'm':
+		morton_flag = 1;
+		xy_from_s = mor_xy_from_s;
+		break;
 	case 't':
 	    title = strdup(optarg);
 	    break;

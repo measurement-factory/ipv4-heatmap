@@ -12,7 +12,7 @@
 .Nd Create a map of IPv4 address data
 .Sh SYNOPSIS
 .Nm
-.Op Fl dhpr
+.Op Fl dhprm
 .Op Fl A Ar float
 .Op Fl B Ar float
 .Op Fl a Ar file
@@ -94,6 +94,8 @@ option is given.
 Use
 .Pa keyfile
 to create the legend scale, rather than the built-in blue-to-red scale.
+.It Fl m
+Use Morton (aka "Z") Curve ordering instead of Hilbert.
 .It Fl o Ar outfile
 Output file name.  If none is given, the image is saved as map.png by
 default.
@@ -265,6 +267,7 @@ http://maps.measurement-factory.com/
 .Sh AUTHORS
 .Nm
 was written by Duane Wessels of The Measurement Factory, Inc.
+With contributions from: Roy Arends of Nominet UK.
 .Sh BUGS
 Can't draw IPv6 address maps.
 .Pp
