@@ -20,6 +20,9 @@ labels/iana/iana-labels.txt
 labels/iana/ipv4-address-space
 labels/iana/reserved
 labels/iana/rfc1918.shades
+demos/ipv4-classful/classful.shade
+demos/ipv4-classful/Makefile
+demos/ipv4-classful/classful.annotations
 "
 
 if svn diff | grep . ; then
