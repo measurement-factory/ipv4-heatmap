@@ -8,6 +8,7 @@ annotate.c
 bbox.c
 bbox.h
 hilbert.c
+morton.c
 hsv2rgb.h
 ipv4-heatmap.1
 ipv4-heatmap.c
