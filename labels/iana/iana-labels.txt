@@ -40,7 +40,7 @@
 40.0.0.0/8	Eli Lily
 41.0.0.0/8	AfriNIC
 42.0.0.0/8	Unallocated
-43.0.0.0/8	Japan Inet
+43.0.0.0/8	Various Registries
 44.0.0.0/8	Amateur Radio Digital Communications
 45.0.0.0/8	Interop
 46.0.0.0/8	Unallocated

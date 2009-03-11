@@ -1,6 +1,6 @@
 IPv4 Global Unicast Address Assignments
 
-(last updated 2009-01-28)
+(last updated 2009-03-11)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -59,7 +59,7 @@ Prefix  Designation                                      Date      Whois        
 040/8   Eli Lily & Company                               1994-06                       LEGACY             
 041/8   AfriNIC                                          2005-04   whois.afrinic.net   ALLOCATED          
 042/8   IANA                                                                           UNALLOCATED       
-043/8   Japan Inet                                       1991-01                       LEGACY              
+043/8   Administered by APNIC                            1991-01                       LEGACY              
 044/8   Amateur Radio Digital Communications             1992-07                       LEGACY             
 045/8   Interop Show Network                             1995-01                       LEGACY             
 046/8   IANA                                                                           UNALLOCATED               
