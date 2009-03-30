@@ -31,6 +31,7 @@ int annotateColor = -1;
 extern void text_in_bbox(const char *text, bbox box, int color, double maxsize);
 extern int _text_last_height;
 extern double _text_last_sz;
+extern int reverse_flag;
 
 /*
  * Calculate the bounding box, draw an outline of the box, then render the
@@ -67,8 +68,12 @@ annotate_file(const char *fn)
     FILE *fp = fopen(fn, "r");
     if (NULL == fp)
 	err(1, fn);
-    if (annotateColor < 0)
-	annotateColor = gdImageColorAllocateAlpha(image, 255, 255, 255, FONT_ALPHA);
+    if (annotateColor < 0) {
+	if (reverse_flag)
+	    annotateColor = gdImageColorAllocateAlpha(image, 0, 0, 0, FONT_ALPHA);
+	else 
+	    annotateColor = gdImageColorAllocateAlpha(image, 255, 255, 255, FONT_ALPHA);
+    }
     if (!gdFTUseFontConfig(1))
 	warnx("fontconfig not available");
     while (NULL != fgets(buf, 512, fp)) {
