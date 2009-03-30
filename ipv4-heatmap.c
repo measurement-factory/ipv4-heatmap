@@ -125,7 +125,7 @@ initialize(void)
     }
     image = gdImageCreateTrueColor(w, h);
     if (image == NULL)
-	errx(1, "gdImageCreateTrueColor returned NULL for w %d h %d\n", w, h);
+	err(1, "gdImageCreateTrueColor(w=%d, h=%d)", w, h);
     /* first allocated color becomes background by default */
     if (reverse_flag)
 	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
