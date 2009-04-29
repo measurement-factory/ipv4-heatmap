@@ -86,7 +86,10 @@
 176.0.0.0/7	Unallocated
 178.0.0.0/8	RIPE
 179.0.0.0/8	Unallocated
-180.0.0.0/6	Unallocated
+180.0.0.0/8	APNIC
+181.0.0.0/8	Unallocated
+182.0.0.0/8	Unallocated
+183.0.0.0/8	APNIC
 184.0.0.0/8	ARIN
 185.0.0.0/8	Unallocated
 186.0.0.0/7	LACNIC
