@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-08-03)
+(last updated 2009-09-17)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -18,7 +18,7 @@ Prefix  Designation                                      Date      Whois        
 
 000/8   IANA - Local Identification                      1981-09                       RESERVED           [2]
 001/8   IANA                                                                           UNALLOCATED        
-002/8   IANA                                                                           UNALLOCATED        
+002/8   RIPE NCC                                         2009-09   whois.ripe.net      ALLOCATED        
 003/8   General Electric Company                         1994-05                       LEGACY             
 004/8   Level 3 Communications, Inc.                     1992-12                       LEGACY             
 005/8   IANA                                                                           UNALLOCATED        
@@ -62,7 +62,7 @@ Prefix  Designation                                      Date      Whois        
 043/8   Administered by APNIC                            1991-01                       LEGACY              
 044/8   Amateur Radio Digital Communications             1992-07                       LEGACY             
 045/8   Interop Show Network                             1995-01                       LEGACY             
-046/8   IANA                                                                           UNALLOCATED               
+046/8   RIPE NCC                                         2009-09   whois.ripe.net      ALLOCATED               
 047/8   Bell-Northern Research                           1991-01                       LEGACY             
 048/8   Prudential Securities Inc.                       1995-05                       LEGACY             
 049/8   IANA                                                                           UNALLOCATED             

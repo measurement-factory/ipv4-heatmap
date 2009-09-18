@@ -1,6 +1,6 @@
 0.0.0.0/8	Local Identification
 1.0.0.0/8	Unallocated
-2.0.0.0/8	Unallocated
+2.0.0.0/8	RIPE
 3.0.0.0/8	GE
 4.0.0.0/8	Level3
 5.0.0.0/8	Unallocated
@@ -43,7 +43,7 @@
 43.0.0.0/8	Various Registries
 44.0.0.0/8	Amateur Radio Digital Communications
 45.0.0.0/8	Interop
-46.0.0.0/8	Unallocated
+46.0.0.0/8	RIPE
 47.0.0.0/8	Bell-Northern Research
 48.0.0.0/8	Prudential
 49.0.0.0/8	Unallocated
