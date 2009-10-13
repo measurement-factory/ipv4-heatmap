@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-09-17)
+(last updated 2009-10-10)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -219,7 +219,7 @@ Prefix  Designation                                      Date      Whois        
 200/8   LACNIC                                           2002-11   whois.lacnic.net    ALLOCATED          
 201/8   LACNIC                                           2003-04   whois.lacnic.net    ALLOCATED          
 202/8   APNIC                                            1993-05   whois.apnic.net     ALLOCATED          
-203/8   APNIC                                            1993-05   whois.apnic.net     ALLOCATED          
+203/8   APNIC                                            1993-05   whois.apnic.net     ALLOCATED          [10]
 204/8   ARIN                                             1994-03   whois.arin.net      ALLOCATED          
 205/8   ARIN                                             1994-03   whois.arin.net      ALLOCATED          
 206/8   ARIN                                             1995-04   whois.arin.net      ALLOCATED          
@@ -240,38 +240,38 @@ Prefix  Designation                                      Date      Whois        
 221/8   APNIC                                            2002-07   whois.apnic.net     ALLOCATED          
 222/8   APNIC                                            2003-02   whois.apnic.net     ALLOCATED          
 223/8   IANA                                                                           UNALLOCATED        
-224/8   Multicast                                        1981-09                       RESERVED           [10]
-225/8   Multicast                                        1981-09                       RESERVED           [10]           
-226/8   Multicast                                        1981-09                       RESERVED           [10]           
-227/8   Multicast                                        1981-09                       RESERVED           [10]           
-228/8   Multicast                                        1981-09                       RESERVED           [10]           
-229/8   Multicast                                        1981-09                       RESERVED           [10]           
-230/8   Multicast                                        1981-09                       RESERVED           [10]           
-231/8   Multicast                                        1981-09                       RESERVED           [10]           
-232/8   Multicast                                        1981-09                       RESERVED           [10]           
-233/8   Multicast                                        1981-09                       RESERVED           [10]           
-234/8   Multicast                                        1981-09                       RESERVED           [10]           
-235/8   Multicast                                        1981-09                       RESERVED           [10]           
-236/8   Multicast                                        1981-09                       RESERVED           [10]           
-237/8   Multicast                                        1981-09                       RESERVED           [10]           
-238/8   Multicast                                        1981-09                       RESERVED           [10]           
-239/8   Multicast                                        1981-09                       RESERVED           [10]           
-240/8   Future use                                       1981-09                       RESERVED           [11]
-241/8   Future use                                       1981-09                       RESERVED           [11]           
-242/8   Future use                                       1981-09                       RESERVED           [11]          
-243/8   Future use                                       1981-09                       RESERVED           [11]           
-244/8   Future use                                       1981-09                       RESERVED           [11]           
-245/8   Future use                                       1981-09                       RESERVED           [11]           
-246/8   Future use                                       1981-09                       RESERVED           [11]           
-247/8   Future use                                       1981-09                       RESERVED           [11]           
-248/8   Future use                                       1981-09                       RESERVED           [11]           
-249/8   Future use                                       1981-09                       RESERVED           [11]           
-250/8   Future use                                       1981-09                       RESERVED           [11]           
-251/8   Future use                                       1981-09                       RESERVED           [11]           
-252/8   Future use                                       1981-09                       RESERVED           [11]           
-253/8   Future use                                       1981-09                       RESERVED           [11]           
-254/8   Future use                                       1981-09                       RESERVED           [11]           
-255/8   Future use                                       1981-09                       RESERVED           [11]           
+224/8   Multicast                                        1981-09                       RESERVED           [11]
+225/8   Multicast                                        1981-09                       RESERVED           [11]           
+226/8   Multicast                                        1981-09                       RESERVED           [11]           
+227/8   Multicast                                        1981-09                       RESERVED           [11]           
+228/8   Multicast                                        1981-09                       RESERVED           [11]           
+229/8   Multicast                                        1981-09                       RESERVED           [11]           
+230/8   Multicast                                        1981-09                       RESERVED           [11]           
+231/8   Multicast                                        1981-09                       RESERVED           [11]           
+232/8   Multicast                                        1981-09                       RESERVED           [11]           
+233/8   Multicast                                        1981-09                       RESERVED           [11]           
+234/8   Multicast                                        1981-09                       RESERVED           [11]           
+235/8   Multicast                                        1981-09                       RESERVED           [11]           
+236/8   Multicast                                        1981-09                       RESERVED           [11]           
+237/8   Multicast                                        1981-09                       RESERVED           [11]           
+238/8   Multicast                                        1981-09                       RESERVED           [11]           
+239/8   Multicast                                        1981-09                       RESERVED           [11]           
+240/8   Future use                                       1981-09                       RESERVED           [12]
+241/8   Future use                                       1981-09                       RESERVED           [12]           
+242/8   Future use                                       1981-09                       RESERVED           [12]          
+243/8   Future use                                       1981-09                       RESERVED           [12]           
+244/8   Future use                                       1981-09                       RESERVED           [12]           
+245/8   Future use                                       1981-09                       RESERVED           [12]           
+246/8   Future use                                       1981-09                       RESERVED           [12]           
+247/8   Future use                                       1981-09                       RESERVED           [12]           
+248/8   Future use                                       1981-09                       RESERVED           [12]           
+249/8   Future use                                       1981-09                       RESERVED           [12]           
+250/8   Future use                                       1981-09                       RESERVED           [12]           
+251/8   Future use                                       1981-09                       RESERVED           [12]           
+252/8   Future use                                       1981-09                       RESERVED           [12]           
+253/8   Future use                                       1981-09                       RESERVED           [12]           
+254/8   Future use                                       1981-09                       RESERVED           [12]           
+255/8   Future use                                       1981-09                       RESERVED           [12]           
 
 
 
@@ -300,17 +300,20 @@ Notes
 
 [7]  172.16.0.0/12 reserved for Private-Use Networks [RFC1918]
 
-[8]  192.0.2.0/24  reserved for Test-Net [RFC3330]
+[8]  192.0.2.0/24 reserved for TEST-NET-1 [RFC-iana-ipv4-examples-02.txt]
      192.88.99.0/24 reserved for 6to4 Relay Anycast [RFC3068]
      192.168.0.0/16 reserved for Private-Use Networks [RFC1918]
 
 [9]  198.18.0.0/15 reserved for Network Interconnect Device
      Benchmark Testing [RFC3330]
+     198.51.100.0/24 reserved for TEST-NET-2 [RFC-iana-ipv4-examples-02.txt]
 
-[10] Multicast (formerly "Class D") [RFC1700]
+[10] 203.0.113.0/24 reserved for TEST-NET-3 [RFC-iana-ipv4-examples-02.txt]
+
+[11] Multicast (formerly "Class D") [RFC1700]
      See: http://www.iana.org/assignments/multicast-addresses
 
-[11] Reserved for future use (formerly "Class E") [RFC1700]
+[12] Reserved for future use (formerly "Class E") [RFC1700]
                   
 
 
