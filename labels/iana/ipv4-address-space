@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-10-10)
+(last updated 2009-10-22)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -286,7 +286,7 @@ Notes
      ALLOCATED: delegated entirely to specific RIR as indicated.
      UNALLOCATED: not yet allocated or reserved.
 
-[2]  0.0.0.0/8 reserved for self-identification [RFC3330]
+[2]  0.0.0.0/8 reserved for self-identification [RFC-iana-rfc3330bis-11.txt]
 
 [3]  Reserved for Private-Use Networks [RFC1918]
 
@@ -294,9 +294,9 @@ Notes
      See: http://www.iana.org/assignments/public-data-network-numbers
      It was recovered in February 2008.
 
-[5]  127.0.0.0/8 is reserved for Loopback [RFC3330]
+[5]  127.0.0.0/8 is reserved for Loopback [RFC-iana-rfc3330bis-11.txt]
 
-[6]  169.254.0.0/16 reserved for Link Local [RFC3330]
+[6]  169.254.0.0/16 reserved for Link Local [RFC-iana-rfc3330bis-11.txt]
 
 [7]  172.16.0.0/12 reserved for Private-Use Networks [RFC1918]
 
@@ -305,7 +305,7 @@ Notes
      192.168.0.0/16 reserved for Private-Use Networks [RFC1918]
 
 [9]  198.18.0.0/15 reserved for Network Interconnect Device
-     Benchmark Testing [RFC3330]
+     Benchmark Testing [RFC-iana-rfc3330bis-11.txt]
      198.51.100.0/24 reserved for TEST-NET-2 [RFC-iana-ipv4-examples-02.txt]
 
 [10] 203.0.113.0/24 reserved for TEST-NET-3 [RFC-iana-ipv4-examples-02.txt]
