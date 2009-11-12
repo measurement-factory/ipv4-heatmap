@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-10-22)
+(last updated 2009-11-11)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -310,7 +310,7 @@ Notes
 
 [10] 203.0.113.0/24 reserved for TEST-NET-3 [RFC-iana-ipv4-examples-02.txt]
 
-[11] Multicast (formerly "Class D") [RFC1700]
+[11] Multicast (formerly "Class D") [RFC3171]
      See: http://www.iana.org/assignments/multicast-addresses
 
 [12] Reserved for future use (formerly "Class E") [RFC1700]
