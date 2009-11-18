@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-11-11)
+(last updated 2009-11-17)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -313,12 +313,15 @@ Notes
 [11] Multicast (formerly "Class D") [RFC3171]
      See: http://www.iana.org/assignments/multicast-addresses
 
-[12] Reserved for future use (formerly "Class E") [RFC1700]
+[12] Reserved for future use (formerly "Class E") [RFC1112]
                   
 
 
 Reference
 ---------
+
+[RFC1112] Deering, S., "Host Extensions for IP Multicasting", 
+          RFC 1112, August 1989
 
 [RFC1356]  Malis, A., Robinson, D., and R. Ullmann, "Multiprotocol
            Interconnect on X.25 and ISDN in the Packet Mode",
@@ -326,9 +329,6 @@ Reference
 
 [RFC1466]  Gerich, E., "Guidelines for Management of IP Address
            Space", RFC 1466, May 1993.
-
-[RFC1700]  Reynolds, J. and J. Postel, "Assigned Numbers",
-           RFC1700, October 1994.
 
 [RFC1918]  Rekhter, Y., Moskowitz, R., Karrenberg, D., Groot, G.,
            and E. Lear, "Address Allocation for Private
