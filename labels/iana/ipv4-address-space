@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2009-11-17)
+(last updated 2009-12-09)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -271,7 +271,7 @@ Prefix  Designation                                      Date      Whois        
 252/8   Future use                                       1981-09                       RESERVED           [12]           
 253/8   Future use                                       1981-09                       RESERVED           [12]           
 254/8   Future use                                       1981-09                       RESERVED           [12]           
-255/8   Future use                                       1981-09                       RESERVED           [12]           
+255/8   Future use                                       1981-09                       RESERVED           [12] [13]          
 
 
 
@@ -315,6 +315,7 @@ Notes
 
 [12] Reserved for future use (formerly "Class E") [RFC1112]
                   
+[13] Reserved for "limited broadcast" destination address [RFC0919] and [RFC0922]
 
 
 Reference
