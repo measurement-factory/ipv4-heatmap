@@ -47,7 +47,7 @@
 47.0.0.0/8	Bell-Northern Research
 48.0.0.0/8	Prudential
 49.0.0.0/8	Unallocated
-50.0.0.0/8	Unallocated
+50.0.0.0/8	ARIN
 51.0.0.0/8	UK Government Department for Work and Pensions
 52.0.0.0/8	E.I. duPont de Nemours and Co., Inc.
 53.0.0.0/8	Cap Debis CCS
@@ -67,7 +67,9 @@
 80.0.0.0/4	RIPE
 96.0.0.0/6	ARIN
 100.0.0.0/6	Unallocated
-104.0.0.0/6	Unallocated
+104.0.0.0/7	Unallocated
+106.0.0.0/8	Unallocated
+107.0.0.0/8	ARIN
 108.0.0.0/8	ARIN
 109.0.0.0/8	RIPE
 110.0.0.0/7	APNIC

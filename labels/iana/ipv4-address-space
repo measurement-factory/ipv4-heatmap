@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2010-01-19)
+(last updated 2010-02-11)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -66,7 +66,7 @@ Prefix  Designation                                      Date      Whois        
 047/8   Bell-Northern Research                           1991-01                       LEGACY             
 048/8   Prudential Securities Inc.                       1995-05                       LEGACY             
 049/8   IANA                                                                           UNALLOCATED             
-050/8   IANA                                                                           UNALLOCATED              
+050/8   ARIN                                             2010-02   whois.arin.net      ALLOCATED              
 051/8   UK Government Department for Work and Pensions   1994-08   whois.ripe.net      LEGACY              
 052/8   E.I. duPont de Nemours and Co., Inc.             1991-12                       LEGACY             
 053/8   Cap Debis CCS                                    1993-10                       LEGACY             
@@ -123,7 +123,7 @@ Prefix  Designation                                      Date      Whois        
 104/8   IANA                                                                           UNALLOCATED        
 105/8   IANA                                                                           UNALLOCATED        
 106/8   IANA                                                                           UNALLOCATED        
-107/8   IANA                                                                           UNALLOCATED        
+107/8   ARIN                                             2010-02   whois.arin.net      ALLOCATED      
 108/8   ARIN                                             2008-12   whois.arin.net      ALLOCATED        
 109/8   RIPE NCC                                         2009-01   whois.ripe.net      ALLOCATED        
 110/8   APNIC                                            2008-11   whois.apnic.net     ALLOCATED       
