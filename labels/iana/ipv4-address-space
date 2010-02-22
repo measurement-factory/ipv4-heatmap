@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2010-02-11)
+(last updated 2010-02-22)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -54,7 +54,7 @@ Prefix  Designation                                      Date      Whois        
 035/8   MERIT Computer Network                           1994-04                       LEGACY             
 036/8   IANA                                                                           UNALLOCATED        
 037/8   IANA                                                                           UNALLOCATED        
-038/8   Performance Systems International                1994-09                       LEGACY             
+038/8   PSINet, Inc.                                     1994-09                       LEGACY             
 039/8   IANA                                                                           UNALLOCATED        
 040/8   Eli Lily & Company                               1994-06                       LEGACY             
 041/8   AfriNIC                                          2005-04   whois.afrinic.net   ALLOCATED          

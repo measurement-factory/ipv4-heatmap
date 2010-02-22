@@ -35,7 +35,7 @@
 34.0.0.0/8	Halliburton
 35.0.0.0/8	Merit
 36.0.0.0/7	Unallocated
-38.0.0.0/8	PSI
+38.0.0.0/8	PSINet, Inc.
 39.0.0.0/8	Unallocated
 40.0.0.0/8	Eli Lily
 41.0.0.0/8	AfriNIC
