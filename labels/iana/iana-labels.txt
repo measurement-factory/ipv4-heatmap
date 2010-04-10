@@ -12,7 +12,7 @@
 11.0.0.0/8	DoD Intel Information Systems
 12.0.0.0/8	AT&T
 13.0.0.0/8	Xerox
-14.0.0.0/8	Unallocated
+14.0.0.0/8	APNIC
 15.0.0.0/8	HP
 16.0.0.0/8	DEC
 17.0.0.0/8	Apple
@@ -115,8 +115,6 @@
 216.0.0.0/8	ARIN
 217.0.0.0/8	RIPE
 218.0.0.0/7	APNIC
-220.0.0.0/7	APNIC
-222.0.0.0/8	APNIC
-223.0.0.0/8	Unallocated
+220.0.0.0/6	APNIC
 224.0.0.0/4	Multicast
 240.0.0.0/4	Future use

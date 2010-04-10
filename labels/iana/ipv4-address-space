@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2010-02-22)
+(last updated 2010-04-09)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -30,7 +30,7 @@ Prefix  Designation                                      Date      Whois        
 011/8   DoD Intel Information Systems                    1993-05                       LEGACY             
 012/8   AT&T Bell Laboratories                           1995-06                       LEGACY             
 013/8   Xerox Corporation                                1991-09                       LEGACY             
-014/8   IANA                                                                           UNALLOCATED        [4]
+014/8   APNIC                                            2010-04   whois.apnic.net     ALLOCATED          [4]
 015/8   Hewlett-Packard Company                          1994-07                       LEGACY             
 016/8   Digital Equipment Corporation                    1994-11                       LEGACY             
 017/8   Apple Computer Inc.                              1992-07                       LEGACY             
@@ -239,7 +239,7 @@ Prefix  Designation                                      Date      Whois        
 220/8   APNIC                                            2001-12   whois.apnic.net     ALLOCATED          
 221/8   APNIC                                            2002-07   whois.apnic.net     ALLOCATED          
 222/8   APNIC                                            2003-02   whois.apnic.net     ALLOCATED          
-223/8   IANA                                                                           UNALLOCATED        
+223/8   APNIC                                            2010-04   whois.apnic.net     ALLOCATED        
 224/8   Multicast                                        1981-09                       RESERVED           [12]
 225/8   Multicast                                        1981-09                       RESERVED           [12]           
 226/8   Multicast                                        1981-09                       RESERVED           [12]           
@@ -292,7 +292,8 @@ Notes
 
 [4]  This was reserved for Public Data Networks [RFC1356] 
      See: http://www.iana.org/assignments/public-data-network-numbers
-     It was recovered in February 2008.
+     It was recovered in February 2008 and subsequently
+     allocated to APNIC in April 2010.
 
 [5]  127.0.0.0/8 is reserved for Loopback [RFC5735]
 
