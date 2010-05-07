@@ -29,7 +29,7 @@
 28.0.0.0/8	DSI-North
 29.0.0.0/8	DISA
 30.0.0.0/8	DISA
-31.0.0.0/8	Unallocated
+31.0.0.0/8	RIPE
 32.0.0.0/8	AT&T
 33.0.0.0/8	DLA Systems Automation Center
 34.0.0.0/8	Halliburton
@@ -85,7 +85,8 @@
 173.0.0.0/8	ARIN
 174.0.0.0/8	ARIN
 175.0.0.0/8	APNIC
-176.0.0.0/7	Unallocated
+176.0.0.0/8	RIPE
+177.0.0.0/8	Unallocated
 178.0.0.0/8	RIPE
 179.0.0.0/8	Unallocated
 180.0.0.0/8	APNIC

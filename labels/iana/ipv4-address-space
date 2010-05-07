@@ -1,6 +1,6 @@
 IANA IPv4 Address Space Registry
 
-(last updated 2010-04-09)
+(last updated 2010-05-07)
 
 The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed 
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the 
@@ -47,7 +47,7 @@ Prefix  Designation                                      Date      Whois        
 028/8   DSI-North                                        1992-07                       LEGACY             
 029/8   Defense Information Systems Agency               1991-07                       LEGACY             
 030/8   Defense Information Systems Agency               1991-07                       LEGACY             
-031/8   IANA                                                                           UNALLOCATED        
+031/8   RIPE NCC                                         2010-05   whois.ripe.net     ALLOCATED        
 032/8   AT&T Global Network Services                     1994-06                       LEGACY             
 033/8   DLA Systems Automation Center                    1991-01                       LEGACY             
 034/8   Halliburton Company                              1993-03                       LEGACY             
@@ -192,7 +192,7 @@ Prefix  Designation                                      Date      Whois        
 173/8   ARIN                                             2008-02   whois.arin.net      ALLOCATED        
 174/8   ARIN                                             2008-02   whois.arin.net      ALLOCATED        
 175/8   APNIC                                            2009-08   whois.apnic.net     ALLOCATED        
-176/8   IANA                                                                           UNALLOCATED        
+176/8   RIPE NCC                                         2010-05   whois.ripe.net     ALLOCATED        
 177/8   IANA                                                                           UNALLOCATED        
 178/8   RIPE NCC                                         2009-01   whois.ripe.net      ALLOCATED        
 179/8   IANA                                                                           UNALLOCATED        
