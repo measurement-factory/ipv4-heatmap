@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2010-10-17</updated>
+  <updated>2010-11-05</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -237,7 +237,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>036/8</prefix>
     <designation>APNIC</designation>
     <date>2010-10</date>
-    <whois>whois.iana.org</whois>
+    <whois>whois.apnic.net</whois>
     <status>ALLOCATED</status>
   </record>
   <record>
@@ -273,7 +273,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>042/8</prefix>
     <designation>APNIC</designation>
     <date>2010-10</date>
-    <whois>whois.iana.org</whois>
+    <whois>whois.apnic.net</whois>
     <status>ALLOCATED</status>
   </record>
   <record>
@@ -1596,6 +1596,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <date>1981-09</date>
     <status>RESERVED</status>
     <xref type="note" data="12"/>
+    <xref type="note" data="13"/>
   </record>
   <record>
     <prefix>235/8</prefix>
@@ -1631,119 +1632,120 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <date>1981-09</date>
     <status>RESERVED</status>
     <xref type="note" data="12"/>
+    <xref type="note" data="14"/>
   </record>
   <record>
     <prefix>240/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>241/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>242/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>243/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>244/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>245/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>246/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>247/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>248/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>249/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>250/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>251/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>252/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>253/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>254/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
   </record>
   <record>
     <prefix>255/8</prefix>
     <designation>Future use</designation>
     <date>1981-09</date>
     <status>RESERVED</status>
-    <xref type="note" data="13"/>
-    <xref type="note" data="14"/>
+    <xref type="note" data="15"/>
+    <xref type="note" data="16"/>
   </record>
   <footnote anchor="1">Indicates the status of address blocks as follows:
 RESERVED: designated by the IETF for specific non-unicast purposes as noted.
@@ -1765,13 +1767,13 @@ It was recovered in February 2008 and was subsequently allocated to APNIC in Apr
 192.88.99.0/24 reserved for 6to4 Relay Anycast <xref type="rfc" data="rfc3068"/>
 192.168.0.0/16 reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/></footnote>
   <footnote anchor="9">192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry <xref type="rfc" data="rfc5736"/></footnote>
-  <footnote anchor="10">198.18.0.0/15 reserved for Network Interconnect Device
-    Benchmark Testing <xref type="rfc" data="rfc5735"/>
-    198.51.100.0/24 reserved for TEST-NET-2 <xref type="rfc" data="rfc5737"/></footnote>
+  <footnote anchor="10">198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing <xref type="rfc" data="rfc5735"/>
+198.51.100.0/24 reserved for TEST-NET-2 <xref type="rfc" data="rfc5737"/></footnote>
   <footnote anchor="11">203.0.113.0/24 reserved for TEST-NET-3 <xref type="rfc" data="rfc5737"/></footnote>
-  <footnote anchor="12">Multicast (formerly "Class D") <xref type="rfc" data="rfc3171"/>
-See: http://www.iana.org/assignments/multicast-addresses</footnote>
-  <footnote anchor="13">Reserved for future use (formerly "Class E") <xref type="rfc" data="rfc1112"/></footnote>
-  <footnote anchor="14">255.255.255.255 is reserved for "limited broadcast" destination address <xref type="rfc" data="rfc0919"/> and <xref type="rfc" data="rfc0922"/> </footnote>
+  <footnote anchor="12">Multicast (formerly "Class D") <xref type="rfc" data="rfc5771"/> registed in http://www.iana.org/assignments/multicast-addresses</footnote>
+  <footnote anchor="13">Unicast-Prefix-Based IPv4 Multicast Addresses <xref type="rfc" data="rfc6034"/></footnote>
+  <footnote anchor="14">Administratively Scoped IP Multicast <xref type="rfc" data="rfc2365"/></footnote>
+  <footnote anchor="15">Reserved for future use (formerly "Class E") <xref type="rfc" data="rfc1112"/></footnote>
+  <footnote anchor="16">255.255.255.255 is reserved for "limited broadcast" destination address <xref type="rfc" data="rfc0919"/> and <xref type="rfc" data="rfc0922"/> </footnote>
   <people/>
 </registry>
