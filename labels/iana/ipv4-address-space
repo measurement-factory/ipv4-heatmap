@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2011-01-31</updated>
+  <updated>2011-02-03</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -689,18 +689,24 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>102/8</prefix>
-    <designation>IANA</designation>
-    <status>UNALLOCATED</status>
+    <designation>AfriNIC</designation>
+    <date>2011-02</date>
+    <whois>whois.afrinic.net</whois>
+    <status>ALLOCATED</status>
   </record>
   <record>
     <prefix>103/8</prefix>
-    <designation>IANA</designation>
-    <status>UNALLOCATED</status>
+    <designation>APNIC</designation>
+    <date>2011-02</date>
+    <whois>whois.apnic.net</whois>
+    <status>ALLOCATED</status>
   </record>
   <record>
     <prefix>104/8</prefix>
-    <designation>IANA</designation>
-    <status>UNALLOCATED</status>
+    <designation>ARIN</designation>
+    <date>2011-02</date>
+    <whois>whois.arin.net</whois>
+    <status>ALLOCATED</status>
   </record>
   <record>
     <prefix>105/8</prefix>
@@ -1224,8 +1230,10 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>179/8</prefix>
-    <designation>IANA</designation>
-    <status>UNALLOCATED</status>
+    <designation>LACNIC</designation>
+    <date>2011-02</date>
+    <whois>whois.lacnic.net</whois>
+    <status>ALLOCATED</status>
   </record>
   <record>
     <prefix>180/8</prefix>
@@ -1264,8 +1272,10 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>185/8</prefix>
-    <designation>IANA</designation>
-    <status>UNALLOCATED</status>
+    <designation>RIPE NCC</designation>
+    <date>2011-02</date>
+    <whois>whois.ripe.net</whois>
+    <status>ALLOCATED</status>
   </record>
   <record>
     <prefix>186/8</prefix>
