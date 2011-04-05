@@ -1,0 +1,126 @@
+0.0.0.0/8	Reserved
+1.0.0.0/8	APNIC
+2.0.0.0/8	RIPE
+3.0.0.0/8	GE
+4.0.0.0/8	Level3
+5.0.0.0/8	RIPE
+6.0.0.0/8	US Army
+7.0.0.0/8	Various Registries
+8.0.0.0/8	Level3
+9.0.0.0/8	IBM
+10.0.0.0/8	Reserved
+11.0.0.0/8	DoD Intel Information Systems
+12.0.0.0/8	AT&T
+13.0.0.0/8	Xerox
+14.0.0.0/8	APNIC
+15.0.0.0/8	HP
+16.0.0.0/8	DEC
+17.0.0.0/8	Apple
+18.0.0.0/8	MIT
+19.0.0.0/8	Ford Motor Company
+20.0.0.0/8	Computer Sciences Corporation
+21.0.0.0/8	DDN-RVN
+22.0.0.0/8	DISA
+23.0.0.0/8	ARIN
+24.0.0.0/8	ARIN
+25.0.0.0/8	UK Ministry of Defence
+26.0.0.0/8	DISA
+27.0.0.0/8	APNIC
+28.0.0.0/8	DSI-North
+29.0.0.0/8	DISA
+30.0.0.0/8	DISA
+31.0.0.0/8	RIPE
+32.0.0.0/8	AT&T
+33.0.0.0/8	DLA Systems Automation Center
+34.0.0.0/8	Halliburton
+35.0.0.0/8	Merit
+36.0.0.0/8	APNIC
+37.0.0.0/8	RIPE
+38.0.0.0/8	PSINet, Inc.
+39.0.0.0/8	APNIC
+40.0.0.0/8	Eli Lily
+41.0.0.0/8	AfriNIC
+42.0.0.0/8	APNIC
+43.0.0.0/8	Various Registries
+44.0.0.0/8	Amateur Radio Digital Communications
+45.0.0.0/8	Various Registries
+46.0.0.0/8	RIPE
+47.0.0.0/8	Bell-Northern Research
+48.0.0.0/8	Prudential
+49.0.0.0/8	APNIC
+50.0.0.0/8	ARIN
+51.0.0.0/8	UK Government Department for Work and Pensions
+52.0.0.0/8	E.I. duPont de Nemours and Co., Inc.
+53.0.0.0/8	Cap Debis CCS
+54.0.0.0/8	Merck and Co., Inc.
+55.0.0.0/8	DoD NIC
+56.0.0.0/8	USPS
+57.0.0.0/8	SITA
+58.0.0.0/7	APNIC
+60.0.0.0/7	APNIC
+62.0.0.0/8	RIPE
+63.0.0.0/8	ARIN
+64.0.0.0/5	ARIN
+72.0.0.0/6	ARIN
+76.0.0.0/8	ARIN
+77.0.0.0/8	RIPE
+78.0.0.0/7	RIPE
+80.0.0.0/4	RIPE
+96.0.0.0/6	ARIN
+100.0.0.0/8	ARIN
+101.0.0.0/8	APNIC
+102.0.0.0/8	AfriNIC
+103.0.0.0/8	APNIC
+104.0.0.0/8	ARIN
+105.0.0.0/8	AfriNIC
+106.0.0.0/8	APNIC
+107.0.0.0/8	ARIN
+108.0.0.0/8	ARIN
+109.0.0.0/8	RIPE
+110.0.0.0/7	APNIC
+112.0.0.0/5	APNIC
+120.0.0.0/6	APNIC
+124.0.0.0/7	APNIC
+126.0.0.0/8	APNIC
+127.0.0.0/8	Reserved
+128.0.0.0/3	Various Registries
+160.0.0.0/5	Various Registries
+168.0.0.0/6	Various Registries
+172.0.0.0/8	Various Registries
+173.0.0.0/8	ARIN
+174.0.0.0/8	ARIN
+175.0.0.0/8	APNIC
+176.0.0.0/8	RIPE
+177.0.0.0/8	LACNIC
+178.0.0.0/8	RIPE
+179.0.0.0/8	LACNIC
+180.0.0.0/8	APNIC
+181.0.0.0/8	LACNIC
+182.0.0.0/7	APNIC
+184.0.0.0/8	ARIN
+185.0.0.0/8	RIPE
+186.0.0.0/7	LACNIC
+188.0.0.0/8	Various Registries
+189.0.0.0/8	LACNIC
+190.0.0.0/8	LACNIC
+191.0.0.0/8	Various Registries
+192.0.0.0/8	Various Registries
+193.0.0.0/8	RIPE
+194.0.0.0/7	RIPE
+196.0.0.0/8	Various Registries
+197.0.0.0/8	AfriNIC
+198.0.0.0/8	Various Registries
+199.0.0.0/8	ARIN
+200.0.0.0/7	LACNIC
+202.0.0.0/7	APNIC
+204.0.0.0/6	ARIN
+208.0.0.0/7	ARIN
+210.0.0.0/7	APNIC
+212.0.0.0/7	RIPE
+214.0.0.0/7	US-DOD
+216.0.0.0/8	ARIN
+217.0.0.0/8	RIPE
+218.0.0.0/7	APNIC
+220.0.0.0/6	APNIC
+224.0.0.0/4	Multicast
+240.0.0.0/4	Reserved
