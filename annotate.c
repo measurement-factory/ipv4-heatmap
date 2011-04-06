@@ -22,7 +22,7 @@
  * FONT_ALPHA sets the transparency for the annotations. in libgd, 0 means 100%
  * transparent, and 127 means 100% opaque.
  */
-#define FONT_ALPHA 45
+#define FONT_ALPHA 75
 
 extern gdImagePtr image;
 extern const char *font_file_or_name;
