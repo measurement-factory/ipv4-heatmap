@@ -30,7 +30,6 @@ extern void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp);
 extern int debug;
 extern int hilbert_curve_order;
 extern int morton_flag;
-extern int addr_space_bits_per_pixel;
 extern unsigned int addr_space_first_addr;
 extern unsigned int addr_space_last_addr;
 
