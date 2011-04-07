@@ -4,6 +4,7 @@ CFLAGS=-g -Wall ${INCS}
 LDFLAGS=-g
 OBJS=\
 	ipv4-heatmap.o \
+	xy_from_ip.o \
 	hilbert.o \
 	morton.o \
 	annotate.o \

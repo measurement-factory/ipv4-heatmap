@@ -43,10 +43,6 @@
 extern void annotate_file(const char *fn);
 extern void shade_file(const char *fn);
 extern void legend(const char *, const char *orient);
-extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-extern void mor_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-
-void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp) = hil_xy_from_s;
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
@@ -64,16 +60,12 @@ const char *legend_keyfile = NULL;
 const char *savename = "map.png";
 extern int annotateColor;
 
-/*
- * The default the Hilbert curve order is 12.  This gives a 4096x4096
- * output image covering the entire space where each pixel represents
- * a /24.
- */
-int addr_space_bits_per_image = 32;	/* /0 */
-int addr_space_bits_per_pixel = 8;	/* /24 */
-int hilbert_curve_order;		/* calc'd after getopt() */
-unsigned int addr_space_first_addr = 0;
-unsigned int addr_space_last_addr = ~0;
+extern unsigned int xy_from_ip(unsigned ip, unsigned *xp, unsigned *yp);
+extern void set_morton_mode();
+extern int set_order();
+extern void set_crop(const char *);
+extern void set_bits_per_pixel(int);
+
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -90,9 +82,9 @@ initialize(void)
     int i;
     int w;
     int h;
-    hilbert_curve_order = (addr_space_bits_per_image - addr_space_bits_per_pixel) / 2;
-    w = 1<<hilbert_curve_order;
-    h = 1<<hilbert_curve_order;
+    int order = set_order();
+    w = 1<<order;
+    h = 1<<order;
     if (title && 4096 != w) {
 	warnx("Image width/height must be 4096 to render a legend.");
 	fprintf(stderr,
@@ -109,17 +101,6 @@ initialize(void)
     else
 	w += (w>>2);
     if (debug) {
-	struct in_addr a;
-	char buf[20];
-	fprintf(stderr, "addr_space_bits_per_image = %d\n", addr_space_bits_per_image);
-	fprintf(stderr, "addr_space_bits_per_pixel = %d\n", addr_space_bits_per_pixel);
-	fprintf(stderr, "hilbert_curve_order = %d\n", hilbert_curve_order);
-	a.s_addr = htonl(addr_space_first_addr);
-	inet_ntop(AF_INET, &a, buf, 20);
-	fprintf(stderr, "first_address = %s\n", buf);
-	a.s_addr = htonl(addr_space_last_addr);
-	inet_ntop(AF_INET, &a, buf, 20);
-	fprintf(stderr, "last = %s\n", buf);
 	fprintf(stderr, "image width = %d\n", w);
 	fprintf(stderr, "image height = %d\n", h);
     }
@@ -178,18 +159,8 @@ paint(void)
 	else
 	    errx(1, "bad input on line %d: %s", line, t);
 
-	/*
-	 * See if the address fits inside the area we are rendering
-	 */
-	if (i < addr_space_first_addr)
-	    continue;
-	else if (i > addr_space_last_addr)
-	    continue;
-        else
-	    i -= addr_space_first_addr;
-
-	i >>= addr_space_bits_per_pixel;
-	xy_from_s(i, hilbert_curve_order, &x, &y);
+	if (0 == xy_from_ip(i, &x, &y))
+		continue;
 	if (debug)
 	    fprintf(stderr, "%s => %u => (%d,%d)\n", t, i, x, y);
 
@@ -331,7 +302,7 @@ main(int argc, char *argv[])
 	    break;
 	case 'm':
 		morton_flag = 1;
-		xy_from_s = mor_xy_from_s;
+		set_morton_mode();
 		break;
 	case 't':
 	    title = strdup(optarg);
@@ -346,18 +317,10 @@ main(int argc, char *argv[])
 	    reverse_flag = 1;
 	    break;
 	case 'y':
-	    cidr_parse(optarg,
-		&addr_space_first_addr,
-		&addr_space_last_addr,
-		&addr_space_bits_per_image);
-	    addr_space_bits_per_image = 32 - addr_space_bits_per_image;
-	    if (1 == (addr_space_bits_per_image % 2))
-		errx(1, "Space to render must have even number of CIDR bits");
+	    set_crop(optarg);
 	    break;
 	case 'z':
-	    addr_space_bits_per_pixel = strtol(optarg, NULL, 10);
-	    if (1 == (addr_space_bits_per_pixel % 2))
-		errx(1, "CIDR bits per pixel must be even");
+	    set_bits_per_pixel(strtol(optarg, NULL, 10));
 	    break;
 	default:
 	    usage(argv[0]);

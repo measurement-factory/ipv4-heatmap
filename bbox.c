@@ -26,9 +26,8 @@
 #define MAX(a,b) (a>b?a:b)
 #endif
 
-extern void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp);
+extern void xy_from_ip(unsigned int ip, unsigned *xp, unsigned *yp);
 extern int debug;
-extern int hilbert_curve_order;
 extern int morton_flag;
 extern unsigned int addr_space_first_addr;
 extern unsigned int addr_space_last_addr;
@@ -86,7 +85,7 @@ bounding_box(unsigned int first, int slash)
 	/*
 	 * treat /32 as a special case
 	 */
-	xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
+	xy_from_ip(first, &x1, &y1);
 	box.xmin = x1;
 	box.ymin = y1;
 	box.xmax = x1;
@@ -96,8 +95,8 @@ bounding_box(unsigned int first, int slash)
 	 * square
 	 */
 	diag >>= slash;
-	xy_from_s(first >> 8, hilbert_curve_order, &x1, &y1);
-	xy_from_s((first + diag) >> 8, hilbert_curve_order, &x2, &y2);
+	xy_from_ip(first, &x1, &y1);
+	xy_from_ip(first + diag, &x2, &y2);
 	box.xmin = MIN(x1, x2);
 	box.ymin = MIN(y1, y2);
 	box.xmax = MAX(x1, x2);
