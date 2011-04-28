@@ -115,7 +115,7 @@ foreach my $rec (@{$XML->{record}}) {
 	my $prefix = sprintf "%d.0.0.0/8", $block;
 	if ($last_desc && $desc ne $last_desc) {
 		foreach $prefix ($cidr->list) {
-			printf "%s\t%s\n", $prefix, $last_desc;
+			printf "%s\t%s\t%s\n", $prefix, $last_desc, 'prefix';
 		}
 		$cidr = undef;
 		$cidr = Net::CIDR::Lite->new;
