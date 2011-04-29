@@ -47,6 +47,7 @@ gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
 int debug = 0;
+const char *whitespace = " \t\r\n";
 const char *font_file_or_name = "Luxi Mono:style=Regular";
 const char *legend_orient = "vert";
 const char *annotations = NULL;
@@ -56,6 +57,11 @@ const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
 int morton_flag = 0;
+struct {
+	unsigned int secs;
+	double input_time;
+	time_t next_output;
+} anim_gif = {0, 0.0, 0};
 const char *legend_keyfile = NULL;
 const char *savename = "map.png";
 extern int annotateColor;
@@ -66,6 +72,7 @@ extern int set_order();
 extern void set_crop(const char *);
 extern void set_bits_per_pixel(int);
 
+void savegif(int done);
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -144,12 +151,33 @@ paint(void)
 	unsigned int y;
 	int color = -1;
 	int k;
+	char *strtok_arg = buf;
+	char *t;
 
 	/*
-	 * First field is an IP address.  We also accept its integer notation
+	 * In animated gif mode the first field is a timestamp
+	 */
+	if (anim_gif.secs) {
+		char *e;
+		t = strtok(strtok_arg, whitespace);
+		strtok_arg = NULL;
+		if (NULL == t)
+			continue;
+		anim_gif.input_time = strtod(t, &e);
+		if (e == t)
+			errx(1, "bad input parsing time on line %d: %s", line, t);
+		if ((time_t) anim_gif.input_time > anim_gif.next_output) {
+			savegif(0);
+			anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
+		}
+	}
+
+	/*
+	 * next field is an IP address.  We also accept its integer notation
 	 * equivalent.
 	 */
-	char *t = strtok(buf, " \t\r\n");
+	t = strtok(strtok_arg, whitespace);
+	strtok_arg = NULL;
 	if (NULL == t)
 	    continue;
 	if (strspn(t, "0123456789") == strlen(t))
@@ -157,7 +185,7 @@ paint(void)
 	else if (1 == inet_pton(AF_INET, t, &i))
 	    i = ntohl(i);
 	else
-	    errx(1, "bad input on line %d: %s", line, t);
+	    errx(1, "bad input parsing IP on line %d: %s", line, t);
 
 	if (0 == xy_from_ip(i, &x, &y))
 		continue;
@@ -165,11 +193,11 @@ paint(void)
 	    fprintf(stderr, "%s => %u => (%d,%d)\n", t, i, x, y);
 
 	/*
-	 * Second field is an optional value, which might also be
+	 * next field is an optional value, which might also be
 	 * logarithmically scaled by us.  If no value is given, then find the
 	 * existing value at that point and increment by one.
 	 */
-	t = strtok(NULL, " \t\r\n");
+	t = strtok(NULL, whitespace);
 	if (NULL != t) {
 	    k = atoi(t);
 	    if (0.0 != log_A) {
@@ -231,6 +259,41 @@ save(void)
 }
 
 void
+savegif(int done)
+{
+	static int ngif = 0;
+	static char *tdir = NULL;
+	static char tmpl[] = "heatmap-tmp-XXXXXX";
+	char fname[512];
+	FILE *gifout = NULL;
+	if (NULL == tdir) {
+		tdir = mkdtemp(tmpl);
+		if (NULL == tdir)
+			err(1, "%s", tmpl);
+	}
+	snprintf(fname, 512, "%s/%07d.gif", tdir, ngif++);
+	gifout = fopen(fname, "wb");
+	if (NULL == gifout)	
+		err(1, "%s", fname);
+	gdImageGif(image, gifout);
+	fclose(gifout);
+	/* don't destroy image! */
+	if (done) {
+		char cmd[512];
+		snprintf(cmd, 512, "gifsicle --colors 256 %s/*.gif > %s", tdir, savename);
+		fprintf(stderr, "Executing: %s\n", cmd);
+		if (0 != system(cmd))
+			errx(1, "gifsicle failed");
+		snprintf(cmd, 512, "rm -rf %s", tdir);
+		fprintf(stderr, "Executing: %s\n", cmd);
+		system(cmd);
+		tdir = NULL;
+		gdImageDestroy(image);
+		image = NULL;
+	}
+}
+
+void
 usage(const char *argv0)
 {
     const char *t = strrchr(argv0, '/');
@@ -250,6 +313,7 @@ usage(const char *argv0)
     printf("\t-c color   color of annotations (0xRRGGBB)\n");
     printf("\t-d         increase debugging\n");
     printf("\t-f font    fontconfig name or .ttf file\n");
+    printf("\t-g secs    make animated gif from each secs of data\n");
     printf("\t-h         draw horizontal legend instead\n");
     printf("\t-k file    key file for legend\n");
     printf("\t-m         use morton order instead of hilbert\n");
@@ -268,7 +332,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:c:df:hk:mo:prs:t:u:y:z:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:c:df:g:hk:mo:prs:t:u:y:z:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -290,6 +354,9 @@ main(int argc, char *argv[])
 	    break;
 	case 'f':
 	    font_file_or_name = strdup(optarg);
+	    break;
+	case 'g':
+	    anim_gif.secs = strtol(optarg, NULL, 10);
 	    break;
 	case 'h':
 	    legend_orient = "horiz";
@@ -339,6 +406,9 @@ main(int argc, char *argv[])
     if (title)
 	legend(title, legend_orient);
     watermark();
-    save();
+    if (anim_gif.secs)
+	savegif(1);
+    else
+    	save();
     return 0;
 }
