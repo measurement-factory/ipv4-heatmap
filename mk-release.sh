@@ -17,6 +17,7 @@ shade.c
 text.c
 cidr.h
 cidr.c
+xy_from_ip.c
 labels/iana/iana-labels.txt
 labels/iana/ipv4-address-space
 labels/iana/reserved
