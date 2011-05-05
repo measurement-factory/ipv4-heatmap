@@ -46,7 +46,7 @@ shade_file(const char *fn)
     char buf[512];
     FILE *fp = fopen(fn, "r");
     if (NULL == fp)
-	err(1, fn);
+	err(1, "%s", fn);
     while (NULL != fgets(buf, 512, fp)) {
 	char *cidr;
 	char *rgbhex;

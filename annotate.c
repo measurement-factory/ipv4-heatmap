@@ -67,7 +67,7 @@ annotate_file(const char *fn)
     char buf[512];
     FILE *fp = fopen(fn, "r");
     if (NULL == fp)
-	err(1, fn);
+	err(1, "%s", fn);
     if (annotateColor < 0) {
 	if (reverse_flag)
 	    annotateColor = gdImageColorAllocateAlpha(image, 0, 0, 0, FONT_ALPHA);

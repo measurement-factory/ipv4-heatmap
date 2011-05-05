@@ -34,7 +34,7 @@ text_width_height(const char *text, double sz, int *w, int *h)
 	(char *)font_file_or_name,
 	sz, 0.0, 0, 0, (char *)text);
     if (NULL != errmsg)
-	errx(1, errmsg);
+	errx(1, "%s", errmsg);
     *w = brect[2] - brect[0];
     *h = brect[3] - brect[5];
     return &brect[0];
