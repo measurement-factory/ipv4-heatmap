@@ -57,6 +57,7 @@ const char *legend_scale_name = NULL;
 int legend_prefixes_flag = 0;
 int reverse_flag = 0;		/* reverse background/font colors */
 int morton_flag = 0;
+int accumulate_counts = 0;	/* for when the input data contains a value */
 struct {
 	unsigned int secs;
 	double input_time;
@@ -140,6 +141,26 @@ initialize(void)
     log_C = 255.0 / log(log_B / log_A);
 }
 
+int
+get_pixel_value(unsigned int x, unsigned int y)
+{
+    int color;
+    int k;
+    color = gdImageGetPixel(image, x, y);
+    if (debug)
+	fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
+    for (k = 0; k < NUM_DATA_COLORS; k++) {
+	if (colors[k] == color) {
+	    if (debug)
+		fprintf(stderr, "color %d has index %d\n", color, k);
+	    break;
+	}
+    }
+    if (k == NUM_DATA_COLORS)	/* not found */
+	k = 0;
+    return k;
+}
+
 void
 paint(void)
 {
@@ -158,18 +179,18 @@ paint(void)
 	 * In animated gif mode the first field is a timestamp
 	 */
 	if (anim_gif.secs) {
-		char *e;
-		t = strtok(strtok_arg, whitespace);
-		strtok_arg = NULL;
-		if (NULL == t)
-			continue;
-		anim_gif.input_time = strtod(t, &e);
-		if (e == t)
-			errx(1, "bad input parsing time on line %d: %s", line, t);
-		if ((time_t) anim_gif.input_time > anim_gif.next_output) {
-			savegif(0);
-			anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
-		}
+	    char *e;
+	    t = strtok(strtok_arg, whitespace);
+	    strtok_arg = NULL;
+	    if (NULL == t)
+		continue;
+	    anim_gif.input_time = strtod(t, &e);
+	    if (e == t)
+		errx(1, "bad input parsing time on line %d: %s", line, t);
+	    if ((time_t) anim_gif.input_time > anim_gif.next_output) {
+		savegif(0);
+		anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
+	    }
 	}
 
 	/*
@@ -188,7 +209,7 @@ paint(void)
 	    errx(1, "bad input parsing IP on line %d: %s", line, t);
 
 	if (0 == xy_from_ip(i, &x, &y))
-		continue;
+	    continue;
 	if (debug)
 	    fprintf(stderr, "%s => %u => (%d,%d)\n", t, i, x, y);
 
@@ -200,38 +221,23 @@ paint(void)
 	t = strtok(NULL, whitespace);
 	if (NULL != t) {
 	    k = atoi(t);
+	    if (accumulate_counts)
+		k += get_pixel_value(x, y);
 	    if (0.0 != log_A) {
 		/*
 		 * apply logarithmic stretching
 		 */
-		k = (int)((log_C * log((double)k / log_A)) + 0.5);
+		k = (int) ((log_C * log((double) k / log_A)) + 0.5);
 	    }
 	} else {
-	    color = gdImageGetPixel(image, x, y);
-	    if (debug)
-		fprintf(stderr, "pixel (%d,%d) has color index %d\n", x, y, color);
-#if PNG_256_COLORS
-	    assert(color >= 0);
-	    assert(color < NUM_DATA_COLORS);
-	    color++;
-#else
-	    for (k = 0; k < NUM_DATA_COLORS; k++) {
-		if (colors[k] == color) {
-		    if (debug)
-			fprintf(stderr, "color %d has index %d\n", color, k);
-		    break;
-		}
-	    }
-	    if (k == NUM_DATA_COLORS)	/* not found */
-		k = 0;
+	    k = get_pixel_value(x, y);
 	    k++;
-#endif
 	}
-	    if (k < 0)
-		k = 0;
-	    if (k >= NUM_DATA_COLORS)
-		k = NUM_DATA_COLORS - 1;
-	    color = colors[k];
+	if (k < 0)
+	    k = 0;
+	if (k >= NUM_DATA_COLORS)
+	    k = NUM_DATA_COLORS - 1;
+	color = colors[k];
 
 	gdImageSetPixel(image, x, y, color);
 	line++;
@@ -332,13 +338,16 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:c:df:g:hk:mo:prs:t:u:y:z:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:Cc:df:g:hk:mo:prs:t:u:y:z:")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
 	    break;
 	case 'B':
 	    log_B = atof(optarg);
+	    break;
+	case 'C':
+	    accumulate_counts = 1;
 	    break;
 	case 'd':
 	    debug++;
