@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2012-03-14</updated>
+  <updated>2012-04-23</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -1786,7 +1786,7 @@ UNALLOCATED: not yet allocated or reserved.</footnote>
   <footnote anchor="4">This was reserved for Public Data Networks <xref type="rfc" data="rfc1356"/>
 See: http://www.iana.org/assignments/public-data-network-numbers
 It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010</footnote>
-  <footnote anchor="5">100.64.0.0/10 is reserved for Shared Address Space <xref type="draft" data="draft-weil-shared-transition-space-request"/></footnote>
+  <footnote anchor="5">100.64.0.0/10 is reserved for Shared Address Space <xref type="rfc" data="rfc6598"/></footnote>
   <footnote anchor="6">127.0.0.0/8 is reserved for Loopback <xref type="rfc" data="rfc5735"/></footnote>
   <footnote anchor="7">169.254.0.0/16 reserved for Link Local <xref type="rfc" data="rfc5735"/></footnote>
   <footnote anchor="8">172.16.0.0/12 reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/></footnote>
