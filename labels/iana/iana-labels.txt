@@ -33,7 +33,7 @@
 32.0.0.0/8	AT&T	prefix
 33.0.0.0/8	DLA Systems Automation Center	prefix
 34.0.0.0/8	Halliburton	prefix
-35.0.0.0/8	Merit	prefix
+35.0.0.0/8	Various Registries	prefix
 36.0.0.0/8	APNIC	prefix
 37.0.0.0/8	RIPE	prefix
 38.0.0.0/8	PSINet, Inc.	prefix
