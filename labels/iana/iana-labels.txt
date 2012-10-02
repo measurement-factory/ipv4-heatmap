@@ -39,7 +39,7 @@
 38.0.0.0/8	PSINet, Inc.	prefix
 39.0.0.0/8	APNIC	prefix
 40.0.0.0/8	Eli Lily	prefix
-41.0.0.0/8	AfriNIC	prefix
+41.0.0.0/8	AFRINIC	prefix
 42.0.0.0/8	APNIC	prefix
 43.0.0.0/8	Various Registries	prefix
 44.0.0.0/8	Amateur Radio Digital Communications	prefix
@@ -69,10 +69,10 @@
 96.0.0.0/6	ARIN	prefix
 100.0.0.0/8	ARIN	prefix
 101.0.0.0/8	APNIC	prefix
-102.0.0.0/8	AfriNIC	prefix
+102.0.0.0/8	AFRINIC	prefix
 103.0.0.0/8	APNIC	prefix
 104.0.0.0/8	ARIN	prefix
-105.0.0.0/8	AfriNIC	prefix
+105.0.0.0/8	AFRINIC	prefix
 106.0.0.0/8	APNIC	prefix
 107.0.0.0/8	ARIN	prefix
 108.0.0.0/8	ARIN	prefix
@@ -108,7 +108,7 @@
 193.0.0.0/8	RIPE	prefix
 194.0.0.0/7	RIPE	prefix
 196.0.0.0/8	Various Registries	prefix
-197.0.0.0/8	AfriNIC	prefix
+197.0.0.0/8	AFRINIC	prefix
 198.0.0.0/8	Various Registries	prefix
 199.0.0.0/8	ARIN	prefix
 200.0.0.0/7	LACNIC	prefix

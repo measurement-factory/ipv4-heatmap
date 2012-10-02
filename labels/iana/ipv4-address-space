@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2012-09-21</updated>
+  <updated>2012-10-01</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -273,7 +273,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>041/8</prefix>
-    <designation>AfriNIC</designation>
+    <designation>AFRINIC</designation>
     <date>2005-04</date>
     <whois>whois.afrinic.net</whois>
     <status>ALLOCATED</status>
@@ -691,7 +691,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>102/8</prefix>
-    <designation>AfriNIC</designation>
+    <designation>AFRINIC</designation>
     <date>2011-02</date>
     <whois>whois.afrinic.net</whois>
     <status>ALLOCATED</status>
@@ -712,7 +712,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>105/8</prefix>
-    <designation>AfriNIC</designation>
+    <designation>AFRINIC</designation>
     <date>2010-11</date>
     <whois>whois.afrinic.net</whois>
     <status>ALLOCATED</status>
@@ -1055,7 +1055,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>154/8</prefix>
-    <designation>Administered by AfriNIC</designation>
+    <designation>Administered by AFRINIC</designation>
     <date>1993-05</date>
     <whois>whois.afrinic.net</whois>
     <status>LEGACY</status>
@@ -1353,14 +1353,14 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>196/8</prefix>
-    <designation>Administered by AfriNIC</designation>
+    <designation>Administered by AFRINIC</designation>
     <date>1993-05</date>
     <whois>whois.afrinic.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>197/8</prefix>
-    <designation>AfriNIC</designation>
+    <designation>AFRINIC</designation>
     <date>2008-10</date>
     <whois>whois.afrinic.net</whois>
     <status>ALLOCATED</status>
