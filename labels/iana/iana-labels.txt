@@ -38,14 +38,14 @@
 37.0.0.0/8	RIPE	prefix
 38.0.0.0/8	PSINet, Inc.	prefix
 39.0.0.0/8	APNIC	prefix
-40.0.0.0/8	Eli Lily	prefix
+40.0.0.0/8	Eli Lilly and Company	prefix
 41.0.0.0/8	AFRINIC	prefix
 42.0.0.0/8	APNIC	prefix
 43.0.0.0/8	Various Registries	prefix
 44.0.0.0/8	Amateur Radio Digital Communications	prefix
 45.0.0.0/8	Various Registries	prefix
 46.0.0.0/8	RIPE	prefix
-47.0.0.0/8	Bell-Northern Research	prefix
+47.0.0.0/8	Various Registries	prefix
 48.0.0.0/8	Prudential	prefix
 49.0.0.0/8	APNIC	prefix
 50.0.0.0/8	ARIN	prefix
