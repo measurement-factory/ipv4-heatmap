@@ -38,7 +38,7 @@
 37.0.0.0/8	RIPE	prefix
 38.0.0.0/8	PSINet, Inc.	prefix
 39.0.0.0/8	APNIC	prefix
-40.0.0.0/8	Eli Lilly and Company	prefix
+40.0.0.0/8	Various Registries	prefix
 41.0.0.0/8	AFRINIC	prefix
 42.0.0.0/8	APNIC	prefix
 43.0.0.0/8	Various Registries	prefix

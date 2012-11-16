@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2012-10-30</updated>
+  <updated>2012-11-16</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -267,8 +267,9 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
   </record>
   <record>
     <prefix>040/8</prefix>
-    <designation>Eli Lilly and Company</designation>
+    <designation>Administered by ARIN</designation>
     <date>1994-06</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
