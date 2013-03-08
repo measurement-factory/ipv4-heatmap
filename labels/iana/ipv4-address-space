@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2013-02-06</updated>
+  <updated>2013-03-07</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -1778,14 +1778,14 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <xref type="note" data="17"/>
   </record>
   <footnote anchor="1">Indicates the status of address blocks as follows:
-RESERVED: designated by the IETF for specific non-unicast purposes as noted.
+RESERVED: designated by the IETF for specific non-global-unicast purposes as noted.
 LEGACY: allocated by the central Internet Registry (IR) prior to the Regional Internet Registries
 (RIRs). This address space is now administered by individual RIRs as noted, including maintenance
 of WHOIS Directory and reverse DNS records. Assignments from these blocks are distributed globally
 on a regional basis.
 ALLOCATED: delegated entirely to specific RIR as indicated.
 UNALLOCATED: not yet allocated or reserved.</footnote>
-  <footnote anchor="2">0.0.0.0/8 reserved for self-identification <xref type="rfc" data="rfc5735"/>. 
+  <footnote anchor="2">0.0.0.0/8 reserved for self-identification <xref type="rfc" data="rfc1122"/>, section 3.2.1.3. 
 Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
   <footnote anchor="3">Reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/>.
 Complete registration details for 10.0.0.0/8 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
@@ -1793,9 +1793,9 @@ Complete registration details for 10.0.0.0/8 are found in <xref type="registry" 
 It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.</footnote>
   <footnote anchor="5">100.64.0.0/10 reserved for Shared Address Space <xref type="rfc" data="rfc6598"/>. 
 Complete registration details for 100.64.0.0/10 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
-  <footnote anchor="6">127.0.0.0/8 reserved for Loopback <xref type="rfc" data="rfc5735"/>. 
+  <footnote anchor="6">127.0.0.0/8 reserved for Loopback <xref type="rfc" data="rfc1122"/>, section 3.2.1.3. 
 Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
-  <footnote anchor="7">169.254.0.0/16 reserved for Link Local <xref type="rfc" data="rfc5735"/>.
+  <footnote anchor="7">169.254.0.0/16 reserved for Link Local <xref type="rfc" data="rfc3927"/>.
 Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
   <footnote anchor="8">172.16.0.0/12 reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/>. 
 Complete registration details are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
@@ -1809,7 +1809,7 @@ at 192.88.99.1/32 - see <xref type="rfc" data="rfc3068"/> section 2.4)
 Complete registration details for 192.168.0.0/16 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
   <footnote anchor="10">192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry <xref type="rfc" data="rfc5736"/>. 
 Complete registration details for 192.0.0.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
-  <footnote anchor="11">198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing <xref type="rfc" data="rfc5735"/>. 
+  <footnote anchor="11">198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing <xref type="rfc" data="rfc2544"/>. 
 Complete registration details for 198.18.0.0/15 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.
 198.51.100.0/24 reserved for TEST-NET-2 <xref type="rfc" data="rfc5737"/>. 
 Complete registration details for 198.51.100.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
