@@ -52,7 +52,7 @@
 51.0.0.0/8	UK Government Department for Work and Pensions	prefix
 52.0.0.0/8	E.I. duPont de Nemours and Co., Inc.	prefix
 53.0.0.0/8	Cap Debis CCS	prefix
-54.0.0.0/8	Merck and Co., Inc.	prefix
+54.0.0.0/8	Various Registries	prefix
 55.0.0.0/8	DoD NIC	prefix
 56.0.0.0/8	USPS	prefix
 57.0.0.0/8	SITA	prefix
