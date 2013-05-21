@@ -3,7 +3,7 @@
 <?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
 <registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
   <title>IANA IPv4 Address Space Registry</title>
-  <updated>2013-03-22</updated>
+  <updated>2013-05-20</updated>
   <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
@@ -33,12 +33,14 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>003/8</prefix>
     <designation>General Electric Company</designation>
     <date>1994-05</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>004/8</prefix>
     <designation>Level 3 Communications, Inc.</designation>
     <date>1992-12</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -65,12 +67,14 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>008/8</prefix>
     <designation>Level 3 Communications, Inc.</designation>
     <date>1992-12</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>009/8</prefix>
     <designation>IBM</designation>
     <date>1992-08</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -90,12 +94,14 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>012/8</prefix>
     <designation>AT&amp;T Bell Laboratories</designation>
     <date>1995-06</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>013/8</prefix>
     <designation>Xerox Corporation</designation>
     <date>1991-09</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -110,36 +116,42 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>015/8</prefix>
     <designation>Hewlett-Packard Company</designation>
     <date>1994-07</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>016/8</prefix>
     <designation>Digital Equipment Corporation</designation>
     <date>1994-11</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>017/8</prefix>
     <designation>Apple Computer Inc.</designation>
     <date>1992-07</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>018/8</prefix>
     <designation>MIT</designation>
     <date>1994-01</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>019/8</prefix>
     <designation>Ford Motor Company</designation>
     <date>1995-05</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
     <prefix>020/8</prefix>
     <designation>Computer Sciences Corporation</designation>
     <date>1994-10</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -217,6 +229,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>032/8</prefix>
     <designation>AT&amp;T Global Network Services</designation>
     <date>1994-06</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -229,6 +242,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>034/8</prefix>
     <designation>Halliburton Company</designation>
     <date>1993-03</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -256,6 +270,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>038/8</prefix>
     <designation>PSINet, Inc.</designation>
     <date>1994-09</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -297,6 +312,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>044/8</prefix>
     <designation>Amateur Radio Digital Communications</designation>
     <date>1992-07</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -324,6 +340,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>048/8</prefix>
     <designation>Prudential Securities Inc.</designation>
     <date>1995-05</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -351,6 +368,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>052/8</prefix>
     <designation>E.I. duPont de Nemours and Co., Inc.</designation>
     <date>1991-12</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
@@ -376,6 +394,7 @@ regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> document
     <prefix>056/8</prefix>
     <designation>US Postal Service</designation>
     <date>1994-06</date>
+    <whois>whois.arin.net</whois>
     <status>LEGACY</status>
   </record>
   <record>
