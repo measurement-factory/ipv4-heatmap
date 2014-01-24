@@ -21,9 +21,11 @@ here. Originally, all the IPv4 address spaces was managed directly by the IANA. 
 address space were allocated to various other registries to manage for particular purposes or
 regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">RFC1466</a>] documents most of these allocations.</pre>
       </dd>
-      <dt>Alternative Formats</dt>
+      <dt>Available Formats</dt>
       <dd>
         <a class="altformat" href="ipv4-address-space.csv"><img src="/_img/icons/text-csv.png" /><br />CSV</a>
+        <a class="altformat" href="ipv4-address-space.xml"><img src="/_img/icons/text-xml.png" /><br />XML</a>
+        <a class="altformat" href="ipv4-address-space.xhtml"><img src="/_img/icons/text-html.png" /><br />HTML</a>
         <a class="altformat" href="ipv4-address-space.txt"><img src="/_img/icons/text-plain.png" /><br />Plain text</a>
       </dd>
     </dl>
@@ -31,7 +33,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
       <input name="search" size="18" type="text" value="" />
       <input value="Search" type="submit" />
     </form>
-    <center> 1 <a href="?&amp;page=2">2</a> <a href="?&amp;page=3">3</a></center>
+    <div class="pagination"> 1 <a href="?&amp;page=2">2</a> <a href="?&amp;page=3">3</a></div>
     <table id="table-ipv4-address-space" class="sortable_srv">
       <thead>
         <tr>
@@ -846,6 +848,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
       </tbody>
     </table>
+    <div class="pagination"> 1 <a href="?&amp;page=2">2</a> <a href="?&amp;page=3">3</a></div>
     <h1>Footnotes</h1>
     <table class="fn">
       <tr>
