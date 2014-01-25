@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="../_support/iana-registry.css" type="text/css" />
     <script type="text/javascript" src="../_support/jquery.js"></script>
     <script type="text/javascript" src="../_support/sort.js"></script>
-    <script type="text/javascript" src="../_support/sort_srv.js"></script>
-    <script type="text/javascript" src="../_support/jsuri.js"></script>
     <title>IANA IPv4 Address Space Registry</title>
   </head>
   <body>
@@ -29,12 +27,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         <a class="altformat" href="ipv4-address-space.txt"><img src="/_img/icons/text-plain.png" /><br />Plain text</a>
       </dd>
     </dl>
-    <form method="get" action="?">
-      <input name="search" size="18" type="text" value="" />
-      <input value="Search" type="submit" />
-    </form>
-    <div class="pagination"> 1 <a href="?&amp;page=2">2</a> <a href="?&amp;page=3">3</a></div>
-    <table id="table-ipv4-address-space" class="sortable_srv">
+    <table id="table-ipv4-address-space" class="sortable">
       <thead>
         <tr>
           <th>Prefix</th>
@@ -846,11 +839,1273 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
+        <tr>
+          <td align="center">100/8</td>
+          <td>ARIN</td>
+          <td align="center">2010-11</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center">[<a href="#note5">5</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">101/8</td>
+          <td>APNIC</td>
+          <td align="center">2010-08</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">102/8</td>
+          <td>AFRINIC</td>
+          <td align="center">2011-02</td>
+          <td align="center">whois.afrinic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">103/8</td>
+          <td>APNIC</td>
+          <td align="center">2011-02</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">104/8</td>
+          <td>ARIN</td>
+          <td align="center">2011-02</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">105/8</td>
+          <td>AFRINIC</td>
+          <td align="center">2010-11</td>
+          <td align="center">whois.afrinic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">106/8</td>
+          <td>APNIC</td>
+          <td align="center">2011-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">107/8</td>
+          <td>ARIN</td>
+          <td align="center">2010-02</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">108/8</td>
+          <td>ARIN</td>
+          <td align="center">2008-12</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">109/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">2009-01</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">110/8</td>
+          <td>APNIC</td>
+          <td align="center">2008-11</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">111/8</td>
+          <td>APNIC</td>
+          <td align="center">2008-11</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">112/8</td>
+          <td>APNIC</td>
+          <td align="center">2008-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">113/8</td>
+          <td>APNIC</td>
+          <td align="center">2008-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">114/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-10</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">115/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-10</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">116/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">117/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">118/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">119/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">120/8</td>
+          <td>APNIC</td>
+          <td align="center">2007-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">121/8</td>
+          <td>APNIC</td>
+          <td align="center">2006-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">122/8</td>
+          <td>APNIC</td>
+          <td align="center">2006-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">123/8</td>
+          <td>APNIC</td>
+          <td align="center">2006-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">124/8</td>
+          <td>APNIC</td>
+          <td align="center">2005-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">125/8</td>
+          <td>APNIC</td>
+          <td align="center">2005-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">126/8</td>
+          <td>APNIC</td>
+          <td align="center">2005-01</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">127/8</td>
+          <td>IANA - Loopback</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note6">6</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">128/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">129/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">130/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">131/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">132/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">133/8</td>
+          <td>Administered by APNIC</td>
+          <td align="center">1997-03</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">134/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">135/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">136/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">137/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">138/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">139/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">140/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">141/8</td>
+          <td>Administered by RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">142/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">143/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">144/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">145/8</td>
+          <td>Administered by RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">146/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">147/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">148/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">149/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">150/8</td>
+          <td>Administered by APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">151/8</td>
+          <td>Administered by RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">152/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">153/8</td>
+          <td>Administered by APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">154/8</td>
+          <td>Administered by AFRINIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.afrinic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">155/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">156/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">157/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">158/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">159/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">160/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">161/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">162/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">163/8</td>
+          <td>Administered by APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">164/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">165/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">166/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">167/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">168/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">169/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center">[<a href="#note7">7</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">170/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">171/8</td>
+          <td>Administered by APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">172/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center">[<a href="#note8">8</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">173/8</td>
+          <td>ARIN</td>
+          <td align="center">2008-02</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">174/8</td>
+          <td>ARIN</td>
+          <td align="center">2008-02</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">175/8</td>
+          <td>APNIC</td>
+          <td align="center">2009-08</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">176/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">2010-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">177/8</td>
+          <td>LACNIC</td>
+          <td align="center">2010-06</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">178/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">2009-01</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">179/8</td>
+          <td>LACNIC</td>
+          <td align="center">2011-02</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">180/8</td>
+          <td>APNIC</td>
+          <td align="center">2009-04</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">181/8</td>
+          <td>LACNIC</td>
+          <td align="center">2010-06</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">182/8</td>
+          <td>APNIC</td>
+          <td align="center">2009-08</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">183/8</td>
+          <td>APNIC</td>
+          <td align="center">2009-04</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">184/8</td>
+          <td>ARIN</td>
+          <td align="center">2008-12</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">185/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">2011-02</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">186/8</td>
+          <td>LACNIC</td>
+          <td align="center">2007-09</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">187/8</td>
+          <td>LACNIC</td>
+          <td align="center">2007-09</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">188/8</td>
+          <td>Administered by RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">189/8</td>
+          <td>LACNIC</td>
+          <td align="center">1995-06</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">190/8</td>
+          <td>LACNIC</td>
+          <td align="center">1995-06</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">191/8</td>
+          <td>Administered by LACNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">192/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center">[<a href="#note9">9</a>][<a href="#note10">10</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">193/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">194/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">195/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">196/8</td>
+          <td>Administered by AFRINIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.afrinic.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">197/8</td>
+          <td>AFRINIC</td>
+          <td align="center">2008-10</td>
+          <td align="center">whois.afrinic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">198/8</td>
+          <td>Administered by ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">LEGACY</td>
+          <td align="center">[<a href="#note11">11</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">199/8</td>
+          <td>ARIN</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">200/8</td>
+          <td>LACNIC</td>
+          <td align="center">2002-11</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">201/8</td>
+          <td>LACNIC</td>
+          <td align="center">2003-04</td>
+          <td align="center">whois.lacnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">202/8</td>
+          <td>APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">203/8</td>
+          <td>APNIC</td>
+          <td align="center">1993-05</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center">[<a href="#note12">12</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">204/8</td>
+          <td>ARIN</td>
+          <td align="center">1994-03</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">205/8</td>
+          <td>ARIN</td>
+          <td align="center">1994-03</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">206/8</td>
+          <td>ARIN</td>
+          <td align="center">1995-04</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">207/8</td>
+          <td>ARIN</td>
+          <td align="center">1995-11</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">208/8</td>
+          <td>ARIN</td>
+          <td align="center">1996-04</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">209/8</td>
+          <td>ARIN</td>
+          <td align="center">1996-06</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">210/8</td>
+          <td>APNIC</td>
+          <td align="center">1996-06</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">211/8</td>
+          <td>APNIC</td>
+          <td align="center">1996-06</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">212/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">1997-10</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">213/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">1993-10</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">214/8</td>
+          <td>US-DOD</td>
+          <td align="center">1998-03</td>
+          <td align="center"></td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">215/8</td>
+          <td>US-DOD</td>
+          <td align="center">1998-03</td>
+          <td align="center"></td>
+          <td align="center">LEGACY</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">216/8</td>
+          <td>ARIN</td>
+          <td align="center">1998-04</td>
+          <td align="center">whois.arin.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">217/8</td>
+          <td>RIPE NCC</td>
+          <td align="center">2000-06</td>
+          <td align="center">whois.ripe.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">218/8</td>
+          <td>APNIC</td>
+          <td align="center">2000-12</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">219/8</td>
+          <td>APNIC</td>
+          <td align="center">2001-09</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">220/8</td>
+          <td>APNIC</td>
+          <td align="center">2001-12</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">221/8</td>
+          <td>APNIC</td>
+          <td align="center">2002-07</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">222/8</td>
+          <td>APNIC</td>
+          <td align="center">2003-02</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">223/8</td>
+          <td>APNIC</td>
+          <td align="center">2010-04</td>
+          <td align="center">whois.apnic.net</td>
+          <td align="center">ALLOCATED</td>
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">224/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">225/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">226/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">227/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">228/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">229/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">230/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">231/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">232/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">233/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">234/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>][<a href="#note14">14</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">235/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">236/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">237/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">238/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">239/8</td>
+          <td>Multicast</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note13">13</a>][<a href="#note15">15</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">240/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">241/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">242/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">243/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">244/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">245/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">246/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">247/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">248/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">249/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">250/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">251/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">252/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">253/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">254/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>]</td>
+        </tr>
+        <tr>
+          <td align="center">255/8</td>
+          <td>Future use</td>
+          <td align="center">1981-09</td>
+          <td align="center"></td>
+          <td align="center">RESERVED</td>
+          <td align="center">[<a href="#note16">16</a>][<a href="#note17">17</a>]</td>
+        </tr>
       </tbody>
     </table>
-    <div class="pagination"> 1 <a href="?&amp;page=2">2</a> <a href="?&amp;page=3">3</a></div>
     <h1>Footnotes</h1>
     <table class="fn">
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note1" id="note1">[1]</a>
+        </td>
+        <td class="fn">
+          <pre>Indicates the status of address blocks as follows:
+RESERVED: designated by the IETF for specific non-global-unicast purposes as noted.
+LEGACY: allocated by the central Internet Registry (IR) prior to the Regional Internet Registries
+(RIRs). This address space is now administered by individual RIRs as noted, including maintenance
+of WHOIS Directory and reverse DNS records. Assignments from these blocks are distributed globally
+on a regional basis.
+ALLOCATED: delegated entirely to specific RIR as indicated.
+UNALLOCATED: not yet allocated or reserved.</pre>
+        </td>
+      </tr>
       <tr>
         <td class="fn" valign="top">
           <a name="note2" id="note2">[2]</a>
@@ -876,6 +2131,128 @@ Complete registration details for 10.0.0.0/8 are found in [<a href="http://www.i
         <td class="fn">
           <pre>This was reserved for Public Data Networks [<a href="http://www.iana.org/go/rfc1356">RFC1356</a>]. See [<a href="http://www.iana.org/assignments/public-data-network-numbers">IANA registry <i>public-data-network-numbers</i></a>].
 It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note5" id="note5">[5]</a>
+        </td>
+        <td class="fn">
+          <pre>100.64.0.0/10 reserved for Shared Address Space [<a href="http://www.iana.org/go/rfc6598">RFC6598</a>]. 
+Complete registration details for 100.64.0.0/10 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note6" id="note6">[6]</a>
+        </td>
+        <td class="fn">
+          <pre>127.0.0.0/8 reserved for Loopback [<a href="http://www.iana.org/go/rfc1122">RFC1122</a>], section 3.2.1.3. 
+Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note7" id="note7">[7]</a>
+        </td>
+        <td class="fn">
+          <pre>169.254.0.0/16 reserved for Link Local [<a href="http://www.iana.org/go/rfc3927">RFC3927</a>].
+Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note8" id="note8">[8]</a>
+        </td>
+        <td class="fn">
+          <pre>172.16.0.0/12 reserved for Private-Use Networks [<a href="http://www.iana.org/go/rfc1918">RFC1918</a>]. 
+Complete registration details are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note9" id="note9">[9]</a>
+        </td>
+        <td class="fn">
+          <pre>192.0.2.0/24  reserved for TEST-NET-1 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
+Complete registration details for 192.0.2.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
+192.88.99.0/24 reserved for 6to4 Relay Anycast [<a href="http://www.iana.org/go/rfc3068">RFC3068</a>]
+Complete registration details for 192.88.99.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
+192.88.99.2/32 reserved for 6a44 Relay Anycast [<a href="http://www.iana.org/go/rfc6751">RFC6751</a>] (possibly collocated with 6to4 Relay 
+at 192.88.99.1/32 - see [<a href="http://www.iana.org/go/rfc3068">RFC3068</a>] section 2.4)
+192.168.0.0/16 reserved for Private-Use Networks [<a href="http://www.iana.org/go/rfc1918">RFC1918</a>]. 
+Complete registration details for 192.168.0.0/16 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note10" id="note10">[10]</a>
+        </td>
+        <td class="fn">
+          <pre>192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry [<a href="http://www.iana.org/go/rfc5736">RFC5736</a>]. 
+Complete registration details for 192.0.0.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note11" id="note11">[11]</a>
+        </td>
+        <td class="fn">
+          <pre>198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing [<a href="http://www.iana.org/go/rfc2544">RFC2544</a>]. 
+Complete registration details for 198.18.0.0/15 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
+198.51.100.0/24 reserved for TEST-NET-2 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
+Complete registration details for 198.51.100.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note12" id="note12">[12]</a>
+        </td>
+        <td class="fn">
+          <pre>203.0.113.0/24 reserved for TEST-NET-3 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
+Complete registration details for 203.0.113.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note13" id="note13">[13]</a>
+        </td>
+        <td class="fn">
+          <pre>Multicast (formerly "Class D") [<a href="http://www.iana.org/go/rfc5771">RFC5771</a>] registered in [<a href="http://www.iana.org/assignments/multicast-addresses">IANA registry <i>multicast-addresses</i></a>]</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note14" id="note14">[14]</a>
+        </td>
+        <td class="fn">
+          <pre>Unicast-Prefix-Based IPv4 Multicast Addresses [<a href="http://www.iana.org/go/rfc6034">RFC6034</a>]</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note15" id="note15">[15]</a>
+        </td>
+        <td class="fn">
+          <pre>Administratively Scoped IP Multicast [<a href="http://www.iana.org/go/rfc2365">RFC2365</a>]</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note16" id="note16">[16]</a>
+        </td>
+        <td class="fn">
+          <pre>Reserved for future use (formerly "Class E") [<a href="http://www.iana.org/go/rfc1112">RFC1112</a>].
+Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="fn" valign="top">
+          <a name="note17" id="note17">[17]</a>
+        </td>
+        <td class="fn">
+          <pre>255.255.255.255 is reserved for "limited broadcast" destination address [<a href="http://www.iana.org/go/rfc919">RFC919</a>] and [<a href="http://www.iana.org/go/rfc922">RFC922</a>].
+Complete registration details for 255.255.255.255/32 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
         </td>
       </tr>
     </table>
