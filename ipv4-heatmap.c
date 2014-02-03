@@ -315,6 +315,7 @@ usage(const char *argv0)
     printf("usage: %s [options] < iplist\n", t ? t + 1 : argv0);
     printf("\t-A float   logarithmic scaling, min value\n");
     printf("\t-B float   logarithmic scaling, max value\n");
+    printf("\t-C         values accumulate in Exact input mode\n");
     printf("\t-a file    annotations file\n");
     printf("\t-c color   color of annotations (0xRRGGBB)\n");
     printf("\t-d         increase debugging\n");
