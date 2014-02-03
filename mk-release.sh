@@ -36,7 +36,7 @@ YYMMDD=`date +%Y%m%d`
 mkdir ipv4-heatmap-$YYMMDD
 
 ls $MANIFEST | cpio -pdv ipv4-heatmap-$YYMMDD
-sed -i .bak -e "s/^#undef RELEASE_VER/#define RELEASE_VER \"$YYMMDD\"/" \
+sed -i.bak -e "s/^#undef RELEASE_VER/#define RELEASE_VER \"$YYMMDD\"/" \
 	ipv4-heatmap-$YYMMDD/ipv4-heatmap.c
 rm ipv4-heatmap-$YYMMDD/ipv4-heatmap.c.bak
 (cd ipv4-heatmap-$YYMMDD; chmod 644 $MANIFEST)
