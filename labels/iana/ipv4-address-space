@@ -11,7 +11,11 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2013-05-20</dd>
+      <dd>2014-03-11</dd>
+      <dt>Registration Procedure(s)</dt>
+      <dd>
+        <pre>Allocated following the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>].</pre>
+      </dd>
       <dt>Description</dt>
       <dd>
         <pre>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
