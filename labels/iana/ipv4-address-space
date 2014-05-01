@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2014-03-19</dd>
+      <dd>2014-05-01</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -98,7 +98,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">006/8</td>
           <td>Army Information Systems Center</td>
           <td align="center">1994-02</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -138,7 +138,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">011/8</td>
           <td>DoD Intel Information Systems</td>
           <td align="center">1993-05</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -218,7 +218,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">021/8</td>
           <td>DDN-RVN</td>
           <td align="center">1991-07</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -226,7 +226,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">022/8</td>
           <td>Defense Information Systems Agency</td>
           <td align="center">1993-05</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -258,7 +258,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">026/8</td>
           <td>Defense Information Systems Agency</td>
           <td align="center">1995-05</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -274,7 +274,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">028/8</td>
           <td>DSI-North</td>
           <td align="center">1992-07</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -282,7 +282,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">029/8</td>
           <td>Defense Information Systems Agency</td>
           <td align="center">1991-07</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -290,7 +290,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">030/8</td>
           <td>Defense Information Systems Agency</td>
           <td align="center">1991-07</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -314,7 +314,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">033/8</td>
           <td>DLA Systems Automation Center</td>
           <td align="center">1991-01</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -490,7 +490,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">055/8</td>
           <td>DoD Network Information Center</td>
           <td align="center">1995-04</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1762,7 +1762,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">214/8</td>
           <td>US-DOD</td>
           <td align="center">1998-03</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1770,7 +1770,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td align="center">215/8</td>
           <td>US-DOD</td>
           <td align="center">1998-03</td>
-          <td align="center"></td>
+          <td align="center">whois.arin.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
