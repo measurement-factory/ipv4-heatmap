@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2014-05-01</dd>
+      <dd>2014-05-20</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -25,7 +25,7 @@ address space were allocated to various other registries to manage for particula
 regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">RFC1466</a>] documents most of these allocations.</pre>
       </dd>
       <dt>Reference</dt>
-      <dd>[<a href="http://www.iana.org/go/draft-housley-number-registries-04">RFC-housley-number-registries-04</a>]</dd>
+      <dd>[<a href="http://www.iana.org/go/rfc7249">RFC7249</a>]</dd>
       <dt>Available Formats</dt>
       <dd>
         <a class="altformat" href="ipv4-address-space.csv"><img src="/_img/icons/text-csv.png" /><br />CSV</a>
