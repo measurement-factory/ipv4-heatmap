@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2014-05-20</dd>
+      <dd>2014-10-14</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -472,9 +472,9 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">053/8</td>
-          <td>Cap Debis CCS</td>
+          <td>Daimler AG</td>
           <td align="center">1993-10</td>
-          <td align="center"></td>
+          <td align="center">whois.ripe.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -504,9 +504,9 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">057/8</td>
-          <td>SITA</td>
+          <td>Societe Internationale de Telecommunications Aeronautiques S.C.R.L.</td>
           <td align="center">1995-05</td>
-          <td align="center"></td>
+          <td align="center">whois.ripe.net</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
