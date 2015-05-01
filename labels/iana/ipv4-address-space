@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2014-10-14</dd>
+      <dd>2015-05-01</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -166,7 +166,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">013/8</td>
-          <td>Xerox Corporation</td>
+          <td>Administered by ARIN</td>
           <td align="center">1991-09</td>
           <td align="center">whois.arin.net</td>
           <td align="center" style="white-space: pre"></td>
@@ -337,7 +337,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">032/8</td>
-          <td>AT&amp;T Global Network Services</td>
+          <td>Administered by ARIN</td>
           <td align="center">1994-06</td>
           <td align="center">whois.arin.net</td>
           <td align="center" style="white-space: pre"></td>
@@ -517,7 +517,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">052/8</td>
-          <td>E.I. duPont de Nemours and Co., Inc.</td>
+          <td>Administered by ARIN</td>
           <td align="center">1991-12</td>
           <td align="center">whois.arin.net</td>
           <td align="center" style="white-space: pre"></td>
