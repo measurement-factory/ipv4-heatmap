@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2015-05-11</dd>
+      <dd>2015-07-08</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -61,7 +61,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -178,7 +178,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center">[<a href="#note4">4</a>]</td>
         </tr>
@@ -295,7 +295,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -376,7 +376,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-10</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -403,7 +403,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2011-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -430,7 +430,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-10</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -439,7 +439,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1991-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -493,7 +493,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-08</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -574,7 +574,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -583,7 +583,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -592,7 +592,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2003-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -601,7 +601,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">1997-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -961,7 +961,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-08</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -979,7 +979,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2011-02</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1006,7 +1006,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2011-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1042,7 +1042,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2008-11</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1051,7 +1051,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2008-11</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1060,7 +1060,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2008-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1069,7 +1069,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2008-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1078,7 +1078,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-10</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1087,7 +1087,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-10</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1096,7 +1096,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1105,7 +1105,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1114,7 +1114,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1123,7 +1123,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1132,7 +1132,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2007-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1141,7 +1141,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2006-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1150,7 +1150,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2006-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1159,7 +1159,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2006-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1168,7 +1168,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2005-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1177,7 +1177,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2005-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1186,7 +1186,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2005-01</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1249,7 +1249,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1997-03</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1402,7 +1402,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1429,7 +1429,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1519,7 +1519,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1591,7 +1591,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1627,7 +1627,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2009-08</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1672,7 +1672,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2009-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1690,7 +1690,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2009-08</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1699,7 +1699,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2009-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1870,7 +1870,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1879,7 +1879,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center">[<a href="#note12">12</a>]</td>
         </tr>
@@ -1942,7 +1942,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">1996-06</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1951,7 +1951,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">1996-06</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2014,7 +2014,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2000-12</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2023,7 +2023,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2001-09</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2032,7 +2032,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2001-12</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2041,7 +2041,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2002-07</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2050,7 +2050,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2003-02</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2059,7 +2059,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>APNIC</td>
           <td align="center">2010-04</td>
           <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
