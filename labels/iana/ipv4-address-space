@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2015-07-20</dd>
+      <dd>2015-07-28</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -70,7 +70,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2009-09</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -97,7 +97,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2010-11</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -277,7 +277,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>UK Ministry of Defence</td>
           <td align="center">1995-01</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -331,7 +331,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2010-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -385,7 +385,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2010-11</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -466,7 +466,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2009-09</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -511,7 +511,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by RIPE NCC</td>
           <td align="center">1994-08</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -529,7 +529,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Daimler AG</td>
           <td align="center">1993-10</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -565,7 +565,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Societe Internationale de Telecommunications Aeronautiques S.C.R.L.</td>
           <td align="center">1995-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -610,7 +610,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1997-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -745,7 +745,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2006-08</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -754,7 +754,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2006-08</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -763,7 +763,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2006-08</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -772,7 +772,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2001-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -781,7 +781,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2001-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -790,7 +790,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2002-11</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -799,7 +799,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2003-11</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -808,7 +808,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2003-11</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -817,7 +817,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -826,7 +826,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -835,7 +835,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -844,7 +844,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2004-04</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -853,7 +853,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2005-06</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -862,7 +862,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2005-06</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -871,7 +871,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2005-06</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -880,7 +880,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2007-03</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -889,7 +889,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2007-03</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -898,7 +898,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2007-07</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -907,7 +907,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2007-07</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1033,7 +1033,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2009-01</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1321,7 +1321,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1357,7 +1357,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1411,7 +1411,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1636,7 +1636,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2010-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1654,7 +1654,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2009-01</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1717,7 +1717,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2011-02</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1744,7 +1744,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1789,7 +1789,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1798,7 +1798,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1807,7 +1807,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1960,7 +1960,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1997-10</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1969,7 +1969,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">1993-10</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -2005,7 +2005,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>RIPE NCC</td>
           <td align="center">2000-06</td>
           <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
