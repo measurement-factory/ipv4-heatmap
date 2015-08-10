@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2015-07-28</dd>
+      <dd>2015-08-10</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -421,7 +421,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>AFRINIC</td>
           <td align="center">2005-04</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -970,7 +970,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>AFRINIC</td>
           <td align="center">2011-02</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -997,7 +997,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>AFRINIC</td>
           <td align="center">2010-11</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1438,7 +1438,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by AFRINIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1645,7 +1645,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2010-06</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1663,7 +1663,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2011-02</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1681,7 +1681,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2010-06</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1726,7 +1726,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2007-09</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1735,7 +1735,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2007-09</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1753,7 +1753,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">1995-06</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1762,7 +1762,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">1995-06</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1771,7 +1771,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by LACNIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1816,7 +1816,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>Administered by AFRINIC</td>
           <td align="center">1993-05</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">LEGACY</td>
           <td align="center"></td>
         </tr>
@@ -1825,7 +1825,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>AFRINIC</td>
           <td align="center">2008-10</td>
           <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1852,7 +1852,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2002-11</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
@@ -1861,7 +1861,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
           <td>LACNIC</td>
           <td align="center">2003-04</td>
           <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre"></td>
+          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
           <td align="center">ALLOCATED</td>
           <td align="center"></td>
         </tr>
