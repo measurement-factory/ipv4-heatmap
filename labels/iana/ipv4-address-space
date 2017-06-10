@@ -11,7 +11,7 @@
     <h1>IANA IPv4 Address Space Registry</h1>
     <dl>
       <dt>Last Updated</dt>
-      <dd>2017-04-19</dd>
+      <dd>2017-06-09</dd>
       <dt>Registration Procedure(s)</dt>
       <dd>
         <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
@@ -184,7 +184,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">015/8</td>
-          <td>Hewlett-Packard Company</td>
+          <td>Administered by ARIN</td>
           <td align="center">1994-07</td>
           <td align="center">whois.arin.net</td>
           <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
@@ -193,7 +193,7 @@ regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">
         </tr>
         <tr>
           <td align="center">016/8</td>
-          <td>Digital Equipment Corporation</td>
+          <td>Hewlett Packard Enterprise Company</td>
           <td align="center">1994-11</td>
           <td align="center">whois.arin.net</td>
           <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
