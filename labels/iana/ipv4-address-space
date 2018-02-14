@@ -1,2524 +1,2644 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:iana="http://www.iana.org/assignments">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ASCII" />
-    <link rel="stylesheet" href="../_support/iana-registry.css" type="text/css" />
-    <script type="text/javascript" src="../_support/jquery.js"></script>
-    <script type="text/javascript" src="../_support/sort.js"></script>
-    <title>IANA IPv4 Address Space Registry</title>
-  </head>
-  <body>
-    <h1>IANA IPv4 Address Space Registry</h1>
-    <dl>
-      <dt>Last Updated</dt>
-      <dd>2017-06-09</dd>
-      <dt>Registration Procedure(s)</dt>
-      <dd>
-        <pre>Allocations to RIRs are made in line with the Global Policy published at [<a href="http://www.icann.org/en/resources/policy/global-addressing">http://www.icann.org/en/resources/policy/global-addressing</a>]. 
-All other assignments require IETF Review.</pre>
-      </dd>
-      <dt>Description</dt>
-      <dd>
-        <pre>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="ipv4-address-space.xsl"?>
+<?oxygen RNGSchema="ipv4-address-space.rng" type="xml"?>
+<registry xmlns="http://www.iana.org/assignments" id="ipv4-address-space">
+  <title>IANA IPv4 Address Space Registry</title>
+  <category>Internet Protocol version 4 (IPv4) Address Space</category>
+  <updated>2017-12-21</updated>
+  <xref type="rfc" data="rfc7249"/>
+  <registration_rule>Allocations to RIRs are made in line with the Global Policy published at <xref type="uri" data="http://www.icann.org/en/resources/policy/global-addressing"/>. 
+All other assignments require IETF Review.</registration_rule>
+  <description>The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
 here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
 address space were allocated to various other registries to manage for particular purposes or
-regional areas of the world. RFC 1466 [<a href="http://www.iana.org/go/rfc1466">RFC1466</a>] documents most of these allocations.</pre>
-      </dd>
-      <dt>Reference</dt>
-      <dd>[<a href="http://www.iana.org/go/rfc7249">RFC7249</a>]</dd>
-      <dt>Available Formats</dt>
-      <dd>
-        <a class="altformat" href="ipv4-address-space.csv"><img src="/_img/icons/text-csv.png" /><br />CSV</a>
-        <a class="altformat" href="ipv4-address-space.xml"><img src="/_img/icons/text-xml.png" /><br />XML</a>
-        <a class="altformat" href="ipv4-address-space.xhtml"><img src="/_img/icons/text-html.png" /><br />HTML</a>
-        <a class="altformat" href="ipv4-address-space.txt"><img src="/_img/icons/text-plain.png" /><br />Plain text</a>
-      </dd>
-    </dl>
-    <table id="table-ipv4-address-space" class="sortable">
-      <thead>
-        <tr>
-          <th>Prefix</th>
-          <th>Designation</th>
-          <th>Date</th>
-          <th>WHOIS</th>
-          <th>RDAP</th>
-          <th>Status [<a href="#note1">1</a>]</th>
-          <th>Note</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td align="center">000/8</td>
-          <td>IANA - Local Identification</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note2">2</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">001/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">002/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2009-09</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">003/8</td>
-          <td>General Electric Company</td>
-          <td align="center">1994-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">004/8</td>
-          <td>Level 3 Communications, Inc.</td>
-          <td align="center">1992-12</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">005/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2010-11</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">006/8</td>
-          <td>Army Information Systems Center</td>
-          <td align="center">1994-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">007/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1995-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">008/8</td>
-          <td>Level 3 Communications, Inc.</td>
-          <td align="center">1992-12</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">009/8</td>
-          <td>IBM</td>
-          <td align="center">1992-08</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">010/8</td>
-          <td>IANA - Private Use</td>
-          <td align="center">1995-06</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note3">3</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">011/8</td>
-          <td>DoD Intel Information Systems</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">012/8</td>
-          <td>AT&amp;T Bell Laboratories</td>
-          <td align="center">1995-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">013/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1991-09</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">014/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center">[<a href="#note4">4</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">015/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">016/8</td>
-          <td>Hewlett Packard Enterprise Company</td>
-          <td align="center">1994-11</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">017/8</td>
-          <td>Apple Computer Inc.</td>
-          <td align="center">1992-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">018/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-01</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">019/8</td>
-          <td>Ford Motor Company</td>
-          <td align="center">1995-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">020/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-10</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">021/8</td>
-          <td>DDN-RVN</td>
-          <td align="center">1991-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">022/8</td>
-          <td>Defense Information Systems Agency</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">023/8</td>
-          <td>ARIN</td>
-          <td align="center">2010-11</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">024/8</td>
-          <td>ARIN</td>
-          <td align="center">2001-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">025/8</td>
-          <td>UK Ministry of Defence</td>
-          <td align="center">1995-01</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">026/8</td>
-          <td>Defense Information Systems Agency</td>
-          <td align="center">1995-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">027/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">028/8</td>
-          <td>DSI-North</td>
-          <td align="center">1992-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">029/8</td>
-          <td>Defense Information Systems Agency</td>
-          <td align="center">1991-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">030/8</td>
-          <td>Defense Information Systems Agency</td>
-          <td align="center">1991-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">031/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2010-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">032/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">033/8</td>
-          <td>DLA Systems Automation Center</td>
-          <td align="center">1991-01</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">034/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">035/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">036/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-10</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">037/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2010-11</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">038/8</td>
-          <td>PSINet, Inc.</td>
-          <td align="center">1994-09</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">039/8</td>
-          <td>APNIC</td>
-          <td align="center">2011-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">040/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1994-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">041/8</td>
-          <td>AFRINIC</td>
-          <td align="center">2005-04</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">042/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-10</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">043/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1991-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">044/8</td>
-          <td>Amateur Radio Digital Communications</td>
-          <td align="center">1992-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">045/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1995-01</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">046/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2009-09</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">047/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1991-01</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">048/8</td>
-          <td>Prudential Securities Inc.</td>
-          <td align="center">1995-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">049/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-08</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">050/8</td>
-          <td>ARIN</td>
-          <td align="center">2010-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">051/8</td>
-          <td>Administered by RIPE NCC</td>
-          <td align="center">1994-08</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">052/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1991-12</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">053/8</td>
-          <td>Daimler AG</td>
-          <td align="center">1993-10</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">054/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1992-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">055/8</td>
-          <td>DoD Network Information Center</td>
-          <td align="center">1995-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">056/8</td>
-          <td>US Postal Service</td>
-          <td align="center">1994-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">057/8</td>
-          <td>Societe Internationale de Telecommunications Aeronautiques S.C.R.L.</td>
-          <td align="center">1995-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">058/8</td>
-          <td>APNIC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">059/8</td>
-          <td>APNIC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">060/8</td>
-          <td>APNIC</td>
-          <td align="center">2003-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">061/8</td>
-          <td>APNIC</td>
-          <td align="center">1997-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">062/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1997-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">063/8</td>
-          <td>ARIN</td>
-          <td align="center">1997-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">064/8</td>
-          <td>ARIN</td>
-          <td align="center">1999-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">065/8</td>
-          <td>ARIN</td>
-          <td align="center">2000-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">066/8</td>
-          <td>ARIN</td>
-          <td align="center">2000-07</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">067/8</td>
-          <td>ARIN</td>
-          <td align="center">2001-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">068/8</td>
-          <td>ARIN</td>
-          <td align="center">2001-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">069/8</td>
-          <td>ARIN</td>
-          <td align="center">2002-08</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">070/8</td>
-          <td>ARIN</td>
-          <td align="center">2004-01</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">071/8</td>
-          <td>ARIN</td>
-          <td align="center">2004-08</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">072/8</td>
-          <td>ARIN</td>
-          <td align="center">2004-08</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">073/8</td>
-          <td>ARIN</td>
-          <td align="center">2005-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">074/8</td>
-          <td>ARIN</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">075/8</td>
-          <td>ARIN</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">076/8</td>
-          <td>ARIN</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">077/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2006-08</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">078/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2006-08</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">079/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2006-08</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">080/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2001-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">081/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2001-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">082/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2002-11</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">083/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2003-11</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">084/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2003-11</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">085/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">086/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">087/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">088/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2004-04</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">089/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">090/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">091/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2005-06</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">092/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2007-03</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">093/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2007-03</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">094/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2007-07</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">095/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2007-07</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">096/8</td>
-          <td>ARIN</td>
-          <td align="center">2006-10</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">097/8</td>
-          <td>ARIN</td>
-          <td align="center">2006-10</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">098/8</td>
-          <td>ARIN</td>
-          <td align="center">2006-10</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">099/8</td>
-          <td>ARIN</td>
-          <td align="center">2006-10</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">100/8</td>
-          <td>ARIN</td>
-          <td align="center">2010-11</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center">[<a href="#note5">5</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">101/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-08</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">102/8</td>
-          <td>AFRINIC</td>
-          <td align="center">2011-02</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">103/8</td>
-          <td>APNIC</td>
-          <td align="center">2011-02</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">104/8</td>
-          <td>ARIN</td>
-          <td align="center">2011-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">105/8</td>
-          <td>AFRINIC</td>
-          <td align="center">2010-11</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">106/8</td>
-          <td>APNIC</td>
-          <td align="center">2011-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">107/8</td>
-          <td>ARIN</td>
-          <td align="center">2010-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">108/8</td>
-          <td>ARIN</td>
-          <td align="center">2008-12</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">109/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2009-01</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">110/8</td>
-          <td>APNIC</td>
-          <td align="center">2008-11</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">111/8</td>
-          <td>APNIC</td>
-          <td align="center">2008-11</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">112/8</td>
-          <td>APNIC</td>
-          <td align="center">2008-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">113/8</td>
-          <td>APNIC</td>
-          <td align="center">2008-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">114/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-10</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">115/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-10</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">116/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">117/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">118/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">119/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">120/8</td>
-          <td>APNIC</td>
-          <td align="center">2007-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">121/8</td>
-          <td>APNIC</td>
-          <td align="center">2006-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">122/8</td>
-          <td>APNIC</td>
-          <td align="center">2006-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">123/8</td>
-          <td>APNIC</td>
-          <td align="center">2006-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">124/8</td>
-          <td>APNIC</td>
-          <td align="center">2005-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">125/8</td>
-          <td>APNIC</td>
-          <td align="center">2005-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">126/8</td>
-          <td>APNIC</td>
-          <td align="center">2005-01</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">127/8</td>
-          <td>IANA - Loopback</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note6">6</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">128/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">129/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">130/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">131/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">132/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">133/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1997-03</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">134/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">135/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">136/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">137/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">138/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">139/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">140/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">141/8</td>
-          <td>Administered by RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">142/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">143/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">144/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">145/8</td>
-          <td>Administered by RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">146/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">147/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">148/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">149/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">150/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">151/8</td>
-          <td>Administered by RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">152/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">153/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">154/8</td>
-          <td>Administered by AFRINIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">155/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">156/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">157/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">158/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">159/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">160/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">161/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">162/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">163/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">164/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">165/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">166/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">167/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">168/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">169/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center">[<a href="#note7">7</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">170/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">171/8</td>
-          <td>Administered by APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">172/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center">[<a href="#note8">8</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">173/8</td>
-          <td>ARIN</td>
-          <td align="center">2008-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">174/8</td>
-          <td>ARIN</td>
-          <td align="center">2008-02</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">175/8</td>
-          <td>APNIC</td>
-          <td align="center">2009-08</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">176/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2010-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">177/8</td>
-          <td>LACNIC</td>
-          <td align="center">2010-06</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">178/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2009-01</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">179/8</td>
-          <td>LACNIC</td>
-          <td align="center">2011-02</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">180/8</td>
-          <td>APNIC</td>
-          <td align="center">2009-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">181/8</td>
-          <td>LACNIC</td>
-          <td align="center">2010-06</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">182/8</td>
-          <td>APNIC</td>
-          <td align="center">2009-08</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">183/8</td>
-          <td>APNIC</td>
-          <td align="center">2009-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">184/8</td>
-          <td>ARIN</td>
-          <td align="center">2008-12</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">185/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2011-02</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">186/8</td>
-          <td>LACNIC</td>
-          <td align="center">2007-09</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">187/8</td>
-          <td>LACNIC</td>
-          <td align="center">2007-09</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">188/8</td>
-          <td>Administered by RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">189/8</td>
-          <td>LACNIC</td>
-          <td align="center">1995-06</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">190/8</td>
-          <td>LACNIC</td>
-          <td align="center">1995-06</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">191/8</td>
-          <td>Administered by LACNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">192/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center">[<a href="#note9">9</a>][<a href="#note10">10</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">193/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">194/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">195/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">196/8</td>
-          <td>Administered by AFRINIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">197/8</td>
-          <td>AFRINIC</td>
-          <td align="center">2008-10</td>
-          <td align="center">whois.afrinic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.afrinic.net/rdap/<br />http://rdap.afrinic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">198/8</td>
-          <td>Administered by ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center">[<a href="#note11">11</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">199/8</td>
-          <td>ARIN</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">200/8</td>
-          <td>LACNIC</td>
-          <td align="center">2002-11</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">201/8</td>
-          <td>LACNIC</td>
-          <td align="center">2003-04</td>
-          <td align="center">whois.lacnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.lacnic.net/rdap/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">202/8</td>
-          <td>APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">203/8</td>
-          <td>APNIC</td>
-          <td align="center">1993-05</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center">[<a href="#note12">12</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">204/8</td>
-          <td>ARIN</td>
-          <td align="center">1994-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">205/8</td>
-          <td>ARIN</td>
-          <td align="center">1994-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">206/8</td>
-          <td>ARIN</td>
-          <td align="center">1995-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">207/8</td>
-          <td>ARIN</td>
-          <td align="center">1995-11</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">208/8</td>
-          <td>ARIN</td>
-          <td align="center">1996-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">209/8</td>
-          <td>ARIN</td>
-          <td align="center">1996-06</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">210/8</td>
-          <td>APNIC</td>
-          <td align="center">1996-06</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">211/8</td>
-          <td>APNIC</td>
-          <td align="center">1996-06</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">212/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1997-10</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">213/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">1993-10</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">214/8</td>
-          <td>US-DOD</td>
-          <td align="center">1998-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">215/8</td>
-          <td>US-DOD</td>
-          <td align="center">1998-03</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">LEGACY</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">216/8</td>
-          <td>ARIN</td>
-          <td align="center">1998-04</td>
-          <td align="center">whois.arin.net</td>
-          <td align="center" style="white-space: pre">https://rdap.arin.net/registry<br />http://rdap.arin.net/registry</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">217/8</td>
-          <td>RIPE NCC</td>
-          <td align="center">2000-06</td>
-          <td align="center">whois.ripe.net</td>
-          <td align="center" style="white-space: pre">https://rdap.db.ripe.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">218/8</td>
-          <td>APNIC</td>
-          <td align="center">2000-12</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">219/8</td>
-          <td>APNIC</td>
-          <td align="center">2001-09</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">220/8</td>
-          <td>APNIC</td>
-          <td align="center">2001-12</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">221/8</td>
-          <td>APNIC</td>
-          <td align="center">2002-07</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">222/8</td>
-          <td>APNIC</td>
-          <td align="center">2003-02</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">223/8</td>
-          <td>APNIC</td>
-          <td align="center">2010-04</td>
-          <td align="center">whois.apnic.net</td>
-          <td align="center" style="white-space: pre">https://rdap.apnic.net/</td>
-          <td align="center">ALLOCATED</td>
-          <td align="center"></td>
-        </tr>
-        <tr>
-          <td align="center">224/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">225/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">226/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">227/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">228/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">229/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">230/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">231/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">232/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">233/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">234/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>][<a href="#note14">14</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">235/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">236/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">237/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">238/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">239/8</td>
-          <td>Multicast</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note13">13</a>][<a href="#note15">15</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">240/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">241/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">242/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">243/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">244/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">245/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">246/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">247/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">248/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">249/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">250/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">251/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">252/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">253/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">254/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>]</td>
-        </tr>
-        <tr>
-          <td align="center">255/8</td>
-          <td>Future use</td>
-          <td align="center">1981-09</td>
-          <td align="center"></td>
-          <td align="center" style="white-space: pre"></td>
-          <td align="center">RESERVED</td>
-          <td align="center">[<a href="#note16">16</a>][<a href="#note17">17</a>]</td>
-        </tr>
-      </tbody>
-    </table>
-    <h1>Footnotes</h1>
-    <table class="fn">
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note1" id="note1">[1]</a>
-        </td>
-        <td class="fn">
-          <pre>Indicates the status of address blocks as follows:
+regional areas of the world. RFC 1466 <xref type="rfc" data="rfc1466"/> documents most of these allocations.</description>
+  <record>
+    <prefix>000/8</prefix>
+    <designation>IANA - Local Identification</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="2"/>
+  </record>
+  <record>
+    <prefix>001/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>002/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2009-09</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>003/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>004/8</prefix>
+    <designation>Level 3 Communications, Inc.</designation>
+    <date>1992-12</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>005/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2010-11</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>006/8</prefix>
+    <designation>Army Information Systems Center</designation>
+    <date>1994-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>007/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1995-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>008/8</prefix>
+    <designation>Level 3 Communications, Inc.</designation>
+    <date>1992-12</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>009/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1992-08</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>010/8</prefix>
+    <designation>IANA - Private Use</designation>
+    <date>1995-06</date>
+    <status>RESERVED</status>
+    <xref type="note" data="3"/>
+  </record>
+  <record>
+    <prefix>011/8</prefix>
+    <designation>DoD Intel Information Systems</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>012/8</prefix>
+    <designation>AT&amp;T Bell Laboratories</designation>
+    <date>1995-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>013/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1991-09</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>014/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-04</date>
+    <whois>whois.apnic.net</whois>
+    <status>ALLOCATED</status>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <xref type="note" data="4"/>
+  </record>
+  <record>
+    <prefix>015/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>016/8</prefix>
+    <designation>Hewlett Packard Enterprise Company</designation>
+    <date>1994-11</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>017/8</prefix>
+    <designation>Apple Computer Inc.</designation>
+    <date>1992-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>018/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-01</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>019/8</prefix>
+    <designation>Ford Motor Company</designation>
+    <date>1995-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>020/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-10</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>021/8</prefix>
+    <designation>DDN-RVN</designation>
+    <date>1991-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>022/8</prefix>
+    <designation>Defense Information Systems Agency</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>023/8</prefix>
+    <designation>ARIN</designation>
+    <date>2010-11</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>024/8</prefix>
+    <designation>ARIN</designation>
+    <date>2001-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>025/8</prefix>
+    <designation>UK Ministry of Defence</designation>
+    <date>1995-01</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>026/8</prefix>
+    <designation>Defense Information Systems Agency</designation>
+    <date>1995-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>027/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>028/8</prefix>
+    <designation>DSI-North</designation>
+    <date>1992-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>029/8</prefix>
+    <designation>Defense Information Systems Agency</designation>
+    <date>1991-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>030/8</prefix>
+    <designation>Defense Information Systems Agency</designation>
+    <date>1991-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>031/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2010-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record updated="2015-05-01">
+    <prefix>032/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>033/8</prefix>
+    <designation>DLA Systems Automation Center</designation>
+    <date>1991-01</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>034/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>035/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>036/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-10</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>037/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2010-11</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>038/8</prefix>
+    <designation>PSINet, Inc.</designation>
+    <date>1994-09</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>039/8</prefix>
+    <designation>APNIC</designation>
+    <date>2011-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>040/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1994-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>041/8</prefix>
+    <designation>AFRINIC</designation>
+    <date>2005-04</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>042/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-10</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>043/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1991-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>044/8</prefix>
+    <designation>Amateur Radio Digital Communications</designation>
+    <date>1992-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>045/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1995-01</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>046/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2009-09</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>047/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1991-01</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>048/8</prefix>
+    <designation>Prudential Securities Inc.</designation>
+    <date>1995-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>049/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-08</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>050/8</prefix>
+    <designation>ARIN</designation>
+    <date>2010-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record updated="2015-05-11">
+    <prefix>051/8</prefix>
+    <designation>Administered by RIPE NCC</designation>
+    <date>1994-08</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record updated="2015-05-01">
+    <prefix>052/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1991-12</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record updated="2014-10-14">
+    <prefix>053/8</prefix>
+    <designation>Daimler AG</designation>
+    <date>1993-10</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>054/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1992-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>055/8</prefix>
+    <designation>DoD Network Information Center</designation>
+    <date>1995-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>056/8</prefix>
+    <designation>US Postal Service</designation>
+    <date>1994-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record updated="2014-10-14">
+    <prefix>057/8</prefix>
+    <designation>Societe Internationale de Telecommunications Aeronautiques S.C.R.L.</designation>
+    <date>1995-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>058/8</prefix>
+    <designation>APNIC</designation>
+    <date>2004-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>059/8</prefix>
+    <designation>APNIC</designation>
+    <date>2004-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>060/8</prefix>
+    <designation>APNIC</designation>
+    <date>2003-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>061/8</prefix>
+    <designation>APNIC</designation>
+    <date>1997-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>062/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1997-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>063/8</prefix>
+    <designation>ARIN</designation>
+    <date>1997-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>064/8</prefix>
+    <designation>ARIN</designation>
+    <date>1999-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>065/8</prefix>
+    <designation>ARIN</designation>
+    <date>2000-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>066/8</prefix>
+    <designation>ARIN</designation>
+    <date>2000-07</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>067/8</prefix>
+    <designation>ARIN</designation>
+    <date>2001-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>068/8</prefix>
+    <designation>ARIN</designation>
+    <date>2001-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>069/8</prefix>
+    <designation>ARIN</designation>
+    <date>2002-08</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>070/8</prefix>
+    <designation>ARIN</designation>
+    <date>2004-01</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>071/8</prefix>
+    <designation>ARIN</designation>
+    <date>2004-08</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>072/8</prefix>
+    <designation>ARIN</designation>
+    <date>2004-08</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>073/8</prefix>
+    <designation>ARIN</designation>
+    <date>2005-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>074/8</prefix>
+    <designation>ARIN</designation>
+    <date>2005-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>075/8</prefix>
+    <designation>ARIN</designation>
+    <date>2005-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>076/8</prefix>
+    <designation>ARIN</designation>
+    <date>2005-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>077/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2006-08</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>078/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2006-08</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>079/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2006-08</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>080/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2001-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>081/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2001-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>082/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2002-11</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>083/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2003-11</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>084/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2003-11</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>085/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2004-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>086/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2004-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>087/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2004-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>088/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2004-04</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>089/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2005-06</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>090/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2005-06</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>091/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2005-06</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>092/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2007-03</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>093/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2007-03</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>094/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2007-07</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>095/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2007-07</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>096/8</prefix>
+    <designation>ARIN</designation>
+    <date>2006-10</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>097/8</prefix>
+    <designation>ARIN</designation>
+    <date>2006-10</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>098/8</prefix>
+    <designation>ARIN</designation>
+    <date>2006-10</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>099/8</prefix>
+    <designation>ARIN</designation>
+    <date>2006-10</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>100/8</prefix>
+    <designation>ARIN</designation>
+    <date>2010-11</date>
+    <whois>whois.arin.net</whois>
+    <status>ALLOCATED</status>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <xref type="note" data="5"/>
+  </record>
+  <record>
+    <prefix>101/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-08</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>102/8</prefix>
+    <designation>AFRINIC</designation>
+    <date>2011-02</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>103/8</prefix>
+    <designation>APNIC</designation>
+    <date>2011-02</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>104/8</prefix>
+    <designation>ARIN</designation>
+    <date>2011-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>105/8</prefix>
+    <designation>AFRINIC</designation>
+    <date>2010-11</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>106/8</prefix>
+    <designation>APNIC</designation>
+    <date>2011-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>107/8</prefix>
+    <designation>ARIN</designation>
+    <date>2010-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>108/8</prefix>
+    <designation>ARIN</designation>
+    <date>2008-12</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>109/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2009-01</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>110/8</prefix>
+    <designation>APNIC</designation>
+    <date>2008-11</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>111/8</prefix>
+    <designation>APNIC</designation>
+    <date>2008-11</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>112/8</prefix>
+    <designation>APNIC</designation>
+    <date>2008-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>113/8</prefix>
+    <designation>APNIC</designation>
+    <date>2008-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>114/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-10</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>115/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-10</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>116/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>117/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>118/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>119/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>120/8</prefix>
+    <designation>APNIC</designation>
+    <date>2007-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>121/8</prefix>
+    <designation>APNIC</designation>
+    <date>2006-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>122/8</prefix>
+    <designation>APNIC</designation>
+    <date>2006-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>123/8</prefix>
+    <designation>APNIC</designation>
+    <date>2006-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>124/8</prefix>
+    <designation>APNIC</designation>
+    <date>2005-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>125/8</prefix>
+    <designation>APNIC</designation>
+    <date>2005-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>126/8</prefix>
+    <designation>APNIC</designation>
+    <date>2005-01</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>127/8</prefix>
+    <designation>IANA - Loopback</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="6"/>
+  </record>
+  <record>
+    <prefix>128/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>129/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>130/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>131/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>132/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>133/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1997-03</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>134/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>135/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>136/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>137/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>138/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>139/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>140/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>141/8</prefix>
+    <designation>Administered by RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>142/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>143/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>144/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>145/8</prefix>
+    <designation>Administered by RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>146/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>147/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>148/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>149/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>150/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>151/8</prefix>
+    <designation>Administered by RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>152/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>153/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>154/8</prefix>
+    <designation>Administered by AFRINIC</designation>
+    <date>1993-05</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>155/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>156/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>157/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>158/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>159/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>160/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>161/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>162/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>163/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>164/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>165/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>166/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>167/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>168/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>169/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <status>LEGACY</status>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <xref type="note" data="7"/>
+  </record>
+  <record>
+    <prefix>170/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>171/8</prefix>
+    <designation>Administered by APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>172/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <status>LEGACY</status>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <xref type="note" data="8"/>
+  </record>
+  <record>
+    <prefix>173/8</prefix>
+    <designation>ARIN</designation>
+    <date>2008-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>174/8</prefix>
+    <designation>ARIN</designation>
+    <date>2008-02</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>175/8</prefix>
+    <designation>APNIC</designation>
+    <date>2009-08</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>176/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2010-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>177/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2010-06</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>178/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2009-01</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>179/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2011-02</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>180/8</prefix>
+    <designation>APNIC</designation>
+    <date>2009-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>181/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2010-06</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>182/8</prefix>
+    <designation>APNIC</designation>
+    <date>2009-08</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>183/8</prefix>
+    <designation>APNIC</designation>
+    <date>2009-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>184/8</prefix>
+    <designation>ARIN</designation>
+    <date>2008-12</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>185/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2011-02</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>186/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2007-09</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>187/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2007-09</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>188/8</prefix>
+    <designation>Administered by RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>189/8</prefix>
+    <designation>LACNIC</designation>
+    <date>1995-06</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>190/8</prefix>
+    <designation>LACNIC</designation>
+    <date>1995-06</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>191/8</prefix>
+    <designation>Administered by LACNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>192/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <status>LEGACY</status>
+    <xref type="note" data="9"/>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <xref type="note" data="10"/>
+  </record>
+  <record>
+    <prefix>193/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>194/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>195/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1993-05</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>196/8</prefix>
+    <designation>Administered by AFRINIC</designation>
+    <date>1993-05</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>197/8</prefix>
+    <designation>AFRINIC</designation>
+    <date>2008-10</date>
+    <whois>whois.afrinic.net</whois>
+    <rdap>
+      <server>https://rdap.afrinic.net/rdap/</server>
+      <server>http://rdap.afrinic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>198/8</prefix>
+    <designation>Administered by ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <status>LEGACY</status>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <xref type="note" data="11"/>
+  </record>
+  <record>
+    <prefix>199/8</prefix>
+    <designation>ARIN</designation>
+    <date>1993-05</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>200/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2002-11</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>201/8</prefix>
+    <designation>LACNIC</designation>
+    <date>2003-04</date>
+    <whois>whois.lacnic.net</whois>
+    <rdap>
+      <server>https://rdap.lacnic.net/rdap/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>202/8</prefix>
+    <designation>APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>203/8</prefix>
+    <designation>APNIC</designation>
+    <date>1993-05</date>
+    <whois>whois.apnic.net</whois>
+    <status>ALLOCATED</status>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <xref type="note" data="12"/>
+  </record>
+  <record>
+    <prefix>204/8</prefix>
+    <designation>ARIN</designation>
+    <date>1994-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>205/8</prefix>
+    <designation>ARIN</designation>
+    <date>1994-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>206/8</prefix>
+    <designation>ARIN</designation>
+    <date>1995-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>207/8</prefix>
+    <designation>ARIN</designation>
+    <date>1995-11</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>208/8</prefix>
+    <designation>ARIN</designation>
+    <date>1996-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>209/8</prefix>
+    <designation>ARIN</designation>
+    <date>1996-06</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>210/8</prefix>
+    <designation>APNIC</designation>
+    <date>1996-06</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>211/8</prefix>
+    <designation>APNIC</designation>
+    <date>1996-06</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>212/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1997-10</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>213/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>1993-10</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>214/8</prefix>
+    <designation>US-DOD</designation>
+    <date>1998-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>215/8</prefix>
+    <designation>US-DOD</designation>
+    <date>1998-03</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>LEGACY</status>
+  </record>
+  <record>
+    <prefix>216/8</prefix>
+    <designation>ARIN</designation>
+    <date>1998-04</date>
+    <whois>whois.arin.net</whois>
+    <rdap>
+      <server>https://rdap.arin.net/registry</server>
+      <server>http://rdap.arin.net/registry</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>217/8</prefix>
+    <designation>RIPE NCC</designation>
+    <date>2000-06</date>
+    <whois>whois.ripe.net</whois>
+    <rdap>
+      <server>https://rdap.db.ripe.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>218/8</prefix>
+    <designation>APNIC</designation>
+    <date>2000-12</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>219/8</prefix>
+    <designation>APNIC</designation>
+    <date>2001-09</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>220/8</prefix>
+    <designation>APNIC</designation>
+    <date>2001-12</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>221/8</prefix>
+    <designation>APNIC</designation>
+    <date>2002-07</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>222/8</prefix>
+    <designation>APNIC</designation>
+    <date>2003-02</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>223/8</prefix>
+    <designation>APNIC</designation>
+    <date>2010-04</date>
+    <whois>whois.apnic.net</whois>
+    <rdap>
+      <server>https://rdap.apnic.net/</server>
+    </rdap>
+    <status>ALLOCATED</status>
+  </record>
+  <record>
+    <prefix>224/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>225/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>226/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>227/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>228/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>229/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>230/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>231/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>232/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>233/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>234/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+    <xref type="note" data="14"/>
+  </record>
+  <record>
+    <prefix>235/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>236/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>237/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>238/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+  </record>
+  <record>
+    <prefix>239/8</prefix>
+    <designation>Multicast</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="13"/>
+    <xref type="note" data="15"/>
+  </record>
+  <record>
+    <prefix>240/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>241/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>242/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>243/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>244/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>245/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>246/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>247/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>248/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>249/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>250/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>251/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>252/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>253/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>254/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+  </record>
+  <record>
+    <prefix>255/8</prefix>
+    <designation>Future use</designation>
+    <date>1981-09</date>
+    <status>RESERVED</status>
+    <xref type="note" data="16"/>
+    <xref type="note" data="17"/>
+  </record>
+  <footnote anchor="1">Indicates the status of address blocks as follows:
 RESERVED: designated by the IETF for specific non-global-unicast purposes as noted.
 LEGACY: allocated by the central Internet Registry (IR) prior to the Regional Internet Registries
 (RIRs). This address space is now administered by individual RIRs as noted, including maintenance
 of WHOIS Directory and reverse DNS records. Assignments from these blocks are distributed globally
 on a regional basis.
 ALLOCATED: delegated entirely to specific RIR as indicated.
-UNALLOCATED: not yet allocated or reserved.</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note2" id="note2">[2]</a>
-        </td>
-        <td class="fn">
-          <pre>0.0.0.0/8 reserved for self-identification [<a href="http://www.iana.org/go/rfc1122">RFC1122</a>], section 3.2.1.3. 
-Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note3" id="note3">[3]</a>
-        </td>
-        <td class="fn">
-          <pre>Reserved for Private-Use Networks [<a href="http://www.iana.org/go/rfc1918">RFC1918</a>].
-Complete registration details for 10.0.0.0/8 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note4" id="note4">[4]</a>
-        </td>
-        <td class="fn">
-          <pre>This was reserved for Public Data Networks [<a href="http://www.iana.org/go/rfc1356">RFC1356</a>]. See [<a href="http://www.iana.org/assignments/public-data-network-numbers">IANA registry <i>public-data-network-numbers</i></a>].
-It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note5" id="note5">[5]</a>
-        </td>
-        <td class="fn">
-          <pre>100.64.0.0/10 reserved for Shared Address Space [<a href="http://www.iana.org/go/rfc6598">RFC6598</a>]. 
-Complete registration details for 100.64.0.0/10 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note6" id="note6">[6]</a>
-        </td>
-        <td class="fn">
-          <pre>127.0.0.0/8 reserved for Loopback [<a href="http://www.iana.org/go/rfc1122">RFC1122</a>], section 3.2.1.3. 
-Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note7" id="note7">[7]</a>
-        </td>
-        <td class="fn">
-          <pre>169.254.0.0/16 reserved for Link Local [<a href="http://www.iana.org/go/rfc3927">RFC3927</a>].
-Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note8" id="note8">[8]</a>
-        </td>
-        <td class="fn">
-          <pre>172.16.0.0/12 reserved for Private-Use Networks [<a href="http://www.iana.org/go/rfc1918">RFC1918</a>]. 
-Complete registration details are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note9" id="note9">[9]</a>
-        </td>
-        <td class="fn">
-          <pre>192.0.2.0/24  reserved for TEST-NET-1 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
-Complete registration details for 192.0.2.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
-192.88.99.0/24 reserved for 6to4 Relay Anycast [<a href="http://www.iana.org/go/rfc3068">RFC3068</a>]
-Complete registration details for 192.88.99.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
-192.88.99.2/32 reserved for 6a44 Relay Anycast [<a href="http://www.iana.org/go/rfc6751">RFC6751</a>] (possibly collocated with 6to4 Relay 
-at 192.88.99.1/32 - see [<a href="http://www.iana.org/go/rfc3068">RFC3068</a>] section 2.4)
-192.168.0.0/16 reserved for Private-Use Networks [<a href="http://www.iana.org/go/rfc1918">RFC1918</a>]. 
-Complete registration details for 192.168.0.0/16 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note10" id="note10">[10]</a>
-        </td>
-        <td class="fn">
-          <pre>192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry [<a href="http://www.iana.org/go/rfc5736">RFC5736</a>]. 
-Complete registration details for 192.0.0.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note11" id="note11">[11]</a>
-        </td>
-        <td class="fn">
-          <pre>198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing [<a href="http://www.iana.org/go/rfc2544">RFC2544</a>]. 
-Complete registration details for 198.18.0.0/15 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].
-198.51.100.0/24 reserved for TEST-NET-2 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
-Complete registration details for 198.51.100.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note12" id="note12">[12]</a>
-        </td>
-        <td class="fn">
-          <pre>203.0.113.0/24 reserved for TEST-NET-3 [<a href="http://www.iana.org/go/rfc5737">RFC5737</a>]. 
-Complete registration details for 203.0.113.0/24 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note13" id="note13">[13]</a>
-        </td>
-        <td class="fn">
-          <pre>Multicast (formerly "Class D") [<a href="http://www.iana.org/go/rfc5771">RFC5771</a>] registered in [<a href="http://www.iana.org/assignments/multicast-addresses">IANA registry <i>multicast-addresses</i></a>]</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note14" id="note14">[14]</a>
-        </td>
-        <td class="fn">
-          <pre>Unicast-Prefix-Based IPv4 Multicast Addresses [<a href="http://www.iana.org/go/rfc6034">RFC6034</a>]</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note15" id="note15">[15]</a>
-        </td>
-        <td class="fn">
-          <pre>Administratively Scoped IP Multicast [<a href="http://www.iana.org/go/rfc2365">RFC2365</a>]</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note16" id="note16">[16]</a>
-        </td>
-        <td class="fn">
-          <pre>Reserved for future use (formerly "Class E") [<a href="http://www.iana.org/go/rfc1112">RFC1112</a>].
-Reserved by protocol. For authoritative registration, see [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-      <tr>
-        <td class="fn" valign="top">
-          <a name="note17" id="note17">[17]</a>
-        </td>
-        <td class="fn">
-          <pre>255.255.255.255 is reserved for "limited broadcast" destination address [<a href="http://www.iana.org/go/rfc919">RFC919</a>] and [<a href="http://www.iana.org/go/rfc922">RFC922</a>].
-Complete registration details for 255.255.255.255/32 are found in [<a href="http://www.iana.org/assignments/iana-ipv4-special-registry">IANA registry <i>iana-ipv4-special-registry</i></a>].</pre>
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>
+UNALLOCATED: not yet allocated or reserved.</footnote>
+  <footnote anchor="2">0.0.0.0/8 reserved for self-identification <xref type="rfc" data="rfc1122"/>, section 3.2.1.3. 
+Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="3">Reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/>.
+Complete registration details for 10.0.0.0/8 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="4">This was reserved for Public Data Networks <xref type="rfc" data="rfc1356"/>. See <xref type="registry" data="public-data-network-numbers"/>.
+It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.</footnote>
+  <footnote anchor="5">100.64.0.0/10 reserved for Shared Address Space <xref type="rfc" data="rfc6598"/>. 
+Complete registration details for 100.64.0.0/10 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="6">127.0.0.0/8 reserved for Loopback <xref type="rfc" data="rfc1122"/>, section 3.2.1.3. 
+Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="7">169.254.0.0/16 reserved for Link Local <xref type="rfc" data="rfc3927"/>.
+Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="8">172.16.0.0/12 reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/>. 
+Complete registration details are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="9">192.0.2.0/24  reserved for TEST-NET-1 <xref type="rfc" data="rfc5737"/>. 
+Complete registration details for 192.0.2.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.
+192.88.99.0/24 reserved for 6to4 Relay Anycast <xref type="rfc" data="rfc3068"/>
+Complete registration details for 192.88.99.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.
+192.88.99.2/32 reserved for 6a44 Relay Anycast <xref type="rfc" data="rfc6751"/> (possibly collocated with 6to4 Relay 
+at 192.88.99.1/32 - see <xref type="rfc" data="rfc3068"/> section 2.4)
+192.168.0.0/16 reserved for Private-Use Networks <xref type="rfc" data="rfc1918"/>. 
+Complete registration details for 192.168.0.0/16 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="10">192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry <xref type="rfc" data="rfc5736"/>. 
+Complete registration details for 192.0.0.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="11">198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing <xref type="rfc" data="rfc2544"/>. 
+Complete registration details for 198.18.0.0/15 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.
+198.51.100.0/24 reserved for TEST-NET-2 <xref type="rfc" data="rfc5737"/>. 
+Complete registration details for 198.51.100.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="12">203.0.113.0/24 reserved for TEST-NET-3 <xref type="rfc" data="rfc5737"/>. 
+Complete registration details for 203.0.113.0/24 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="13">Multicast (formerly "Class D") <xref type="rfc" data="rfc5771"/> registered in <xref type="registry" data="multicast-addresses"/></footnote>
+  <footnote anchor="14">Unicast-Prefix-Based IPv4 Multicast Addresses <xref type="rfc" data="rfc6034"/></footnote>
+  <footnote anchor="15">Administratively Scoped IP Multicast <xref type="rfc" data="rfc2365"/></footnote>
+  <footnote anchor="16">Reserved for future use (formerly "Class E") <xref type="rfc" data="rfc1112"/>.
+Reserved by protocol. For authoritative registration, see <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <footnote anchor="17">255.255.255.255 is reserved for "limited broadcast" destination address <xref type="rfc" data="rfc919"/> and <xref type="rfc" data="rfc922"/>.
+Complete registration details for 255.255.255.255/32 are found in <xref type="registry" data="iana-ipv4-special-registry"/>.</footnote>
+  <people/>
+</registry>

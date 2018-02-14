@@ -1,0 +1,125 @@
+0.0.0.0/8	Reserved	prefix
+1.0.0.0/8	APNIC	prefix
+2.0.0.0/8	RIPE	prefix
+3.0.0.0/8	Various Registries	prefix
+4.0.0.0/8	Level3	prefix
+5.0.0.0/8	RIPE	prefix
+6.0.0.0/8	US Army	prefix
+7.0.0.0/8	Various Registries	prefix
+8.0.0.0/8	Level3	prefix
+9.0.0.0/8	Various Registries	prefix
+10.0.0.0/8	Reserved	prefix
+11.0.0.0/8	DoD Intel Information Systems	prefix
+12.0.0.0/8	AT&T	prefix
+13.0.0.0/8	Various Registries	prefix
+14.0.0.0/8	APNIC	prefix
+15.0.0.0/8	Various Registries	prefix
+16.0.0.0/8	Hewlett Packard Enterprise Company	prefix
+17.0.0.0/8	Apple	prefix
+18.0.0.0/8	Various Registries	prefix
+19.0.0.0/8	Ford Motor Company	prefix
+20.0.0.0/8	Various Registries	prefix
+21.0.0.0/8	DDN-RVN	prefix
+22.0.0.0/8	DISA	prefix
+23.0.0.0/8	ARIN	prefix
+24.0.0.0/8	ARIN	prefix
+25.0.0.0/8	UK Ministry of Defence	prefix
+26.0.0.0/8	DISA	prefix
+27.0.0.0/8	APNIC	prefix
+28.0.0.0/8	DSI-North	prefix
+29.0.0.0/8	DISA	prefix
+30.0.0.0/8	DISA	prefix
+31.0.0.0/8	RIPE	prefix
+32.0.0.0/8	Various Registries	prefix
+33.0.0.0/8	DLA Systems Automation Center	prefix
+34.0.0.0/7	Various Registries	prefix
+36.0.0.0/8	APNIC	prefix
+37.0.0.0/8	RIPE	prefix
+38.0.0.0/8	PSINet, Inc.	prefix
+39.0.0.0/8	APNIC	prefix
+40.0.0.0/8	Various Registries	prefix
+41.0.0.0/8	AFRINIC	prefix
+42.0.0.0/8	APNIC	prefix
+43.0.0.0/8	Various Registries	prefix
+44.0.0.0/8	Amateur Radio Digital Communications	prefix
+45.0.0.0/8	Various Registries	prefix
+46.0.0.0/8	RIPE	prefix
+47.0.0.0/8	Various Registries	prefix
+48.0.0.0/8	Prudential	prefix
+49.0.0.0/8	APNIC	prefix
+50.0.0.0/8	ARIN	prefix
+51.0.0.0/8	Various Registries	prefix
+52.0.0.0/8	Various Registries	prefix
+53.0.0.0/8	Daimler AG	prefix
+54.0.0.0/8	Various Registries	prefix
+55.0.0.0/8	DoD NIC	prefix
+56.0.0.0/8	USPS	prefix
+57.0.0.0/8	Societe Internationale de Telecommunications Aeronautiques S.C.R.L.	prefix
+58.0.0.0/7	APNIC	prefix
+60.0.0.0/7	APNIC	prefix
+62.0.0.0/8	RIPE	prefix
+63.0.0.0/8	ARIN	prefix
+64.0.0.0/5	ARIN	prefix
+72.0.0.0/6	ARIN	prefix
+76.0.0.0/8	ARIN	prefix
+77.0.0.0/8	RIPE	prefix
+78.0.0.0/7	RIPE	prefix
+80.0.0.0/4	RIPE	prefix
+96.0.0.0/6	ARIN	prefix
+100.0.0.0/8	ARIN	prefix
+101.0.0.0/8	APNIC	prefix
+102.0.0.0/8	AFRINIC	prefix
+103.0.0.0/8	APNIC	prefix
+104.0.0.0/8	ARIN	prefix
+105.0.0.0/8	AFRINIC	prefix
+106.0.0.0/8	APNIC	prefix
+107.0.0.0/8	ARIN	prefix
+108.0.0.0/8	ARIN	prefix
+109.0.0.0/8	RIPE	prefix
+110.0.0.0/7	APNIC	prefix
+112.0.0.0/5	APNIC	prefix
+120.0.0.0/6	APNIC	prefix
+124.0.0.0/7	APNIC	prefix
+126.0.0.0/8	APNIC	prefix
+127.0.0.0/8	Reserved	prefix
+128.0.0.0/3	Various Registries	prefix
+160.0.0.0/5	Various Registries	prefix
+168.0.0.0/6	Various Registries	prefix
+172.0.0.0/8	Various Registries	prefix
+173.0.0.0/8	ARIN	prefix
+174.0.0.0/8	ARIN	prefix
+175.0.0.0/8	APNIC	prefix
+176.0.0.0/8	RIPE	prefix
+177.0.0.0/8	LACNIC	prefix
+178.0.0.0/8	RIPE	prefix
+179.0.0.0/8	LACNIC	prefix
+180.0.0.0/8	APNIC	prefix
+181.0.0.0/8	LACNIC	prefix
+182.0.0.0/7	APNIC	prefix
+184.0.0.0/8	ARIN	prefix
+185.0.0.0/8	RIPE	prefix
+186.0.0.0/7	LACNIC	prefix
+188.0.0.0/8	Various Registries	prefix
+189.0.0.0/8	LACNIC	prefix
+190.0.0.0/8	LACNIC	prefix
+191.0.0.0/8	Various Registries	prefix
+192.0.0.0/8	Various Registries	prefix
+193.0.0.0/8	RIPE	prefix
+194.0.0.0/7	RIPE	prefix
+196.0.0.0/8	Various Registries	prefix
+197.0.0.0/8	AFRINIC	prefix
+198.0.0.0/8	Various Registries	prefix
+199.0.0.0/8	ARIN	prefix
+200.0.0.0/7	LACNIC	prefix
+202.0.0.0/7	APNIC	prefix
+204.0.0.0/6	ARIN	prefix
+208.0.0.0/7	ARIN	prefix
+210.0.0.0/7	APNIC	prefix
+212.0.0.0/7	RIPE	prefix
+214.0.0.0/7	US-DOD	prefix
+216.0.0.0/8	ARIN	prefix
+217.0.0.0/8	RIPE	prefix
+218.0.0.0/7	APNIC	prefix
+220.0.0.0/6	APNIC	prefix
+224.0.0.0/4	Multicast	prefix
+240.0.0.0/4	Reserved
