@@ -18,11 +18,10 @@
 #include <gd.h>
 #include "bbox.h"
 
-extern gdImagePtr image;
 extern int debug;
 
-void
-shade_cidr(const char *cidr, unsigned int rgb, int alpha)
+static void
+shade_cidr(gdImagePtr image, const char *cidr, unsigned int rgb, int alpha)
 {
     bbox box = bbox_from_cidr(cidr);
     int color = gdImageColorAllocateAlpha(image,
@@ -41,7 +40,7 @@ shade_cidr(const char *cidr, unsigned int rgb, int alpha)
  * Second field is an RGB value Third field is an alpha value
  */
 void
-shade_file(const char *fn)
+shade_file(gdImagePtr image, const char *fn)
 {
     char buf[512];
     FILE *fp = fopen(fn, "r");
@@ -64,7 +63,7 @@ shade_file(const char *fn)
 	if (NULL == alpha_str)
 	    continue;
 	alpha = strtol(alpha_str, NULL, 10);
-	shade_cidr(cidr, rgb, alpha);
+	shade_cidr(image, cidr, rgb, alpha);
     }
     fclose(fp);
 }

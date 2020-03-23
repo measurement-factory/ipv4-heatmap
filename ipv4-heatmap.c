@@ -40,9 +40,9 @@
 #define NUM_DATA_COLORS 256
 #undef RELEASE_VER
 
-extern void annotate_file(const char *fn);
-extern void shade_file(const char *fn);
-extern void legend(const char *, const char *orient);
+extern void annotate_file(gdImagePtr i, const char *fn);
+extern void shade_file(gdImagePtr i, const char *fn);
+extern void legend(gdImagePtr i, const char *, const char *orient);
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
@@ -74,6 +74,7 @@ extern void set_crop(const char *);
 extern void set_bits_per_pixel(int);
 
 void savegif(int done);
+void annotate(gdImagePtr);
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -245,12 +246,12 @@ paint(void)
 }
 
 void
-watermark(void)
+watermark(gdImagePtr i)
 {
-    int color = gdImageColorAllocateAlpha(image, 127, 127, 127, 63);
-    gdImageStringUp(image,
+    int color = gdImageColorAllocateAlpha(i, 127, 127, 127, 63);
+    gdImageStringUp(i,
 	gdFontGetSmall(),
-	gdImageSX(image) - 20, 220,
+	gdImageSX(i) - 20, 220,
 	(u_char *) "IPv4 Heatmap / Measurement Factory", color);
 }
 
@@ -258,6 +259,9 @@ void
 save(void)
 {
     FILE *pngout = fopen(savename, "wb");
+    if (NULL == pngout)
+	err(1, "%s", savename);
+    annotate(image);
     gdImagePng(image, pngout);
     fclose(pngout);
     gdImageDestroy(image);
@@ -272,6 +276,7 @@ savegif(int done)
 	static char tmpl[] = "heatmap-tmp-XXXXXX";
 	char fname[512];
 	FILE *gifout = NULL;
+	gdImagePtr clone;
 	if (NULL == tdir) {
 		tdir = mkdtemp(tmpl);
 		if (NULL == tdir)
@@ -281,8 +286,13 @@ savegif(int done)
 	gifout = fopen(fname, "wb");
 	if (NULL == gifout)	
 		err(1, "%s", fname);
+	clone = gdImageClone(image);
+	if (NULL == clone)
+		errx(1, "gdImageClone() failed");
+	annotate(clone);
 	gdImageGif(image, gifout);
 	fclose(gifout);
+	gdImageDestroy(clone);
 	/* don't destroy image! */
 	if (done) {
 		char cmd[512];
@@ -297,6 +307,18 @@ savegif(int done)
 		gdImageDestroy(image);
 		image = NULL;
 	}
+}
+
+void
+annotate(gdImagePtr i)
+{
+    if (shadings)
+	shade_file(i, shadings);
+    if (annotations)
+	annotate_file(i, annotations);
+    if (title)
+	legend(i, title, legend_orient);
+    watermark(i);
 }
 
 void
@@ -409,16 +431,11 @@ main(int argc, char *argv[])
 
     initialize();
     paint();
-    if (shadings)
-	shade_file(shadings);
-    if (annotations)
-	annotate_file(annotations);
-    if (title)
-	legend(title, legend_orient);
-    watermark();
-    if (anim_gif.secs)
+    if (anim_gif.secs) {
 	savegif(1);
-    else
+    } else {
+	annotate(image);
     	save();
+    }
     return 0;
 }

@@ -27,7 +27,6 @@ bbox AAA;
 bbox BBB;
 bbox CCC;
 
-extern gdImagePtr image;
 static int textColor;
 
 extern int debug;
@@ -41,14 +40,14 @@ extern const char *legend_keyfile;
 extern int reverse_flag;
 extern double log_A;
 extern double log_C;
-extern void text_in_bbox(const char *text, bbox box, int color, double maxsize);
+extern void text_in_bbox(gdImagePtr image, const char *text, bbox box, int color, double maxsize);
 
 
 /*
  * Show how big various blocks are
  */
 static void
-legend_prefixes(void)
+legend_prefixes(gdImagePtr image)
 {
     char *sample_cidr[] = {
 	"0.0.0.0/8",
@@ -67,7 +66,7 @@ legend_prefixes(void)
 	CCC.ymin,
 	CCC.xmax,
 	CCC.ymin + 128);
-    text_in_bbox("Prefix Sizes", tbox, textColor, 0.0);
+    text_in_bbox(image, "Prefix Sizes", tbox, textColor, 0.0);
     samplebox_ctr_x = CCC.xmin + 256;
     samplebox_ctr_y = tbox.ymax + 192;
     while (sample_cidr[i]) {
@@ -91,14 +90,14 @@ legend_prefixes(void)
 	tbox.ymin = ((box.ymin + box.ymax) / 2) - 30;
 	tbox.ymax = ((box.ymin + box.ymax) / 2) + 30;
 	snprintf(tstr, 10, "= %s", strchr(sample_cidr[i], '/'));
-	text_in_bbox(tstr, tbox, textColor, 0.0);
+	text_in_bbox(image, tstr, tbox, textColor, 0.0);
 	samplebox_ctr_y += MAX(hh + 64, 64);
 	i++;
     }
 }
 
 static void
-legend_scale(const char *orient)
+legend_scale(gdImagePtr image, const char *orient)
 {
     unsigned int i;
     bbox tbox;
@@ -108,7 +107,7 @@ legend_scale(const char *orient)
 	BBB.ymin,
 	BBB.xmax,
 	BBB.ymin + 128);
-    text_in_bbox(legend_scale_name, tbox, textColor, 0.0);
+    text_in_bbox(image, legend_scale_name, tbox, textColor, 0.0);
     for (i = 0; i < num_colors; i++) {
 	if (0 == strcmp(orient, "vert")) {
 	    BBOX_SET(tbox,
@@ -149,7 +148,7 @@ legend_scale(const char *orient)
 		BBB.xmin + 256 + (i * 2.55 * 4) + 256,
 		BBB.ymin + 442 + 72);
 	}
-	text_in_bbox(tmp, tbox, textColor, 0.0);
+	text_in_bbox(image, tmp, tbox, textColor, 0.0);
     }
 }
 
@@ -162,7 +161,7 @@ legend_scale(const char *orient)
  * text is larger than the boxes
  */
 static void
-legend_key(const char *orient, const char *file)
+legend_key(gdImagePtr image, const char *orient, const char *file)
 {
     unsigned int i = 0;
     bbox tbox;
@@ -177,7 +176,7 @@ legend_key(const char *orient, const char *file)
 	BBB.ymin + 128);
     if (NULL != fgets(buf, 128, fp)) {
 	strtok(buf, "\r\n");
-	text_in_bbox(buf, tbox, textColor, 0.0);
+	text_in_bbox(image, buf, tbox, textColor, 0.0);
     }
     while (NULL != fgets(buf, 128, fp)) {
 	char *rgbhex;
@@ -219,29 +218,29 @@ legend_key(const char *orient, const char *file)
 	    tbox.xmin, tbox.ymin, tbox.xmax, tbox.ymax,
 	    color);
 	if (NULL != (label = strtok(NULL, " \t\r\n")))
-	    text_in_bbox(label, sbox, textColor, 0.0);
+	    text_in_bbox(image, label, sbox, textColor, 0.0);
 	i++;
     }
 }
 
 static void
-legend_title(const char *text)
+legend_title(gdImagePtr image, const char *text)
 {
-    text_in_bbox(text, AAA, textColor, 0.0);
+    text_in_bbox(image, text, AAA, textColor, 0.0);
 }
 
 #if SEPARATE_LEGEND_FILE
 static void
-legend_save(const char *orient)
+legend_save(gdImagePtr image, const char *orient)
 {
     FILE *pngout;
     char fname[128];
     snprintf(fname, 128, "legend-%s.png", orient);
     pngout = fopen(fname, "wb");
+    if (NULL == pngout)
+	err(1, "%s", fname);
     gdImagePng(image, pngout);
     fclose(pngout);
-    gdImageDestroy(image);
-    image = NULL;
 }
 #endif
 
@@ -249,7 +248,7 @@ legend_save(const char *orient)
  * Render a legend
  */
 void
-legend(const char *title, const char *orient)
+legend(gdImagePtr image, const char *title, const char *orient)
 {
     if (0 == strcmp(orient, "vert")) {
 	BBOX_SET(legend_bb, 4096, 0, 1024, 4096);
@@ -292,7 +291,7 @@ legend(const char *title, const char *orient)
 #if SEPARATE_LEGEND_FILE
     image = gdImageCreateTrueColor(legend_bb.xmax, legend_bb.ymax);
     if (reverse_flag)
-	gdImageFill(image, 0, 0, gdImageColorAllocate(image, 255, 255, 255));
+	gdImageFill(l, 0, 0, gdImageColorAllocate(legend_image, 255, 255, 255));
 #endif
     if (!reverse_flag)
 	textColor = gdImageColorAllocate(image, 255, 255, 255);
@@ -315,14 +314,16 @@ legend(const char *title, const char *orient)
 	    annotateColor);
     }
 
-    legend_title(title);
+    legend_title(image, title);
     if (legend_scale_name)
-	legend_scale(orient);
+	legend_scale(image, orient);
     if (legend_keyfile)
-	legend_key(orient, legend_keyfile);
+	legend_key(image, orient, legend_keyfile);
     if (legend_prefixes_flag)
-	legend_prefixes();
+	legend_prefixes(image);
 #if SEPARATE_LEGEND_FILE
-    legend_save(orient);
+    legend_save(image, orient);
+    gdImageDestroy(image);
+    image = NULL;
 #endif
 }
