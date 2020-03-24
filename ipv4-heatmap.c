@@ -293,7 +293,7 @@ savegif(int done)
 	if (NULL == clone)
 		errx(1, "gdImageClone() failed");
 	annotate(clone);
-	gdImageGif(image, gifout);
+	gdImageGif(clone, gifout);
 	fclose(gifout);
 	gdImageDestroy(clone);
 	/* don't destroy image! */
