@@ -36,13 +36,15 @@
 
 #include "hsv2rgb.h"
 #include "cidr.h"
+#include "ipv4-heatmap.h"
+#include "annotate.h"
+#include "shade.h"
+#include "legend.h"
+#include "xy_from_ip.h"
 
 #define NUM_DATA_COLORS 256
 #undef RELEASE_VER
 
-extern void annotate_file(const char *fn);
-extern void shade_file(const char *fn);
-extern void legend(const char *, const char *orient);
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
@@ -65,15 +67,9 @@ struct {
 } anim_gif = {0, 0.0, 0};
 const char *legend_keyfile = NULL;
 const char *savename = "map.png";
-extern int annotateColor;
 
-extern unsigned int xy_from_ip(unsigned ip, unsigned *xp, unsigned *yp);
-extern void set_morton_mode();
-extern int set_order();
-extern void set_crop(const char *);
-extern void set_bits_per_pixel(int);
-
-void savegif(int done);
+static void savegif(int done);
+static void annotate(gdImagePtr);
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -84,7 +80,7 @@ double log_A = 0.0;
 double log_B = 0.0;
 double log_C = 0.0;
 
-void
+static void
 initialize(void)
 {
     int i;
@@ -141,7 +137,7 @@ initialize(void)
     log_C = 255.0 / log(log_B / log_A);
 }
 
-int
+static int
 get_pixel_value(unsigned int x, unsigned int y)
 {
     int color;
@@ -187,10 +183,6 @@ paint(void)
 	    anim_gif.input_time = strtod(t, &e);
 	    if (e == t)
 		errx(1, "bad input parsing time on line %d: %s", line, t);
-	    if ((time_t) anim_gif.input_time > anim_gif.next_output) {
-		savegif(0);
-		anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
-	    }
 	}
 
 	/*
@@ -239,18 +231,30 @@ paint(void)
 	    k = NUM_DATA_COLORS - 1;
 	color = colors[k];
 
+	/*
+	 * Now that we're doing parsing the entire input line, we can check if
+	 * an animated gif file needs to be written out.  This is done here because
+         * saving the gif image can call annotation routines that also use strtok().
+	 */
+	if (anim_gif.secs) {
+	    if ((time_t) anim_gif.input_time > anim_gif.next_output) {
+		savegif(0);
+		anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
+	    }
+	}
+
 	gdImageSetPixel(image, x, y, color);
 	line++;
     }
 }
 
 void
-watermark(void)
+watermark(gdImagePtr i)
 {
-    int color = gdImageColorAllocateAlpha(image, 127, 127, 127, 63);
-    gdImageStringUp(image,
+    int color = gdImageColorAllocateAlpha(i, 127, 127, 127, 63);
+    gdImageStringUp(i,
 	gdFontGetSmall(),
-	gdImageSX(image) - 20, 220,
+	gdImageSX(i) - 20, 220,
 	(u_char *) "IPv4 Heatmap / Measurement Factory", color);
 }
 
@@ -258,6 +262,9 @@ void
 save(void)
 {
     FILE *pngout = fopen(savename, "wb");
+    if (NULL == pngout)
+	err(1, "%s", savename);
+    annotate(image);
     gdImagePng(image, pngout);
     fclose(pngout);
     gdImageDestroy(image);
@@ -272,6 +279,7 @@ savegif(int done)
 	static char tmpl[] = "heatmap-tmp-XXXXXX";
 	char fname[512];
 	FILE *gifout = NULL;
+	gdImagePtr clone;
 	if (NULL == tdir) {
 		tdir = mkdtemp(tmpl);
 		if (NULL == tdir)
@@ -281,8 +289,13 @@ savegif(int done)
 	gifout = fopen(fname, "wb");
 	if (NULL == gifout)	
 		err(1, "%s", fname);
-	gdImageGif(image, gifout);
+	clone = gdImageClone(image);
+	if (NULL == clone)
+		errx(1, "gdImageClone() failed");
+	annotate(clone);
+	gdImageGif(clone, gifout);
 	fclose(gifout);
+	gdImageDestroy(clone);
 	/* don't destroy image! */
 	if (done) {
 		char cmd[512];
@@ -297,6 +310,18 @@ savegif(int done)
 		gdImageDestroy(image);
 		image = NULL;
 	}
+}
+
+static void
+annotate(gdImagePtr i)
+{
+    if (shadings)
+	shade_file(i, shadings);
+    if (annotations)
+	annotate_file(i, annotations);
+    if (title)
+	legend(i, title, legend_orient);
+    watermark(i);
 }
 
 void
@@ -409,16 +434,11 @@ main(int argc, char *argv[])
 
     initialize();
     paint();
-    if (shadings)
-	shade_file(shadings);
-    if (annotations)
-	annotate_file(annotations);
-    if (title)
-	legend(title, legend_orient);
-    watermark();
-    if (anim_gif.secs)
+    if (anim_gif.secs) {
 	savegif(1);
-    else
+    } else {
+	annotate(image);
     	save();
+    }
     return 0;
 }

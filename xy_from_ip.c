@@ -13,14 +13,12 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
+#include "ipv4-heatmap.h"
+#include "xy_from_ip.h"
 #include "cidr.h"
+#include "hilbert.h"
 
-
-extern void hil_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
-extern void mor_xy_from_s(unsigned s, int n, unsigned *xp, unsigned *yp);
 void (*xy_from_s) (unsigned s, int n, unsigned *xp, unsigned *yp) = hil_xy_from_s;
-
-extern int debug;
 
 /*
  * The default the Hilbert curve order is 12.  This gives a 4096x4096

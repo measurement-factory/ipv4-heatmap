@@ -16,10 +16,10 @@
 #include <err.h>
 
 #include <gd.h>
+#include "ipv4-heatmap.h"
 #include "bbox.h"
+#include "text.h"
 
-extern gdImagePtr image;
-extern const char *font_file_or_name;
 double _text_last_sz = 0.0;
 
 
@@ -50,7 +50,7 @@ text_width_height(const char *text, double sz, int *w, int *h)
  * underneath their owner names in each /8 box.
  */
 void
-text_in_bbox(const char *text, bbox box, int color, double maxsize)
+text_in_bbox(gdImagePtr image, const char *text, bbox box, int color, double maxsize)
 {
     double sz;
     int tw, th;

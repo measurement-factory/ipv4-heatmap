@@ -1,0 +1,11 @@
+extern const char *font_file_or_name;
+extern const char *legend_keyfile;
+extern const char *legend_scale_name;
+extern double log_A;
+extern double log_C;
+extern int colors[];
+extern int debug;
+extern int legend_prefixes_flag;
+extern int morton_flag;
+extern int num_colors;
+extern int reverse_flag;

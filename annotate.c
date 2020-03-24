@@ -16,7 +16,9 @@
 #include <err.h>
 
 #include <gd.h>
+#include "ipv4-heatmap.h"
 #include "bbox.h"
+#include "text.h"
 
 /*
  * FONT_ALPHA sets the transparency for the annotations. in libgd, 0 means 100%
@@ -24,21 +26,15 @@
  */
 #define FONT_ALPHA 75
 
-extern gdImagePtr image;
-extern const char *font_file_or_name;
 int annotateColor = -1;
 
-extern void text_in_bbox(const char *text, bbox box, int color, double maxsize);
-extern int _text_last_height;
-extern double _text_last_sz;
-extern int reverse_flag;
 
 /*
  * Calculate the bounding box, draw an outline of the box, then render the
  * text.
  */
-void
-annotate_cidr(const char *cidr, const char *label, const char *sublabel)
+static void
+annotate_cidr(gdImagePtr image, const char *cidr, const char *label, const char *sublabel)
 {
     bbox box = bbox_from_cidr(cidr);
     if (box.xmin < 0) {
@@ -46,14 +42,14 @@ annotate_cidr(const char *cidr, const char *label, const char *sublabel)
 	return;
     }
     bbox_draw_outline(box, image, annotateColor);
-    text_in_bbox(label, box, annotateColor, 128.0);
+    text_in_bbox(image, label, box, annotateColor, 128.0);
     if (sublabel) {
 	bbox box2 = box;
 	box2.ymin = (box.ymin + box.ymax) / 2 + (int)(_text_last_sz / 2) + 6;
 	box2.ymax = box2.ymin + 24;
 	if (0 == strcmp(sublabel, "prefix"))
 	    sublabel = cidr;
-	text_in_bbox(sublabel, box2, annotateColor, 12.0);
+	text_in_bbox(image, sublabel, box2, annotateColor, 12.0);
     }
 }
 
@@ -62,7 +58,7 @@ annotate_cidr(const char *cidr, const char *label, const char *sublabel)
  * Second field is a text label
  */
 void
-annotate_file(const char *fn)
+annotate_file(gdImagePtr image, const char *fn)
 {
     char buf[512];
     FILE *fp = fopen(fn, "r");
@@ -87,7 +83,7 @@ annotate_file(const char *fn)
 	if (NULL == label)
 	    continue;
 	sublabel = strtok(NULL, "\t\r\n");
-	annotate_cidr(cidr, label, sublabel);
+	annotate_cidr(image, cidr, label, sublabel);
     }
     fclose(fp);
 }

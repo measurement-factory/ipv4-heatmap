@@ -27,7 +27,7 @@ typedef struct _item item;
 
 item *array[65536];
 
-item *
+static item *
 find(struct in_addr a, int new)
 {
 	unsigned int b = ntohl(a.s_addr) >> 16;
