@@ -17,8 +17,8 @@
 
 #include <gd.h>
 #include "bbox.h"
+#include "ipv4-heatmap.h"
 
-extern int debug;
 
 static void
 shade_cidr(gdImagePtr image, const char *cidr, unsigned int rgb, int alpha)

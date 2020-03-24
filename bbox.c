@@ -18,19 +18,15 @@
 #include <arpa/inet.h>
 
 #include <gd.h>
+#include "ipv4-heatmap.h"
 #include "cidr.h"
 #include "bbox.h"
+#include "xy_from_ip.h"
 
 #ifndef MIN
 #define MIN(a,b) (a<b?a:b)
 #define MAX(a,b) (a>b?a:b)
 #endif
-
-extern void xy_from_ip(unsigned int ip, unsigned *xp, unsigned *yp);
-extern int debug;
-extern int morton_flag;
-extern unsigned int addr_space_first_addr;
-extern unsigned int addr_space_last_addr;
 
 
 void

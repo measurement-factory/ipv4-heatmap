@@ -36,13 +36,15 @@
 
 #include "hsv2rgb.h"
 #include "cidr.h"
+#include "ipv4-heatmap.h"
+#include "annotate.h"
+#include "shade.h"
+#include "legend.h"
+#include "xy_from_ip.h"
 
 #define NUM_DATA_COLORS 256
 #undef RELEASE_VER
 
-extern void annotate_file(gdImagePtr i, const char *fn);
-extern void shade_file(gdImagePtr i, const char *fn);
-extern void legend(gdImagePtr i, const char *, const char *orient);
 gdImagePtr image = NULL;
 int colors[NUM_DATA_COLORS];
 int num_colors = NUM_DATA_COLORS;
@@ -65,16 +67,9 @@ struct {
 } anim_gif = {0, 0.0, 0};
 const char *legend_keyfile = NULL;
 const char *savename = "map.png";
-extern int annotateColor;
 
-extern unsigned int xy_from_ip(unsigned ip, unsigned *xp, unsigned *yp);
-extern void set_morton_mode();
-extern int set_order();
-extern void set_crop(const char *);
-extern void set_bits_per_pixel(int);
-
-void savegif(int done);
-void annotate(gdImagePtr);
+static void savegif(int done);
+static void annotate(gdImagePtr);
 
 /*
  * if log_A and log_B are set, then the input data will be scaled
@@ -85,7 +80,7 @@ double log_A = 0.0;
 double log_B = 0.0;
 double log_C = 0.0;
 
-void
+static void
 initialize(void)
 {
     int i;
@@ -142,7 +137,7 @@ initialize(void)
     log_C = 255.0 / log(log_B / log_A);
 }
 
-int
+static int
 get_pixel_value(unsigned int x, unsigned int y)
 {
     int color;
@@ -317,7 +312,7 @@ savegif(int done)
 	}
 }
 
-void
+static void
 annotate(gdImagePtr i)
 {
     if (shadings)

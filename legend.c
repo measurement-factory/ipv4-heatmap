@@ -19,6 +19,9 @@
 
 #include <gd.h>
 #include "bbox.h"
+#include "ipv4-heatmap.h"
+#include "annotate.h"
+#include "text.h"
 
 #define MAX(a,b) (a>b?a:b)
 
@@ -28,19 +31,6 @@ bbox BBB;
 bbox CCC;
 
 static int textColor;
-
-extern int debug;
-extern int annotateColor;
-extern int colors[];
-extern int num_colors;
-extern const char *font_file_or_name;
-extern const char *legend_scale_name;
-extern int legend_prefixes_flag;
-extern const char *legend_keyfile;
-extern int reverse_flag;
-extern double log_A;
-extern double log_C;
-extern void text_in_bbox(gdImagePtr image, const char *text, bbox box, int color, double maxsize);
 
 
 /*

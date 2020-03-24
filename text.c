@@ -16,9 +16,10 @@
 #include <err.h>
 
 #include <gd.h>
+#include "ipv4-heatmap.h"
 #include "bbox.h"
+#include "text.h"
 
-extern const char *font_file_or_name;
 double _text_last_sz = 0.0;
 
 

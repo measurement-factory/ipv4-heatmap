@@ -16,7 +16,9 @@
 #include <err.h>
 
 #include <gd.h>
+#include "ipv4-heatmap.h"
 #include "bbox.h"
+#include "text.h"
 
 /*
  * FONT_ALPHA sets the transparency for the annotations. in libgd, 0 means 100%
@@ -24,13 +26,8 @@
  */
 #define FONT_ALPHA 75
 
-extern const char *font_file_or_name;
 int annotateColor = -1;
 
-extern void text_in_bbox(gdImagePtr image, const char *text, bbox box, int color, double maxsize);
-extern int _text_last_height;
-extern double _text_last_sz;
-extern int reverse_flag;
 
 /*
  * Calculate the bounding box, draw an outline of the box, then render the
