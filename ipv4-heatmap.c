@@ -188,10 +188,6 @@ paint(void)
 	    anim_gif.input_time = strtod(t, &e);
 	    if (e == t)
 		errx(1, "bad input parsing time on line %d: %s", line, t);
-	    if ((time_t) anim_gif.input_time > anim_gif.next_output) {
-		savegif(0);
-		anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
-	    }
 	}
 
 	/*
@@ -239,6 +235,18 @@ paint(void)
 	if (k >= NUM_DATA_COLORS)
 	    k = NUM_DATA_COLORS - 1;
 	color = colors[k];
+
+	/*
+	 * Now that we're doing parsing the entire input line, we can check if
+	 * an animated gif file needs to be written out.  This is done here because
+         * saving the gif image can call annotation routines that also use strtok().
+	 */
+	if (anim_gif.secs) {
+	    if ((time_t) anim_gif.input_time > anim_gif.next_output) {
+		savegif(0);
+		anim_gif.next_output = (time_t) anim_gif.input_time + anim_gif.secs;
+	    }
+	}
 
 	gdImageSetPixel(image, x, y, color);
 	line++;
