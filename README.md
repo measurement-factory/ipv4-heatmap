@@ -9,6 +9,11 @@ See http://maps.measurement-factory.com/ for additional information and a galler
 
 - GD library
 
+# Installing Dependencies & Compiling
+
+- apt-get install libgd-dev
+- make
+
 # Documentation
 
 ## NAME
