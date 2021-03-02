@@ -11,7 +11,7 @@ See http://maps.measurement-factory.com/ for additional information and a galler
 
 # Installing Dependencies & Compiling
 
-- apt-get install libgd-dev
+- apt-get install libgd-dev build-essential
 - make
 
 # Documentation
