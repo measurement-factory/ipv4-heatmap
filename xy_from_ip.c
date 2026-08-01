@@ -30,6 +30,7 @@ int addr_space_bits_per_image = 32;	/* /0 */
 int addr_space_bits_per_pixel = 8;	/* /24 */
 unsigned int addr_space_first_addr = 0;
 unsigned int addr_space_last_addr = ~0;
+int transpose_flag = 0;
 
 
 /*
@@ -47,6 +48,11 @@ xy_from_ip(unsigned ip, unsigned *xp, unsigned *yp)
 	return 0;
     s = (ip - addr_space_first_addr) >> addr_space_bits_per_pixel;
     xy_from_s(s, hilbert_curve_order, xp, yp);
+    if (transpose_flag) {
+	unsigned int t = *xp;
+	*xp = *yp;
+	*yp = t;
+    }
     return 1;
 }
 
@@ -55,6 +61,18 @@ void
 set_morton_mode()
 {
     xy_from_s = mor_xy_from_s;
+}
+
+
+/*
+ * Reflect the curve about its main diagonal.  This preserves the
+ * locality properties of the curve, but moves the last address of
+ * the rendered space from the upper right to the lower left corner.
+ */
+void
+set_transpose_mode()
+{
+    transpose_flag = 1;
 }
 
 int
