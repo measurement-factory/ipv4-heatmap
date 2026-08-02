@@ -353,6 +353,7 @@ usage(const char *argv0)
     printf("\t-p         show size of prefixes in legend\n");
     printf("\t-r         reverse; white background, black text\n");
     printf("\t-s file    shading file\n");
+    printf("\t-T         transpose; last address in lower left, not upper right\n");
     printf("\t-t str     map title\n");
     printf("\t-u str     scale title in legend\n");
     printf("\t-y cidr    address space to render\n");
@@ -364,7 +365,7 @@ int
 main(int argc, char *argv[])
 {
     int ch;
-    while ((ch = getopt(argc, argv, "A:B:a:Cc:df:g:hk:mo:prs:t:u:y:z:")) != -1) {
+    while ((ch = getopt(argc, argv, "A:B:a:Cc:df:g:hk:mo:prs:t:u:y:z:T")) != -1) {
 	switch (ch) {
 	case 'A':
 	    log_A = atof(optarg);
@@ -406,6 +407,9 @@ main(int argc, char *argv[])
 		morton_flag = 1;
 		set_morton_mode();
 		break;
+	case 'T':
+	    set_transpose_mode();
+	    break;
 	case 't':
 	    title = strdup(optarg);
 	    break;

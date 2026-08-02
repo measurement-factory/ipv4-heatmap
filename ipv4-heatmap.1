@@ -12,7 +12,7 @@
 .Nd Create a map of IPv4 address data
 .Sh SYNOPSIS
 .Nm
-.Op Fl dhprm
+.Op Fl dhprmT
 .Op Fl A Ar float
 .Op Fl B Ar float
 .Op Fl a Ar file
@@ -121,6 +121,11 @@ The
 .Ar shades
 file can be used to shade certain areas of the map with specific colors
 and transparency levels.  See SHADING below for the format of this file.
+.It Fl T
+Transpose the curve by reflecting it about its main diagonal.  This
+preserves the locality properties of the curve, but moves the last
+address of the rendered space from the upper right corner to the lower
+left corner.
 .It Fl t Ar title
 Instructs
 .Nm

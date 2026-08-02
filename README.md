@@ -20,7 +20,7 @@ See http://maps.measurement-factory.com/ for additional information and a galler
      ipv4‐heatmap — Create a map of IPv4 address data
 
 ## SYNOPSIS
-     ipv4‐heatmap [−dhprm] [−A float] [−B float] [−a file] [−f font]
+     ipv4‐heatmap [−dhprmT] [−A float] [−B float] [−a file] [−f font]
                   [−g seconds] [−k file] [−o file] [−s file] [−t string]
                   [−u string] [−y prefix] [−z bits] < iplist
 
